@@ -1,0 +1,73 @@
+# ── Secrets ───────────────────────────────────────────────────────────
+.env
+.env.local
+*.key
+*.pem
+
+# ── Data: DENY BY DEFAULT ─────────────────────────────────────────────
+#
+# Not an extension list. An extension list only covers the shapes that
+# existed when it was written, and this tree will acquire new ones —
+# archived filings, parquet panels, sqlite caches, ~60k cached model
+# responses. Any of those landing in history is unrecoverable, and the
+# LLM response cache in particular is both large and expensive to rebuild.
+#
+# Deny the directories; admit exceptions deliberately, one line at a time.
+# `data/*` would exclude the directories themselves, so git never descends
+# and no negation below could re-include anything. `data/**` plus a
+# directory re-include keeps the tree while excluding every file in it.
+data/**
+!data/**/
+!data/README.md
+!data/**/.gitkeep
+
+# ── Generated outputs ─────────────────────────────────────────────────
+# Regenerable end to end from data/ + src/. Figures and tables belong in
+# the report, not in git.
+output/*
+!output/.gitkeep
+
+# ── Rendered documents ────────────────────────────────────────────────
+# The .md files in docs/ are canonical; the .docx are build artefacts.
+docs/*.docx
+
+# ── Python ────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ── Editor / OS ───────────────────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local data, credentials and regenerated files
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+.venv*/
+venv/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+/data/
+/datasets/
+/output/
+/outputs/
+*.sqlite
+*.sqlite3
+*.db
+*.parquet
+*.csv
+*.xlsx
+*.zip

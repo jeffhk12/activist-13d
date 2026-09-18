@@ -1,0 +1,34 @@
+# Runtime. Pin on first successful full run — floating versions are fine while
+# the pipeline is still being built, and wrong once results are reported.
+
+# --- core -------------------------------------------------------------------
+pandas
+numpy
+pyarrow                 # parquet
+duckdb                  # queries the parquet panel directly, no server
+requests
+
+# --- parsing ----------------------------------------------------------------
+lxml                    # both the pre-2024 HTML and the post-2024 XML
+beautifulsoup4          # fallback for malformed pre-2024 filings
+
+# --- extraction schema ------------------------------------------------------
+pydantic                # the schema, its validation, and its hashable version
+
+# --- modelling --------------------------------------------------------------
+scikit-learn
+scikit-survival         # random survival forests, gradient-boosted Cox, C-index
+lifelines               # Kaplan-Meier, Cox PH, descriptive survival
+torch                   # DeepHit backend
+pycox                   # DeepHit competing risks
+econml                  # causal forests, DML
+mapie                   # conformal prediction
+lightgbm                # learning-to-rank baseline
+
+# --- reporting --------------------------------------------------------------
+matplotlib
+statsmodels             # event-study regressions
+
+# --- providers (extraction) -------------------------------------------------
+# Added per provider as they are wired in. Kept out of requirements-ci.txt so
+# CI can never import a client that reads a credential.

@@ -1,0 +1,385 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:activist13d:extraction:v1",
+  "title": "Completed development extraction record v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "workflow_status",
+    "accession",
+    "analysis_scope",
+    "input_manifest_sha256",
+    "raw_source_sha256",
+    "protocol_hashes",
+    "producer",
+    "reviewed_document_ids",
+    "evidence_completeness",
+    "evidence_gaps",
+    "fields",
+    "intent"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "extraction-v1"
+    },
+    "workflow_status": {
+      "const": "completed"
+    },
+    "accession": {
+      "type": "string",
+      "pattern": "^\\d{10}-\\d{2}-\\d{6}$"
+    },
+    "analysis_scope": {
+      "enum": [
+        "initial_disclosure",
+        "amendment_diagnostic"
+      ]
+    },
+    "input_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "raw_source_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "protocol_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "categories",
+        "prompt",
+        "schema",
+        "workflow",
+        "validation_plan"
+      ],
+      "properties": {
+        "categories": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "prompt": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "schema": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "workflow": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "validation_plan": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "producer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "identifier",
+        "model",
+        "provider",
+        "settings",
+        "created_at",
+        "raw_response_path"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "human_reference",
+            "model_extraction",
+            "mechanical_extraction"
+          ]
+        },
+        "identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "provider": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "settings": {
+          "type": "object"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "raw_response_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "reviewed_document_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_completeness": {
+      "enum": [
+        "adequate",
+        "incomplete",
+        "uncertain"
+      ]
+    },
+    "evidence_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "issuer_ciks",
+        "reporting_party_ciks",
+        "cusips",
+        "event_date",
+        "filing_date",
+        "acceptance_datetime_et",
+        "item4"
+      ],
+      "properties": {
+        "issuer_ciks": {
+          "$ref": "#/$defs/field"
+        },
+        "reporting_party_ciks": {
+          "$ref": "#/$defs/field"
+        },
+        "cusips": {
+          "$ref": "#/$defs/field"
+        },
+        "event_date": {
+          "$ref": "#/$defs/field"
+        },
+        "filing_date": {
+          "$ref": "#/$defs/field"
+        },
+        "acceptance_datetime_et": {
+          "$ref": "#/$defs/field"
+        },
+        "item4": {
+          "$ref": "#/$defs/field"
+        }
+      }
+    },
+    "intent": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {
+        "$ref": "#/$defs/category"
+      }
+    }
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "text_sha256",
+        "start",
+        "end",
+        "quote"
+      ],
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "values",
+        "evidence",
+        "rationale"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "present",
+            "not_found_in_supplied_text",
+            "ambiguous",
+            "unavailable"
+          ]
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "present"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "values": {
+                "minItems": 1
+              },
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "not_found_in_supplied_text",
+                  "unavailable"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "values": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    "category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "category",
+        "label",
+        "stance",
+        "rationale",
+        "evidence"
+      ],
+      "properties": {
+        "category": {
+          "enum": [
+            "board_representation",
+            "leadership_change",
+            "capital_return",
+            "capital_structure",
+            "sale_of_company",
+            "asset_transaction",
+            "operational_change",
+            "governance_change",
+            "other_stated_objective"
+          ]
+        },
+        "label": {
+          "enum": [
+            "present",
+            "not_stated",
+            "cannot_determine"
+          ]
+        },
+        "stance": {
+          "enum": [
+            "explicit_request_or_stated_plan",
+            "conditional_interest",
+            "generic_reservation",
+            "denial",
+            "unclear",
+            "none"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "label": {
+                "const": "present"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "stance": {
+                "const": "explicit_request_or_stated_plan"
+              },
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+# Normalise to LF in the repo, check out native. Without this, every file
+# written on Windows shows a whole-file diff to anyone on another platform.
+* text=auto
+
+*.py   text eol=lf
+*.md   text eol=lf
+*.toml text eol=lf
+*.yml  text eol=lf
+*.txt  text eol=lf
+
+# Build artefacts and archived evidence are binary; never touch them.
+*.docx binary
+*.parquet binary
+*.idx  binary

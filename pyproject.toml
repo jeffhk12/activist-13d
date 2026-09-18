@@ -1,0 +1,48 @@
+# Tooling config only — deliberately no [project] table.
+#
+# Config lives here rather than in ruff.toml / pytest.ini so both tools read
+# one file. Standards this encodes: STANDARDS.md in the repo root.
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+src = ["src", "tests", "scripts"]
+
+# Data and generated outputs are not source. Never walk them — data/raw holds
+# tens of thousands of cached documents and linting it wastes minutes.
+extend-exclude = ["data", "output", "docs"]
+
+[tool.ruff.lint]
+# Narrow on purpose. A rule set that produces hundreds of findings gets
+# suppressed wholesale; one that produces a handful gets fixed.
+#
+#   E, F  pycodestyle + pyflakes — the real-mistake baseline
+#   I     sorted imports, so diffs stay readable
+#   B     bugbear — the classes that silently change a printed number:
+#         late-bound closures in loops (B023), swallowed exception
+#         context (B904), mutable default arguments
+select = ["E", "F", "I", "B"]
+
+# Turning a rule off is a decision that gets written down. Every entry below
+# carries a reason and, if temporary, what re-enables it.
+ignore = [
+    # Line length. `ruff format` fixes these mechanically; enable in the same
+    # commit that introduces the formatter, not before.
+    "E501",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Tests assert on hand-computed constants; magic numbers there are the point.
+"tests/**" = ["E741"]
+
+[tool.pytest.ini_options]
+# src/ layout with no [project] table, so nothing installs the package.
+# pytest puts it on sys.path itself; scripts/ do the same via sys.path.insert.
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+markers = [
+    "network: hits a live external endpoint. Deselected by default in CI.",
+    "slow: takes more than a few seconds.",
+]
+filterwarnings = ["error::DeprecationWarning"]

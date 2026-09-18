@@ -1,0 +1,10 @@
+Offline exploratory mechanical triage prompt v1
+
+For each exception flag, inspect only the cached parsed submission text and its
+recorded raw submission. Return a source-supported candidate only for a field
+with an unambiguous literal match. Cite the accession, document filename and
+character offsets for every candidate. If the text is absent, ambiguous, or a
+binary document is involved, return cannot_determine. Do not infer intent,
+economic exposure, corporate eligibility, campaign identity, or any other
+research label. This output is exploratory model judgment and never changes a
+human-review packet.

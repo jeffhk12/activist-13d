@@ -1,0 +1,65 @@
+Execute the user-authorized activist-13d overnight discovery run. You are the single
+overnight worker, explicitly selected as gpt-5.6-terra with medium reasoning to
+reduce usage. Finish when done; do not fill the night with more work. No subagents.
+
+Read CLAUDE.md, STANDARDS.md, docs/SEC-PILOT.md, docs/PILOT-TRIAGE-2026-09-09.md
+and relevant source/tests. The macOS environment is .venv under this project.
+PYTHONNOUSERSITE=1 and PYTHONIOENCODING=utf-8. Start with the 38 offline tests and lint.
+No Git repository is present here; do not initialize, commit, push or publish.
+
+Authorized deliverables, in order:
+1. Build and test a restartable Python collection job using existing SEC cache,
+   provenance, index and submission parsing code. Strengthen only necessary gaps.
+   Preserve all raw data and current pilot outputs. Store new evidence separately.
+2. Download quarterly form.idx files for 2013 Q1 through 2026 Q2 (all completed
+   quarters); capture 2026 Q3 as a dated PARTIAL snapshot through retrieval time.
+   No future quarter. Inventory initial 13D and amendments by distinct accession.
+   Process one quarterly index at a time and retain only Schedule 13D metadata in
+   memory, not all full-index rows across years. Report index parse failures.
+3. Retain the existing ten pilot accessions and add 90 distinct initial filings
+   for 100 total, stratified reproducibly across 2013-2017, 2018-2022, 2023-2024,
+   and 2025-2026. Use an explicit fixed seed or deterministic accession selection.
+   Freeze the sample manifest before downloading submissions. Keep existing ten
+   distinguishable from expanded sample; never claim representative prevalence.
+4. Preserve Item 4 and referenced sections/exhibits separately with source
+   locations; unresolved or external references remain explicit. Validate on the
+   ten existing filings, especially Bulldog Exhibit B. Do not make legal judgments
+   from event-to-filing date gaps. Add meaningful synthetic tests for changes.
+5. If steps 1-4 succeed, probe at most 20 amendment submissions for at most five
+   sampled filer/subject pairs. Distinguish candidate matches from verified chains;
+   issuer CIK alone is not a campaign join. Log match rates and ambiguity.
+6. Generate an EDA in output/overnight/EDA.md and machine-readable metrics:
+   n, periods, formats, missingness, document counts, candidate date gaps,
+   unresolved references and parser failure queue. Source hashes on all records.
+   All arithmetic is Python. Do not send bulk raw filings through model context.
+7. Optionally review at most 15 short evidence bundles for preliminary context,
+   only after mechanical work is complete. Include exact spans, rationale,
+   accession, model string, timestamp, and hash of these instructions. These are
+   exploratory model judgments, not ground truth or final training labels.
+8. Run appropriate tests, lint, and offline replay. Write the morning handoff to
+   output/overnight/MORNING-HANDOFF.md, including completed/failed/skipped steps,
+   exact rerun commands, sample sizes, limits, source inventory, and next actions.
+   Save progress to output/overnight/progress.json after each phase.
+
+Operational limits:
+- One worker and one collector process. No model API calls, paid endpoints,
+  provider SDK installation, model training, trading, messaging or account access.
+- SEC fetches only www.sec.gov and data.sec.gov, at <=2 requests/second;
+  at most 200 new successful HTTP requests and 3 GiB new raw data. Enforce size
+  limits with streamed reads (including a 100 MiB per-response maximum). Persist
+  budget counters so restarting cannot reset the total. Existing cache is reused
+  after hashes match, never refreshed in place. Set timeouts and write atomically.
+- Stop live collection on 403/429, contact missing, source corruption, or limits;
+  no repeated retries. Record the reason and continue only independent offline work.
+- EDGAR_USER_AGENT must use the user-supplied name/email. It may be loaded from
+  data/local/sec-contact.json, key user_agent. Do not print it in logs or reports.
+  If it is initially absent, prepare code and offline tests first, then check once
+  again. If still absent, write a ready-to-run launcher and mark collection blocked.
+- Stay in the project. Preserve raw files and versioned protocol files. New derived
+  artifacts go to data/interim/overnight and output/overnight. No credentials in Git.
+- Use Python for downloads, statistics and report rendering. Small tool outputs,
+  no large raw text dumps. No repeated polling or speculative refactoring.
+- The supervisor enforces a six-hour wall-clock maximum. Stop earlier when done.
+  Do not escalate the model. No claimed hard token cap; report measured CLI usage.
+- Runtime sandbox and automatic approval review remain in force. If an action is
+  denied, do not bypass it. Capture the denial and complete allowed offline work.
