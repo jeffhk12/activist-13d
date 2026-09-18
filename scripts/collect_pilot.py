@@ -83,12 +83,12 @@ def write_review(records: list[dict], audit: dict) -> None:
                 sheet.extend(["", f"## Exhibit: {doc['filename']}", "",
                               doc["text"] or "Binary content retained in raw submission."])
         sheet.extend(["", "Full document/exhibit text and per-person XML fields are preserved in filings.jsonl.", ""])
-        (sheets / f"{accession}.md").write_text("\n".join(sheet), encoding="utf-8")
+        (sheets / f"{accession}.md").write_text("\n".join(sheet), encoding="utf-8", newline="\n")
     lines.extend(["", "## Next validation steps", "",
                   "Review Item 4 boundaries and referenced exhibits, screen actual activist intent, "
                   "resolve manager entities, and collect amendment chains. Legacy ownership percentages "
                   "are not yet parsed; XML ownership is retained per reporting person without aggregation.", ""])
-    (output / "SEC-PILOT-REPORT.md").write_text("\n".join(lines), encoding="utf-8")
+    (output / "SEC-PILOT-REPORT.md").write_text("\n".join(lines), encoding="utf-8", newline="\n")
 
 
 def main() -> None:
@@ -131,7 +131,7 @@ def main() -> None:
     out = ROOT / "data/interim/pilot"
     out.mkdir(parents=True, exist_ok=True)
     (out / "filings.jsonl").write_text(
-        "".join(json.dumps(record, ensure_ascii=False) + "\n" for record in records), encoding="utf-8"
+        "".join(json.dumps(record, ensure_ascii=False) + "\n" for record in records), encoding="utf-8", newline="\n"
     )
     audit = {
         "sampling": "five evenly spaced initial filings per quarter, by date then accession",
@@ -144,7 +144,7 @@ def main() -> None:
         "event_date_found": sum(bool(r["event_date"]) for r in records),
         "no_llm_calls": True,
     }
-    (out / "audit.json").write_text(json.dumps(audit, indent=2) + "\n", encoding="utf-8")
+    (out / "audit.json").write_text(json.dumps(audit, indent=2) + "\n", encoding="utf-8", newline="\n")
     write_review(records, audit)
     print(json.dumps(audit, indent=2))
     print(f"Wrote {out}")

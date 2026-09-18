@@ -12,12 +12,12 @@ Run: PYTHONNOUSERSITE=1 PYTHONIOENCODING=utf-8 .venv/bin/python scripts/data_col
 from __future__ import annotations
 
 import argparse
-import fcntl
 import hashlib
 import json
 import os
 import re
 import shutil
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -26,6 +26,9 @@ from urllib.parse import urlparse
 import requests
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / 'src'))
+from activist13d.file_lock import acquire_exclusive  # noqa: E402
+
 RAW = ROOT / "data/raw/edgar/bulk-v1"
 INTERIM = ROOT / "data/interim/bulk-v1"
 OUTPUT = ROOT / "output/data-collection/sec"
@@ -312,7 +315,7 @@ def run(refresh: bool = True) -> None:
     RAW.mkdir(parents=True, exist_ok=True)
     with (OUTPUT / "collector.lock").open("a") as lock:
         try:
-            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            acquire_exclusive(lock)
         except BlockingIOError:
             raise SystemExit("SEC bulk collector already running") from None
         client = Collector(load_contact())
