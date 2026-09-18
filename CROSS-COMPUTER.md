@@ -4,7 +4,7 @@ Code checkpoint prepared September 17, 2026.
 
 Clone `https://github.com/jeffhk12/activist-13d.git` using branch `main` on each computer, into a local folder outside cloud sync. This Mac copy is at `/Users/jefflu/Projects/activist-13d`. The original source remains at `/Users/jefflu/Documents/GitHub-Repos/activist-13d`; preserve and compare any subsequent edits there before switching working copies.
 
-Install a separate environment from the project's dependency files on each operating system. Restore the required data and local credentials separately. USB recovery source/data snapshots are under `Jeff-Workspace-Backup/2026-09-17`; the earlier September 14 backup is also retained. Consult the backup verification files before restoring. OneDrive `Project-Transfer` is for selected travel data/results, within the 100 GB allowance.
+Install a separate environment from the project's dependency files on each operating system. Restore the required data and local credentials separately. Fresh source snapshots and Git bundles are under `Jeff-Workspace-Backup/2026-09-17`. The verified complete data backup remains under `Jeff-Workspace-Backup/2026-09-14`; the full September 17 data refresh did not complete. Consult the backup verification files before restoring. OneDrive `Project-Transfer` is for selected travel data/results, within the 100 GB allowance.
 
 Save and commit changes, push this branch before switching computers, and pull it on the other computer before editing. Check for uncommitted work first.
 
