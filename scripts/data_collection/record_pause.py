@@ -13,7 +13,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "output/data-collection"
+OUT = ROOT / "research/runs/data-collection"
 stamp = datetime.now(timezone.utc).isoformat()
 locks = []
 for relative in ("sec/collector.lock", "wrds/worker.lock"):

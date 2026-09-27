@@ -32,7 +32,8 @@ def safe_destination(root, name):
     relative = PurePosixPath(name)
     if (
         not relative.parts
-        or relative.parts[0] not in ("data", "output")
+        or not (relative.parts[0] in ("data", "output")
+                or relative.parts[:2] == ("research", "runs"))
         or relative.is_absolute()
         or ".." in relative.parts
         or PureWindowsPath(name).drive
@@ -40,6 +41,9 @@ def safe_destination(root, name):
         or ":" in name
     ):
         raise ValueError("Unsafe transfer path: " + name)
+    # Historical transfer archives keep their original member names and hashes.
+    if relative.parts[0] == "output":
+        relative = PurePosixPath("research/runs", *relative.parts[1:])
     target = root.joinpath(*relative.parts)
     if not target.resolve().is_relative_to(root.resolve()):
         raise ValueError("Destination symlink escapes the working tree: " + name)

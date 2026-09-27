@@ -10,7 +10,7 @@ src = ["src", "tests", "scripts"]
 
 # Data and generated outputs are not source. Never walk them — data/raw holds
 # tens of thousands of cached documents and linting it wastes minutes.
-extend-exclude = ["data", "output", "docs"]
+extend-exclude = ["data", "review", "research", "maintenance"]
 
 [tool.ruff.lint]
 # Narrow on purpose. A rule set that produces hundreds of findings gets

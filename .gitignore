@@ -73,3 +73,9 @@ __pycache__/
 *.zip
 # Local verified-transfer receipts
 .workspace-transfer.json
+/.migration-*/
+/migration-conflicts/
+/review/
+/research/runs/
+/research/docs/*.docx
+/maintenance/

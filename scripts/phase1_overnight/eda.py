@@ -247,7 +247,7 @@ def run(run_dir):
     report.table(['Benchmark field', 'Observed value'], [('Index', '2703 — HFRI Event-Driven (Total) Index'), ('Monthly observations', len(series)), ('First month', min(r['Date'] for r in series)), ('Last month', max(r['Date'] for r in series)), ('Missing source ROR', sum(r.get('ROR') in (None,'') for r in series)), ('Currency / fee source labels', 'USD / Net of All Fees')])
     report.para('ROR values and NAV remain as supplied. Return-unit convention and methodology documentation remain unresolved; no compounded benchmark returns, annualized Sharpe, or strategy comparisons are presented. Monthly HFR returns will not be interpolated to daily.')
     values['hfr_inventory'] = hfr_info
-    public = ROOT / 'output/data-collection/public-series-20260914T010236Z-corrected-v2/manifest.json'
+    public = ROOT / 'research/runs/data-collection/public-series-20260914T010236Z-corrected-v2/manifest.json'
     files.append(public)
     values['public_series_inventory'] = json.loads(public.read_text())
     report.para('Public-series inventory: archived FRED DTB3 cash-rate proxy and Fama–French daily/monthly factors. Pull dates, coverage and missing-value conventions are preserved in the public-series manifest and calculation JSON. Cash-accrual conversion and final benchmark specification are not frozen.')

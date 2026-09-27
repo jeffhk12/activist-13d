@@ -33,7 +33,7 @@ TABLES = ("crsp.dsf", "crsp.dsi", "crsp.dsenames", "crsp.stocknames", "crsp.dsed
           "crsp.ccmxpf_lnkhist", "comp.funda", "audit.feed31_shareholder_activism",
           "crsp.dsf_v2", "crsp.stocknames_v2")
 CACHE = ROOT / "data/raw/wrds/bulk-v1"
-OUT = ROOT / "output/data-collection/wrds"
+OUT = ROOT / "research/runs/data-collection/wrds"
 STOP_REQUESTED = False
 
 

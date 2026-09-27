@@ -3,7 +3,7 @@
 Run from the project root with the local `.venv/bin/python`, `PYTHONNOUSERSITE=1`, and `PYTHONIOENCODING=utf-8`.
 
 - `build_v1.py` generates/verifies codebook, prompt and schema from the immutable category source. It refuses to change an existing version's bytes.
-- `validate.py RECORD EVIDENCE` validates a **completed** extraction record against schema-v1.json, protocol/input hashes, category coverage, abstention rules and exact canonical-text citations. The evidence JSON uses `accession`, `source_sha256`, and a `documents` array with `document_id`, `text`, and `text_sha256`. This is a structural/provenance check, not semantic validation.
+- `validate.py RECORD EVIDENCE` validates a **completed** extraction record against schema-v1.json, research/protocol/input hashes, category coverage, abstention rules and exact canonical-text citations. The evidence JSON uses `accession`, `source_sha256`, and a `documents` array with `document_id`, `text`, and `text_sha256`. This is a structural/provenance check, not semantic validation.
 - `test_protocol.py` tests invented examples only; it produces no real human or model labels.
 
 Blank human worksheets intentionally do not pass the completed-record schema. They are converted only after human review. The validator accepts only the v1 contract; a revised protocol requires a correspondingly versioned validator/run.

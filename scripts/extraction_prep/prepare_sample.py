@@ -16,12 +16,15 @@ import json
 import re
 import shutil
 import sqlite3
+import sys
 from collections import Counter
 from pathlib import Path
 
 from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / 'src'))
+from activist13d.local_paths import resolve_project_path
 SEED = 'sec-extraction-development-20260916-v1'
 BUCKETS = ((2013, 2016), (2017, 2020), (2021, 2024), (2025, 2026))
 CAP = 20 * 1024**2
@@ -93,24 +96,24 @@ def docs(raw):
 
 
 def packet_hashes(root):
-    folder = root / 'output/phase1-prep/20260914T003050627334Z/packets'
+    folder = root / 'research/runs/phase1-prep/20260914T003050627334Z/packets'
     actual = {p.name: sha(p.read_bytes()) for p in folder.glob('*.html')}
-    baseline = json.loads((root / 'output/phase1-prep/integrity-20260914T004440397334Z/audit.json').read_text())['packet_hashes_after']
+    baseline = json.loads((root / 'research/runs/phase1-prep/integrity-20260914T004440397334Z/audit.json').read_text())['packet_hashes_after']
     if actual != baseline:
         raise ValueError('Original human packet hashes differ from baseline')
     return actual
 
 
 def packet_metadata(root):
-    folder = root / 'output/phase1-prep/20260914T003050627334Z/packets'
+    folder = root / 'research/runs/phase1-prep/20260914T003050627334Z/packets'
     return {p.name: [p.stat().st_size, p.stat().st_mtime_ns] for p in folder.glob('*.html')}
 
 
 def load_exclusions(root):
     excluded = set()
-    for p in (root / 'output/phase1-prep').glob('*/packets/*.html'):
+    for p in (root / 'research/runs/phase1-prep').glob('*/packets/*.html'):
         excluded.add(p.stem)
-    for p in (root / 'output/phase1-overnight').glob('*pilot*/sec.sqlite'):
+    for p in (root / 'research/runs/phase1-overnight').glob('*pilot*/sec.sqlite'):
         with sqlite3.connect(f'file:{p}?mode=ro', uri=True) as db:
             excluded.update(r[0] for r in db.execute('SELECT accession FROM records'))
     return excluded
@@ -138,7 +141,7 @@ def choose(rows, failures, excluded):
 
 
 def verify(row, manifest, root):
-    source = (root / manifest['storage_path']).resolve()
+    source = resolve_project_path(manifest['storage_path'], root)
     if not source.is_relative_to((root / 'data/raw/edgar').resolve()):
         raise ValueError('Raw source path escapes SEC cache')
     if source.stat().st_size > CAP:
@@ -177,7 +180,7 @@ def packet(bundle):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--out', type=Path, default=ROOT / 'output/extraction-prep/development-20260916')
+    parser.add_argument('--out', type=Path, default=ROOT / 'research/runs/extraction-prep/development-20260916')
     args = parser.parse_args(argv)
     out = args.out.resolve()
     out.mkdir(parents=True, exist_ok=True)
@@ -187,7 +190,7 @@ def main(argv=None):
         raise ValueError('10 GiB bounded-preparation disk reserve reached')
     before = packet_metadata(ROOT)
     print('Preparing sample; original packet content-hash check is deferred after a stalled local read.', flush=True)
-    dbpath = ROOT / 'output/phase1-overnight/full-20260915/sec.sqlite'
+    dbpath = ROOT / 'research/runs/phase1-overnight/full-20260915/sec.sqlite'
     db = sqlite3.connect(f'file:{dbpath}?mode=ro', uri=True)
     manifest_path = ROOT / 'data/interim/bulk-v1/sec-manifest.json'
     manifest_available = manifest_path.exists()
@@ -210,7 +213,7 @@ def main(argv=None):
     for acc, error, source_json in db.execute('SELECT accession,error,source_json FROM failures'):
         if not manifest_available:
             manifest[acc] = json.loads(source_json)
-        source = ROOT / manifest[acc]['storage_path']
+        source = resolve_project_path(manifest[acc]['storage_path'], ROOT)
         if source.stat().st_size > CAP:
             oversize += 1
             continue

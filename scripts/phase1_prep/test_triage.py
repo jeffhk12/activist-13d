@@ -19,12 +19,12 @@ ROOT = Path(__file__).resolve().parents[2]
 class TriageArtifactTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        paths = sorted(glob.glob(str(ROOT / "output/phase1-prep/triage-*/triage.json")))
+        paths = sorted(glob.glob(str(ROOT / "research/runs/phase1-prep/triage-*/triage.json")))
         if not paths:
             raise AssertionError("run triage.py first")
         cls.data = json.loads(Path(paths[-1]).read_text())
         cls.sources = {r["accession"]: r for r in (
-            json.loads(line) for line in (ROOT / "output/phase1-prep/20260914T003050627334Z/reparsed-records.jsonl").read_text().splitlines())}
+            json.loads(line) for line in (ROOT / "research/runs/phase1-prep/20260914T003050627334Z/reparsed-records.jsonl").read_text().splitlines())}
 
     def test_metadata_declares_offline_model_and_inputs(self):
         meta = self.data["metadata"]

@@ -150,12 +150,12 @@ def main():
     result["provenance"] = {
         "input_sha256": hashlib.sha256(input_path.read_bytes()).hexdigest(),
         "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-        "triage_sha256": hashlib.sha256((ROOT / "docs/PILOT-TRIAGE-2026-09-09.md").read_bytes()).hexdigest(),
+        "triage_sha256": hashlib.sha256((ROOT / "research/docs/PILOT-TRIAGE-2026-09-09.md").read_bytes()).hexdigest(),
         "formulas": {"calendar_gap": "filing_date - event_date_candidate, calendar days",
                      "coverage": "number of present values / ten filings",
                      "item4_characters": "len(parsed Item 4 string), Unicode characters"},
     }
-    output = ROOT / "output"
+    output = ROOT / "research/runs"
     output.mkdir(exist_ok=True)
     (output / "PILOT-EDA.json").write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
     (output / "PILOT-EDA.md").write_text(render(result))

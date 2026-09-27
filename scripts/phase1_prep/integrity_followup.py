@@ -20,7 +20,7 @@ from pathlib import Path
 from run import packet
 
 ROOT = Path(__file__).resolve().parents[2]
-COMPLETED = ROOT / "output/phase1-prep/20260914T003050627334Z"
+COMPLETED = ROOT / "research/runs/phase1-prep/20260914T003050627334Z"
 RAW = (ROOT / "data/raw/edgar").resolve()
 INDEX_ROW = re.compile(
     r"^(?P<form>\S+(?: \S+)*?)\s{2,}(?P<company>.*?)\s+"
@@ -113,7 +113,7 @@ def verify_dates(header_date, *recorded_dates):
 
 def package_provenance() -> dict:
     files = ["pyproject.toml", "requirements.txt", "requirements-ci.txt", "requirements-pilot-lock.txt"]
-    files += ["output/overnight/collector.lock", "output/overnight/worker.lock"]
+    files += ["research/runs/overnight/collector.lock", "research/runs/overnight/worker.lock"]
     result = {name: {"sha256": digest(ROOT / name), "bytes": (ROOT / name).stat().st_size}
               for name in files if (ROOT / name).is_file()}
     packages = {}
@@ -216,7 +216,7 @@ def audit(completed: Path = COMPLETED, output: Path | None = None) -> tuple[Path
               "inventory_sha256": digest(inventory_path), "reparsed_sha256": digest(reparsed_path),
               "network_calls": 0, "model_api_calls": 0,
               "completed_run": str(completed.relative_to(ROOT))}
-    output = output or ROOT / "output/phase1-prep" / ("integrity-" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ"))
+    output = output or ROOT / "research/runs/phase1-prep" / ("integrity-" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ"))
     output.mkdir(parents=True, exist_ok=False)
     (output / "audit.json").write_text(json.dumps(result, indent=2) + "\n")
     (output / "REPORT.md").write_text("# Phase 1 integrity follow-up\n\n```json\n" + json.dumps({k: result[k] for k in ("status", "n_records", "verified_records", "n_index_files", "n_index_rows", "packet_hash_count", "old_packets_unchanged", "packet_render_match", "inventory_dates_match", "index_sets_match")}, indent=2) + "\n```\n\nSupersedes earlier integrity follow-up outputs. All index bytes are compared with both sidecars and separately recorded index metadata hashes. Filing dates agree across raw headers, raw index rows, manifest, prior records, and packet inventory. Original blank packets match deterministic rendering from the completed run. These are local consistency checks, not external authentication or semantic validation. Full hashes and package provenance are in audit.json. No network or model API calls.\n")

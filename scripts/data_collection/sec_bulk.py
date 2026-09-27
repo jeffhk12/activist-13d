@@ -31,7 +31,7 @@ from activist13d.file_lock import acquire_exclusive  # noqa: E402
 
 RAW = ROOT / "data/raw/edgar/bulk-v1"
 INTERIM = ROOT / "data/interim/bulk-v1"
-OUTPUT = ROOT / "output/data-collection/sec"
+OUTPUT = ROOT / "research/runs/data-collection/sec"
 MANIFEST = INTERIM / "sec-manifest.json"
 PROGRESS = OUTPUT / "progress.json"
 FAILURES = OUTPUT / "failures.jsonl"

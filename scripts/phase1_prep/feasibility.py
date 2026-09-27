@@ -16,7 +16,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-PREP = ROOT / "output/phase1-prep/20260914T003050627334Z"
+PREP = ROOT / "research/runs/phase1-prep/20260914T003050627334Z"
 
 
 def sha(path):
@@ -96,7 +96,7 @@ def main():
     next_metadata = directory_candidates(directory_path, directory_meta)
     sources[str(directory_path.relative_to(ROOT))] = sha(directory_path)
     sources[str(directory_meta.relative_to(ROOT))] = sha(directory_meta)
-    run = ROOT / "output/phase1-prep" / ("feasibility-" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ"))
+    run = ROOT / "research/runs/phase1-prep" / ("feasibility-" + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ"))
     run.mkdir()
     for name, payload in {"summary": summary, "identifier-readiness": rows, "cached-schemas": schemas, "cached-probes": probes,
                           "next-metadata-candidates": next_metadata,

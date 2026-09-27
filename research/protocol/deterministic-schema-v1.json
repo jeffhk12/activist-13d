@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Deterministic filing facts v1 (separate from semantic extraction)",
+  "type": "object",
+  "required": ["parser_version", "accession", "filings", "issuers", "filing_entities", "reporting_persons", "securities", "ownership", "documents", "sections", "references", "quality_issues"],
+  "additionalProperties": false,
+  "properties": {
+    "parser_version": {"const": "deterministic-v1"},
+    "accession": {"type": "string", "pattern": "^[0-9]{10}-[0-9]{2}-[0-9]{6}$"},
+    "filings": {"type":"array", "minItems":1,"maxItems":1,"items":{"$ref":"#/$defs/filing"}},
+    "issuers": {"type":"array","items":{"$ref":"#/$defs/entity"}},
+    "filing_entities": {"type":"array","items":{"$ref":"#/$defs/entity"}},
+    "reporting_persons": {"type":"array","items":{"$ref":"#/$defs/person"}},
+    "securities": {"type":"array","items":{"$ref":"#/$defs/security"}},
+    "ownership": {"type":"array","items":{"$ref":"#/$defs/ownership"}},
+    "documents": {"$ref":"#/$defs/rows"},
+    "sections": {"$ref":"#/$defs/rows"},
+    "references": {"$ref":"#/$defs/rows"},
+    "quality_issues": {"$ref":"#/$defs/rows"}
+  },
+  "$defs": {
+    "rows": {"type":"array","items":{"type":"object"}},
+    "filing": {
+      "type":"object", "required":["accession","parsing_status","source_sha256"],
+      "properties":{"parsing_status":{"enum":["processed","failed"]}},
+      "allOf":[{"if":{"properties":{"parsing_status":{"const":"processed"}}},"then":{
+        "required":["accession_field","source_form","filing_date","acceptance_datetime_et","initial_or_amendment","event_date","body_issuer_name","source_url","source_path"],
+        "properties":{"accession_field":{"$ref":"#/$defs/field"},"source_form":{"$ref":"#/$defs/field"},"filing_date":{"$ref":"#/$defs/field"},"acceptance_datetime_et":{"$ref":"#/$defs/field"},"initial_or_amendment":{"$ref":"#/$defs/field"},"event_date":{"$ref":"#/$defs/field"},"body_issuer_name":{"$ref":"#/$defs/field"}}
+      }}]
+    },
+    "entity": {
+      "type":"object","required":["accession","entity_id","header_role","name","cik"],
+      "properties":{"name":{"$ref":"#/$defs/field"},"cik":{"$ref":"#/$defs/field"}}
+    },
+    "person": {
+      "type":"object","required":["accession","person_id","name","cik","person_code","citizenship","source_of_funds"],
+      "properties":{"name":{"$ref":"#/$defs/field"},"cik":{"$ref":"#/$defs/field"},"person_code":{"$ref":"#/$defs/field"},"citizenship":{"$ref":"#/$defs/field"},"source_of_funds":{"$ref":"#/$defs/field"}}
+    },
+    "security": {
+      "type":"object","required":["accession","security_id","title","cusip","cusip_check_digit_valid"],
+      "properties":{"title":{"$ref":"#/$defs/field"},"cusip":{"$ref":"#/$defs/field"},"cusip_check_digit_valid":{"$ref":"#/$defs/field"}}
+    },
+    "ownership": {
+      "type":"object","required":["accession","person_id","security_id","aggregate_shares","percent_of_class","sole_voting_power","shared_voting_power","sole_dispositive_power","shared_dispositive_power"],
+      "properties":{"aggregate_shares":{"$ref":"#/$defs/field"},"percent_of_class":{"$ref":"#/$defs/field"},"sole_voting_power":{"$ref":"#/$defs/field"},"shared_voting_power":{"$ref":"#/$defs/field"},"sole_dispositive_power":{"$ref":"#/$defs/field"},"shared_dispositive_power":{"$ref":"#/$defs/field"}}
+    },
+    "field": {
+      "type":"object",
+      "required":["raw_value","value","status","rule","parser_version","evidence"],
+      "properties": {
+        "status":{"enum":["present","not_found_in_supplied_text","ambiguous","unavailable","invalid_format"]},
+        "rule":{"type":"string","minLength":1},
+        "parser_version":{"type":"string","minLength":1},
+        "evidence":{"type":"array","items":{"type":"object"}},
+        "alternatives":{"type":"array"}
+      },
+      "allOf": [
+        {"if":{"properties":{"status":{"const":"present"}}},"then":{"properties":{"value":{"not":{"type":"null"}},"evidence":{"minItems":1}}}},
+        {"if":{"properties":{"status":{"enum":["not_found_in_supplied_text","ambiguous","unavailable","invalid_format"]}}},"then":{"properties":{"value":{"type":"null"}}}}
+      ]
+    }
+  }
+}

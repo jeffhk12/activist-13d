@@ -1,8 +1,12 @@
 # activist-13d
 
+Before writing project chat explanations, updates, reports, proposals, dashboards
+or handoffs, read and follow [the output standard](research/OUTPUT-STANDARD.md).
+It defines the investment-first explanation, audience, terminology and report checks.
+
 Course project. Standards live in `STANDARDS.md` — read it before writing code
 here rather than expecting this file to restate them. Design rationale is in
-`docs/DESIGN-RECORD.md`; data sourcing in `docs/DATA-SOURCING.md`.
+`research/docs/DESIGN-RECORD.md`; data sourcing in `research/docs/DATA-SOURCING.md`.
 
 ## The three rules that override convenience
 
@@ -24,7 +28,7 @@ here rather than expecting this file to restate them. Design rationale is in
 
 - **`data/` is gitignored deny-by-default.** Do not add exceptions without a
   written reason. `data/raw/` is append-only frozen evidence.
-- **Prompts and schemas in `protocol/` are never edited in place.** A change is
+- **Prompts and schemas in `research/protocol/` are never edited in place.** A change is
   a new version file. Labels from two prompt versions are not comparable.
 - **No test may reach a paid endpoint.** `tests/conftest.py` blanks every
   provider credential by assignment, not `setdefault`. Do not weaken that.
@@ -41,3 +45,7 @@ here rather than expecting this file to restate them. Design rationale is in
   output. Put the arithmetic in the test.
 - Every identifier join reports its match rate, and a test asserts the rate has
   not silently fallen.
+# Workspace navigation
+
+Use `START-HERE.html`. Before creating or moving project files, read
+[the workspace standard](research/WORKSPACE-STANDARD.md).

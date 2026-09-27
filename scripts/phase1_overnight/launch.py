@@ -3,7 +3,7 @@
 Inputs: explicit isolated output directory. Outputs: durable log and process IDs.
 Identity: one global supervisor lock prevents concurrent full overnight jobs.
 Tier: 0
-Run: PYTHONNOUSERSITE=1 PYTHONIOENCODING=utf-8 .venv/bin/python scripts/phase1_overnight/launch.py --output output/phase1-overnight/RUN
+Run: PYTHONNOUSERSITE=1 PYTHONIOENCODING=utf-8 .venv/bin/python scripts/phase1_overnight/launch.py --output research/runs/phase1-overnight/RUN
 """
 import argparse
 import fcntl
@@ -32,8 +32,8 @@ def main():
                                      cwd=ROOT, env=env, stdin=subprocess.DEVNULL, stdout=log, stderr=log, start_new_session=True)
         print('Supervisor PID', child.pid, 'output', output)
         return
-    (ROOT / 'output/phase1-overnight').mkdir(parents=True, exist_ok=True)
-    with (ROOT / 'output/phase1-overnight/supervisor.lock').open('a') as lock:
+    (ROOT / 'research/runs/phase1-overnight').mkdir(parents=True, exist_ok=True)
+    with (ROOT / 'research/runs/phase1-overnight/supervisor.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         with (output / 'collection.log').open('ab') as log:
             child = subprocess.Popen([sys.executable, str(Path(__file__).with_name('run.py')), '--output', str(output)],

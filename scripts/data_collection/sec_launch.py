@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-OUTPUT = ROOT / "output/data-collection/sec"
+OUTPUT = ROOT / "research/runs/data-collection/sec"
 
 
 def supervise() -> None:

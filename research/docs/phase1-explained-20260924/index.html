@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phase 1 — Can following a 13D disclosure improve returns?</title>
+<style>
+body{margin:0;background:#f3f5f7;color:#233547;font:17px/1.65 system-ui,sans-serif}main{max-width:1000px;margin:35px auto;padding:0 22px}section{background:white;padding:28px;margin:22px 0;border:1px solid #dce3e8;border-radius:9px}h1{font-size:32px;line-height:1.25}h2{font-size:23px}a{color:#145b92}nav{display:flex;gap:20px;flex-wrap:wrap}.status{color:#576879}.takeaway{border-left:5px solid #24668c}.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:12px;border-bottom:1px solid #dce3e8;vertical-align:top}th{background:#edf3f7}li{margin:9px 0}summary{cursor:pointer;font-weight:650}p{max-width:85ch}@media(max-width:600px){section{padding:18px}h1{font-size:26px}}@media print{body{background:white;font-size:11pt}section{border:0;padding:0}nav{display:none}}
+</style></head><body><main>
+<nav><a href="../../../START-HERE.html">Project home</a><a href="../../OUTPUT-STANDARD.md">Project output standard</a><a href="../proposal_v3/index.html">Proposal V3</a></nav>
+<h1>Can following an initial 13D disclosure improve returns?</h1>
+<p class="status">24 September 2026 · Phase 1: checking the data · No return results yet</p>
+<section class="takeaway"><h2>What we know today</h2>
+<p><strong>We have a starting sample for the investment study, but we do not yet know whether following these managers earns better returns.</strong> Of 404 initial disclosures potentially linked to our broader manager list, 240 pass the current basic data checks. They cover 217 distinct securities. They are possible observations for further review, not 240 winning trades or 240 independently verified activist campaigns.</p>
+<p>Think of this as reconciling the holdings and price history before running a performance attribution report. A return calculation can look precise and still be misleading if it uses the wrong stock, repeats the same opportunity, or assumes a purchase before the information was available.</p></section>
+<section><h2>The investment question and our three phases</h2>
+<p>The starting question is: if an investor bought after an initial 13D became public, would that approach improve returns? We also want to know whether identifying the manager helps distinguish better opportunities from other filings.</p>
+<div class="scroll"><table><tr><th>Phase</th><th>What we test</th><th>What it would tell us</th></tr>
+<tr><td>1. Simple following</td><td>Buy after the disclosure using consistent entry, holding and portfolio rules.</td><td>Whether there is a useful baseline strategy before adding a predictive model.</td></tr>
+<tr><td>2. Structured-data machine learning</td><td>Use investor identity, company characteristics and filing facts to select opportunities.</td><td>Whether those facts improve selection over simple following.</td></tr>
+<tr><td>3. Add NLP</td><td>Also read the investor's stated intentions in Item 4.</td><td>Whether the text adds investment value beyond the other information.</td></tr></table></div>
+<p><strong>Phase 1 is not the machine learning phase.</strong> It provides the comparison that the later models need to beat.</p></section>
+<section><h2>How 75,631 records became 404 relevant initial disclosures</h2>
+<p>The archive contains 75,631 parsed filing records, including both initial disclosures and later amendments. Within it, 17,795 records are initial 13Ds. Starting with initial disclosures keeps an investor's later updates from automatically becoming repeated new entry signals.</p>
+<p>Our broader list combines HFR Event-Driven manager candidates with seven separately selected groups, including Elliott. It links to 3,125 records in total: <strong>404 initial disclosures and 2,721 amendments</strong>. This is the discovery sample; the manager relationships and their historical availability still need review.</p>
+<p>The broader list contains <strong>71 candidate manager units</strong>, including a focused activist list of <strong>22</strong>. These are provisional identity groupings, not yet a certified count of distinct economic managers. The focused list has 323 initial disclosures within the broader 404.</p>
+<p>The dates are not yet aligned for a fair comparison: the supplied HFR history starts in 2018, while the supplemental groups were selected retrospectively. Available current stock and price data in this audit extend through 2025; 2026 coverage remains incomplete. These counts are a coverage inventory, not a finalized performance sample period.</p></section>
+<section><h2>Why the sample gets smaller</h2>
+<p>The following checks are sequential: each row starts with the filings remaining from the previous row. This table describes the broader manager subset only.</p>
+<div class="scroll"><table><tr><th>Check</th><th>Remaining initial filings</th><th>What it means</th></tr>
+<tr><td>Possible links to our manager list</td><td>404</td><td>The starting set. All 404 have source files that pass the stored integrity checks.</td></tr>
+<tr><td>Match to the stock at the filing date</td><td>372</td><td>32 lack a usable historical match. We cannot safely attach stock returns yet.</td></tr>
+<tr><td>Screen for ordinary corporate shares</td><td>259</td><td>100 relate to fund vehicles and 13 to other security types. Those need separate treatment for a corporate-stock strategy.</td></tr>
+<tr><td>Find an opening price on the proposed purchase date</td><td>252</td><td>7 more lack the required observed price. A recorded price alone does not establish that a trade could execute at that price.</td></tr>
+<tr><td>Pass the remaining basic identity and date checks</td><td>240</td><td>12 more remain outside this preliminary set pending checks. A date discrepancy can reflect normal filing timing; it is not automatically an error.</td></tr>
+</table></div>
+<p><strong>The 164 filings outside the current 240 are not failed investments.</strong> Some concern different securities; others need better data or review. We have not measured their returns.</p>
+<p>Within the 240, the focused activist subset contributes <strong>191 filings across 174 securities</strong>. Do not add 191 to 240: the focused subset is already included.</p></section>
+<section><h2>What the comparison can—and cannot—tell us yet</h2>
+<p>Another 7,699 initial filings outside the broader manager subset pass the same sequential basic checks. Together with the 240, that gives 7,939 preliminary observations across the archive.</p>
+<p>That creates a possible comparison, but <strong>“outside our list” does not mean “not an activist.”</strong> It includes unrecognized and unresolved managers. We also match stocks much more often in the broader manager group: 372 of 404 initial filings, versus 9,641 of 17,391 other initial filings before applying source-integrity exclusions. The two groups' missing data could affect any apparent performance difference.</p>
+<p>For an allocator, the relevant question is whether manager identity helps select investments after accounting for differences such as the period, company characteristics and practical trading rules. A higher unadjusted average alone would not settle that question.</p></section>
+<section><h2>What happens next</h2>
+<ol><li><strong>Confirm who is investing and what counts as a new opportunity.</strong> Review manager relationships and repeated filings so the same position is not accidentally counted as several independent ideas.</li>
+<li><strong>Set the return comparison before examining results.</strong> Specify a common sample period, benchmark, holding period, position weights, costs, treatment of delistings and overlapping positions. Final choices remain open.</li>
+<li><strong>Calculate the baseline performance.</strong> Compare simple following for the identified-manager subset with other filings and the agreed benchmark, using the same trading rules. Report how much any difference is, how uncertain it is, and whether it survives costs.</li></ol>
+<p>The current purchase-date check uses the second trading session after the public acceptance date, allowing a full intervening session. This is a conservative data-check convention; it is not yet the final execution rule.</p></section>
+<section><details><summary>Supporting evidence and technical detail</summary>
+<p>This is a plain-English companion to the preserved feasibility V2 run. It changes the explanation, not the underlying sample or research results.</p>
+<ul><li><a href="../../runs/phase1-baseline/20260924-feasibility-v2/attrition.json">Sequential counts behind the sample table</a></li>
+<li><a href="../../runs/phase1-baseline/20260924-feasibility-v2/summary.json">Group totals, securities and coverage diagnostics</a></li>
+<li><a href="../../runs/phase1-baseline/20260924-feasibility-v2/index.html">Original technical coverage report</a> and <a href="../../runs/phase1-baseline/20260924-feasibility-v2/HANDOFF.md">technical handoff</a></li>
+<li><a href="../../runs/phase1-baseline/20260924-feasibility-v2/initial-manager-review.html">Review the 404 initial disclosures and source links</a></li>
+<li><a href="../../runs/investor-identity/20260924-supplemental-v1/index.html">Manager candidate list and archive filing counts</a></li>
+<li><a href="../../runs/hfr-quarterly/20260924-v1/index.html">HFR historical coverage and date limitations</a></li></ul>
+<p>The stock matching uses identifiers valid at the time, rather than assuming today's ticker or identifier represents the same historical security. Basic corporate-share classifications are provisional; they do not certify that every issuer meets the final investment universe rules. Repeated issuer/party groups and same-stock, same-day disclosures still require review.</p>
+</details></section>
+</main></body></html>

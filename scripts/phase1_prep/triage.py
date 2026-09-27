@@ -20,7 +20,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-PREP = ROOT / "output/phase1-prep/20260914T003050627334Z"
+PREP = ROOT / "research/runs/phase1-prep/20260914T003050627334Z"
 PROMPT = Path(__file__).with_name("triage_prompt_v1.txt")
 MODEL = "gpt-5.6-luna"
 PROVIDER = "Codex subagent"
@@ -101,7 +101,7 @@ def main() -> None:
     records = {json.loads(line)["accession"]: json.loads(line) for line in (PREP / "reparsed-records.jsonl").read_text().splitlines()}
     exceptions = json.loads((PREP / "exceptions.json").read_text())
     timestamp = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
-    out = ROOT / "output/phase1-prep" / ("triage-" + timestamp.replace("-", "").replace(":", "").replace(".", ""))
+    out = ROOT / "research/runs/phase1-prep" / ("triage-" + timestamp.replace("-", "").replace(":", "").replace(".", ""))
     prompt_hash = sha256(PROMPT)
     rows = []
     for ex in exceptions:
@@ -141,7 +141,7 @@ def main() -> None:
                 assert row["candidate"] in source_text[row["source_span"]["start"]:row["source_span"]["end"]] if row["field"] == "item4" else row["candidate"] in row["source_span"]["text"]
     out.mkdir(parents=True, exist_ok=True)
     (out / "task_prompt.txt").write_text(PROMPT.read_text())
-    (out / "triage.json").write_text(json.dumps({"metadata": {"model": MODEL, "provider": PROVIDER, "timestamp_utc": timestamp, "prompt_sha256": prompt_hash, "prompt_path": str(PROMPT), "script_sha256": sha256(Path(__file__)), "input_hashes": {"exceptions_sha256": sha256(PREP / "exceptions.json"), "records_sha256": sha256(PREP / "reparsed-records.jsonl")}, "offline": True, "human_packets_modified": False, "supersedes": "output/phase1-prep/triage-20260914T003050627334Z"}, "records": rows}, indent=2) + "\n")
+    (out / "triage.json").write_text(json.dumps({"metadata": {"model": MODEL, "provider": PROVIDER, "timestamp_utc": timestamp, "prompt_sha256": prompt_hash, "prompt_path": str(PROMPT), "script_sha256": sha256(Path(__file__)), "input_hashes": {"exceptions_sha256": sha256(PREP / "exceptions.json"), "records_sha256": sha256(PREP / "reparsed-records.jsonl")}, "offline": True, "human_packets_modified": False, "supersedes": "research/runs/phase1-prep/triage-20260914T003050627334Z"}, "records": rows}, indent=2) + "\n")
     counts = {}
     for row in rows:
         counts.setdefault(row["flag"], {"n": 0, "candidate": 0, "cannot_determine": 0})

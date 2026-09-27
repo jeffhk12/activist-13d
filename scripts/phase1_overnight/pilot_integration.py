@@ -12,7 +12,7 @@ from link_candidates import run as link
 
 ROOT = Path(__file__).resolve().parents[2]
 if __name__ == '__main__':
-    output = ROOT / 'output/phase1-overnight/pilot-20260915'
+    output = ROOT / 'research/runs/phase1-overnight/pilot-20260915'
     result = link(output / 'sec.sqlite', output / 'links')
     print({k: result[k] for k in ('n_records', 'matched', 'conflicts')})
     print(eda(output))

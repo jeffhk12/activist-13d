@@ -89,7 +89,7 @@ def packet(record, inventory):
 
 
 def main():
-    run = ROOT / "output/phase1-prep" / datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
+    run = ROOT / "research/runs/phase1-prep" / datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     run.mkdir(parents=True)
     (run / "packets").mkdir()
     print(f"Run directory: {run}", flush=True)

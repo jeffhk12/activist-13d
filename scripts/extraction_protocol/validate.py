@@ -13,7 +13,7 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-PROTOCOL = ROOT / 'protocol'
+PROTOCOL = ROOT / 'research/protocol'
 
 
 def digest(data):

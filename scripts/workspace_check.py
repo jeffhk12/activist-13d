@@ -71,7 +71,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source', type=Path, default=ROOT)
     args = parser.parse_args()
-    output = ROOT / 'output/workspace-validation' / datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+    output = ROOT / 'research/runs/workspace-validation' / datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
     output.mkdir(parents=True, exist_ok=False)
     verify(args.source.resolve(), output)
 

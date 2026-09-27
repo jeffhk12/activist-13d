@@ -1,0 +1,1160 @@
+[
+  {
+    "accession": "0001104659-24-000323",
+    "filing_date": "2024-01-02",
+    "acceptance_datetime_et": "2024-01-02T16:03:19",
+    "filers": [
+      {
+        "name": "Chavant Capital Partners LLC",
+        "cik": "0001855211"
+      }
+    ],
+    "subjects": [
+      {
+        "name": "Chavant Capital Acquisition Corp.",
+        "cik": "0001855467"
+      }
+    ],
+    "cusip": "60743G100",
+    "event_date": "2023-12-21",
+    "item4_status": "heading_span_needs_review",
+    "ownership_status": "not_parsed",
+    "reporting_persons_xml": [],
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1855467/0001104659-24-000323.txt",
+    "source_sha256": "2bd05f2572c5fc948a86f998872eaf8b9970a158f2419f0f2c2ca0e50091dff5",
+    "item4": "The information in the Explanatory Note and Items 3 and 6 of this Schedule 13D is incorporated herein by reference. The Reporting Persons acquired their interest in the Issuer for investment purposes and in connection with the transactions described above and review their investment in the Issuer on a continuing basis. Depending on various factors, including, without limitation, the Founder Share Lock-Up (described in Item 6 below), the Issuer\u2019s financial position, results of operations, price levels of the Class A Common Stock, conditions in the securities markets and general economic and industry conditions, the Reporting Persons may in the future take or propose to take such actions with respect to their investment in the Issuer as they deem appropriate, including, without limitation, acquiring additional shares of Class A Common Stock (or other securities of or interests in the Issuer) or disposing of all or a portion of the shares of Class A Common Stock (or other securities of or interests in the Issuer) beneficially owned in the public markets, in privately negotiated transactions or otherwise, and potentially entering into derivative or other transactions that increase or decrease the Reporting Persons\u2019 economic interest in or control over the Issuer. Subject to the Founder Share Lock-Up and applicable law, Chavant Capital expects to distribute to its members the shares of Class A Common Stock it holds. Dr. Jiong Ma serves as a member of the Board of Directors of the Issuer and, in such capacity, may have influence over the corporate activities of the Issuer, including activities which may relate to items described in subparagraphs (a) through (j) of Item 4 of Schedule 13D. Except as described in this Schedule 13D, the Reporting Persons do not have any present plans or proposals that relate to or would result in any of the actions described in subparagraphs (a) through (j) of Item 4 of Schedule 13D, although, subject to the agreements described herein, the Reporting Persons, at any time and from time to time, may review, reconsider and change their position and/or change their purpose and/or develop such plans and may seek to influence management or the Board of the Issuer with respect to the business and affairs of the Issuer and may from time to time consider pursuing or proposing such matters with advisors, the Issuer or other persons.",
+    "documents": [
+      {
+        "document_id": "SEC-HEADER",
+        "filename": "submission.txt",
+        "type": "SEC-HEADER",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[1]",
+        "filename": "tm2333981d2_sc13d.htm",
+        "type": "SC 13D",
+        "status": "parsed_text"
+      }
+    ]
+  },
+  {
+    "accession": "0001398344-24-000853",
+    "filing_date": "2024-01-22",
+    "acceptance_datetime_et": "2024-01-22T17:05:26",
+    "filers": [
+      {
+        "name": "Bulldog Investors, LLP",
+        "cik": "0001504304"
+      }
+    ],
+    "subjects": [
+      {
+        "name": "Texas Pacific Land Corp",
+        "cik": "0001811074"
+      }
+    ],
+    "cusip": null,
+    "event_date": "2024-01-17",
+    "item4_status": "heading_span_needs_review",
+    "ownership_status": "not_parsed",
+    "reporting_persons_xml": [],
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1504304/0001398344-24-000853.txt",
+    "source_sha256": "243e4443d6b46bd403f8b79eff49a34bd286f418e85edeb006f6bf663159861d",
+    "item4": "Letter was sent to the company. See exhibit B.",
+    "documents": [
+      {
+        "document_id": "SEC-HEADER",
+        "filename": "submission.txt",
+        "type": "SEC-HEADER",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[1]",
+        "filename": "fp0086902-1_sc13d.htm",
+        "type": "SC 13D",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[2]",
+        "filename": "fp0086902-1_ex7a.htm",
+        "type": "EX-7.A",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[3]",
+        "filename": "fp0086902-1_ex7b.htm",
+        "type": "EX-7.B",
+        "status": "parsed_text"
+      }
+    ]
+  },
+  {
+    "accession": "0001104659-24-024047",
+    "filing_date": "2024-02-14",
+    "acceptance_datetime_et": "2024-02-14T17:09:41",
+    "filers": [
+      {
+        "name": "Graves Michael",
+        "cik": "0001339978"
+      }
+    ],
+    "subjects": [
+      {
+        "name": "EAGLE PHARMACEUTICALS, INC.",
+        "cik": "0000827871"
+      }
+    ],
+    "cusip": "269796108",
+    "event_date": "2024-02-12",
+    "item4_status": "heading_span_needs_review",
+    "ownership_status": "not_parsed",
+    "reporting_persons_xml": [],
+    "source_url": "https://www.sec.gov/Archives/edgar/data/827871/0001104659-24-024047.txt",
+    "source_sha256": "7703fe7fb2e7ace068c7762c3f3fde24011d2e12369304ffaea39875d7a77552",
+    "item4": "The Reporting Person has acquired, and holds, the Common Stock for investment purposes and in connection with his position as Interim Principal Executive Officer of the Issuer and his position as a director on the board of directors of the Issuer. From time to time, the Reporting Person may acquire beneficial ownership of additional shares of Common Stock as compensation, by purchase or otherwise, including (a) pursuant to the vesting or exercise of outstanding equity awards currently owned by him or (b) upon receipt from the Issuer of future compensatory equity awards, including, but not limited to, awards of Common Stock, options to purchase shares of Common Stock, and restricted stock units for Common Stock. In addition, from time to time, the Reporting Person may determine to dispose of all or a portion of the shares of Common Stock which are beneficially owned by him and over which he has investment power. The Reporting Person expects that he will, from time to time, review his position in the shares of Common Stock and may, depending on the Issuer\u2019s performance and other market conditions, seek to (i) acquire additional securities of the Issuer, through open market purchases, privately negotiated transactions, or otherwise, (ii) dispose of all or a portion of the securities of the Issuer owned by him in the open market, in privately negotiated transactions, or otherwise, or (iii) take any other available course of action, which could involve one or more of the types of transactions or have one or more of the results specified in clauses (a) through (j) of Item 4 of Schedule 13D of the Securities and Exchange Act of 1934, as amended (the \u201cAct\u201d). Any such acquisition or disposition or other transaction would be made in compliance with all applicable laws and regulations. The Reporting Person specifically reserves the right to change his intention with respect to any or all such matters described above. 3 Except as set forth in this Item 6 below, the Reporting Person does not have any present plans or proposals that relate to, or that would result in, any of the actions specified in clauses (a) through (j) of Item 4 of Schedule 13D under the Act. The information set forth in Item 6 of this Schedule 13D is incorporated by reference in its entirety into this Item 4.",
+    "documents": [
+      {
+        "document_id": "SEC-HEADER",
+        "filename": "submission.txt",
+        "type": "SEC-HEADER",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[1]",
+        "filename": "tm246055d1_sc13d.htm",
+        "type": "SC 13D",
+        "status": "parsed_text"
+      }
+    ]
+  },
+  {
+    "accession": "0001493152-24-008748",
+    "filing_date": "2024-03-04",
+    "acceptance_datetime_et": "2024-03-04T17:30:09",
+    "filers": [
+      {
+        "name": "KATZ GARY MORRIS",
+        "cik": "0001764243"
+      }
+    ],
+    "subjects": [
+      {
+        "name": "Presidio Property Trust, Inc.",
+        "cik": "0001080657"
+      }
+    ],
+    "cusip": "74102L303",
+    "event_date": "2024-01-05",
+    "item4_status": "heading_span_needs_review",
+    "ownership_status": "not_parsed",
+    "reporting_persons_xml": [],
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1764243/0001493152-24-008748.txt",
+    "source_sha256": "ee659f0afe18ee3760270ed5d43e5c306182d3eb42bbd706fe3410bf1c5d74fd",
+    "item4": "All of the Issuer\u2019s securities owned by the Reporting Person have been acquired for investment purposes only. The Reporting Person has no present plans or proposals that relate to or would result in any of the actions required to be described in subsections (a) through (j) of Item 4 of Schedule 13D. The Reporting Person may, at any time, review or reconsider its positions with respect to the Issuer and formulate plans or proposals with respect to any of such matters, but have no present intention of doing so.",
+    "documents": [
+      {
+        "document_id": "SEC-HEADER",
+        "filename": "submission.txt",
+        "type": "SEC-HEADER",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[1]",
+        "filename": "formsc13d.htm",
+        "type": "SC 13D",
+        "status": "parsed_text"
+      }
+    ]
+  },
+  {
+    "accession": "0001193125-24-081594",
+    "filing_date": "2024-03-29",
+    "acceptance_datetime_et": "2024-03-29T08:52:55",
+    "filers": [
+      {
+        "name": "Fitzpatrick Stephen James",
+        "cik": "0001911254"
+      }
+    ],
+    "subjects": [
+      {
+        "name": "Vertical Aerospace Ltd.",
+        "cik": "0001867102"
+      }
+    ],
+    "cusip": "G9471C107",
+    "event_date": "2024-03-22",
+    "item4_status": "heading_span_needs_review",
+    "ownership_status": "not_parsed",
+    "reporting_persons_xml": [],
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1911254/0001193125-24-081594.txt",
+    "source_sha256": "d5a4d814af31e6f1b1f66c7dafbb57e73a1267fb0e17e08590087f90b1ed64cc",
+    "item4": "The information set forth in or incorporated by reference in Item 3 and Item 6 of this Schedule 13D is hereby incorporated by reference in its entirety into this Item 4. The Reporting Persons acquired the securities described in this Schedule 13D for investment purposes and intend to review their investments in the Issuer on a continuing basis. Any actions the Reporting Persons might undertake may be made at any time and from time to time without prior notice and will be dependent upon the Reporting Persons\u2019 review of numerous factors, including, but not limited to: an ongoing evaluation of the Issuer\u2019s business, financial condition, operations and prospects; price levels of the Issuer\u2019s securities; general market, industry and economic conditions; the relative attractiveness of alternative business and investment opportunities; and other future developments. The Reporting Persons intend to review their respective investment in the Issuer on a continuing basis. Depending on various factors, including, without limitation, the outcome of any discussions referenced above, the Issuer\u2019s financial position and strategic direction, actions taken by Vertical\u2019s board of directors, price levels of the Ordinary Shares, other investment opportunities available to the Reporting Persons, conditions in the securities market and general economic and industry conditions, the Reporting Persons may from time to time and at any time in the future, subject to its investment strategy and policy and in accordance with its articles of association as amended or restated from time to time, take such actions with respect to the investment in the Issuer as they deem appropriate, including: (i) acquiring additional Ordinary Shares and/or other equity, debt, notes or other securities of the Issuer, or derivative or other instruments that are based upon or relate to the value of the Ordinary Shares or the Issuer (collectively, \u201c Securities \u201d) in the open market or otherwise; (ii) disposing of any or all of their Securities in the open market or otherwise after the Reporting Person\u2019s lock-up period as part of the Transaction described above expires, as applicable; (iii) engaging in any hedging or similar transactions with respect to the Securities; or (iv) considering, proposing or otherwise engaging in one or more of the actions described in this Schedule 13D.",
+    "documents": [
+      {
+        "document_id": "SEC-HEADER",
+        "filename": "submission.txt",
+        "type": "SEC-HEADER",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[1]",
+        "filename": "d744149dsc13d.htm",
+        "type": "SC 13D",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[2]",
+        "filename": "d744149dex997.htm",
+        "type": "EX-99.7",
+        "status": "parsed_text"
+      }
+    ]
+  },
+  {
+    "accession": "0000807249-25-000003",
+    "filing_date": "2025-01-02",
+    "acceptance_datetime_et": "2025-01-02T16:06:02",
+    "filers": [
+      {
+        "name": "GAMCO INVESTORS, INC. ET AL",
+        "cik": "0000807249"
+      }
+    ],
+    "subjects": [
+      {
+        "name": "Liberty Latin America Ltd.",
+        "cik": "0001712184"
+      }
+    ],
+    "cusip": "G9001E102",
+    "event_date": "2024-12-27",
+    "item4_status": "xml_field_needs_review",
+    "ownership_status": "per_person_xml_no_aggregation",
+    "reporting_persons_xml": [
+      {
+        "reportingPersonCIK": [
+          "0000807249"
+        ],
+        "reportingPersonNoCIK": [
+          "N"
+        ],
+        "reportingPersonName": [
+          "GAMCO INVESTORS, INC. ET AL"
+        ],
+        "fundType": [
+          "WC"
+        ],
+        "legalProceedings": [
+          "N"
+        ],
+        "citizenshipOrOrganization": [
+          "NY"
+        ],
+        "soleVotingPower": [
+          "0.00"
+        ],
+        "sharedVotingPower": [
+          "0.00"
+        ],
+        "soleDispositivePower": [
+          "0.00"
+        ],
+        "sharedDispositivePower": [
+          "0.00"
+        ],
+        "aggregateAmountOwned": [
+          "0.00"
+        ],
+        "isAggregateExcludeShares": [
+          "Y"
+        ],
+        "percentOfClass": [
+          "0.0"
+        ],
+        "typeOfReportingPerson": [
+          "CO",
+          "HC"
+        ]
+      },
+      {
+        "reportingPersonCIK": [
+          "0001081407"
+        ],
+        "reportingPersonNoCIK": [
+          "N"
+        ],
+        "reportingPersonName": [
+          "GABELLI FUNDS LLC"
+        ],
+        "fundType": [
+          "OO"
+        ],
+        "legalProceedings": [
+          "N"
+        ],
+        "citizenshipOrOrganization": [
+          "NY"
+        ],
+        "soleVotingPower": [
+          "761718.00"
+        ],
+        "sharedVotingPower": [
+          "0.00"
+        ],
+        "soleDispositivePower": [
+          "761718.00"
+        ],
+        "sharedDispositivePower": [
+          "0.00"
+        ],
+        "aggregateAmountOwned": [
+          "761718.00"
+        ],
+        "isAggregateExcludeShares": [
+          "N"
+        ],
+        "percentOfClass": [
+          "2.0"
+        ],
+        "typeOfReportingPerson": [
+          "IA",
+          "CO"
+        ]
+      },
+      {
+        "reportingPersonCIK": [
+          "0001460612"
+        ],
+        "reportingPersonNoCIK": [
+          "N"
+        ],
+        "reportingPersonName": [
+          "GAMCO Asset Management Inc."
+        ],
+        "fundType": [
+          "OO"
+        ],
+        "legalProceedings": [
+          "N"
+        ],
+        "citizenshipOrOrganization": [
+          "NY"
+        ],
+        "soleVotingPower": [
+          "1056668.00"
+        ],
+        "sharedVotingPower": [
+          "0.00"
+        ],
+        "soleDispositivePower": [
+          "1056713.00"
+        ],
+        "sharedDispositivePower": [
+          "0.00"
+        ],
+        "aggregateAmountOwned": [
+          "1056713.00"
+        ],
+        "isAggregateExcludeShares": [
+          "N"
+        ],
+        "percentOfClass": [
+          "2.8"
+        ],
+        "typeOfReportingPerson": [
+          "CO",
+          "IA"
+        ]
+      },
+      {
+        "reportingPersonNoCIK": [
+          "Y"
+        ],
+        "reportingPersonName": [
+          "MJG ASSOCIATES, INC."
+        ],
+        "fundType": [
+          "OO"
+        ],
+        "legalProceedings": [
+          "N"
+        ],
+        "citizenshipOrOrganization": [
+          "CT"
+        ],
+        "soleVotingPower": [
+          "90000.00"
+        ],
+        "sharedVotingPower": [
+          "0.00"
+        ],
+        "soleDispositivePower": [
+          "90000.00"
+        ],
+        "sharedDispositivePower": [
+          "0.00"
+        ],
+        "aggregateAmountOwned": [
+          "90000.00"
+        ],
+        "isAggregateExcludeShares": [
+          "N"
+        ],
+        "percentOfClass": [
+          "0.2"
+        ],
+        "typeOfReportingPerson": [
+          "CO"
+        ]
+      },
+      {
+        "reportingPersonCIK": [
+          "0001238894"
+        ],
+        "reportingPersonNoCIK": [
+          "N"
+        ],
+        "reportingPersonName": [
+          "GGCP, INC."
+        ],
+        "fundType": [
+          "WC"
+        ],
+        "legalProceedings": [
+          "N"
+        ],
+        "citizenshipOrOrganization": [
+          "WY"
+        ],
+        "soleVotingPower": [
+          "0.00"
+        ],
+        "sharedVotingPower": [
+          "0.00"
+        ],
+        "soleDispositivePower": [
+          "0.00"
+        ],
+        "sharedDispositivePower": [
+          "0.00"
+        ],
+        "aggregateAmountOwned": [
+          "0.00"
+        ],
+        "isAggregateExcludeShares": [
+          "Y"
+        ],
+        "percentOfClass": [
+          "0.0"
+        ],
+        "typeOfReportingPerson": [
+          "CO",
+          "HC"
+        ]
+      },
+      {
+        "reportingPersonCIK": [
+          "0001642122"
+        ],
+        "reportingPersonNoCIK": [
+          "N"
+        ],
+        "reportingPersonName": [
+          "Associated Capital Group, Inc."
+        ],
+        "fundType": [
+          "WC"
+        ],
+        "legalProceedings": [
+          "N"
+        ],
+        "citizenshipOrOrganization": [
+          "DE"
+        ],
+        "soleVotingPower": [
+          "0.00"
+        ],
+        "sharedVotingPower": [
+          "0.00"
+        ],
+        "soleDispositivePower": [
+          "0.00"
+        ],
+        "sharedDispositivePower": [
+          "0.00"
+        ],
+        "aggregateAmountOwned": [
+          "0.00"
+        ],
+        "isAggregateExcludeShares": [
+          "Y"
+        ],
+        "percentOfClass": [
+          "0.0"
+        ],
+        "typeOfReportingPerson": [
+          "CO",
+          "HC"
+        ]
+      },
+      {
+        "reportingPersonCIK": [
+          "0001185533"
+        ],
+        "reportingPersonNoCIK": [
+          "N"
+        ],
+        "reportingPersonName": [
+          "GABELLI MARIO J"
+        ],
+        "fundType": [
+          "PF"
+        ],
+        "legalProceedings": [
+          "N"
+        ],
+        "citizenshipOrOrganization": [
+          "X1"
+        ],
+        "soleVotingPower": [
+          "0.00"
+        ],
+        "sharedVotingPower": [
+          "0.00"
+        ],
+        "soleDispositivePower": [
+          "0.00"
+        ],
+        "sharedDispositivePower": [
+          "0.00"
+        ],
+        "aggregateAmountOwned": [
+          "0.00"
+        ],
+        "isAggregateExcludeShares": [
+          "Y"
+        ],
+        "percentOfClass": [
+          "0.0"
+        ],
+        "typeOfReportingPerson": [
+          "IN"
+        ]
+      }
+    ],
+    "source_url": "https://www.sec.gov/Archives/edgar/data/807249/0000807249-25-000003.txt",
+    "source_sha256": "43f65ac072b378ea23259e47e91d91e9760d60fc732ba8f2a03aa786a03645a8",
+    "item4": "Each of the Reporting Persons has purchased and holds the Securities reported by it for investment for one or more accounts over which it has shared, sole, or both investment and/or voting power, for its own account, or both. The Reporting Persons are engaged in the business of securities analysis and investment. The Reporting Persons analyze the operations, capital structure and markets of companies in which they invest, including the Issuer, on a continuous basis through analysis of documentation and discussions with knowledgeable industry and market observers and with representatives of such companies (often at the invitation of management). As a result of these analytical activities one or more of the Reporting Persons may issue analysts reports, participate in interviews or hold discussions with third parties, with management or with Directors in which the Reporting Person may suggest or take a position with respect to potential changes in the operations, management or capital structure of such companies as a means of enhancing shareholder values. Such suggestions or positions may relate to one or more of the transactions specified in clauses (a) through (j) of Item 4 of Schedule 13D including, without limitation, such matters as disposing of one or more businesses, selling the company or acquiring another company or business, changing operating or marketing strategies, adopting or not adopting, certain types of anti-takeover measures and restructuring the company capitalization or dividend policy. Each of the Reporting Persons intends to adhere to the foregoing investment philosophy with respect to the Issuer. However, none of the Reporting Persons intends to seek control of the Issuer or participate in the management of the Issuer, and any Reporting Person that is registered as an investment company under the Company Act will participate in such a transaction only following receipt of an exemption from the SEC under Rule 17d-1 under the Company Act, if required, and in accordance with other applicable law. In pursuing this investment philosophy, each Reporting Person will continuously assess the Issuers business, financial condition, results of operations and prospects, general economic conditions, the securities markets in general and those for the Issuers securities in particular, other developments and other investment opportunities, as well as the investment objectives and diversification requirements of its shareholders or clients and its fiduciary duties to such shareholders or clients. Depending on such assessments, one or more of the Reporting Persons may acquire additional Securities or may determine to sell or otherwise dispose of all or some of its holdings of Securities. Although the Reporting Persons share the same basic investment philosophy and although most portfolio decisions are made by or under the supervision of Mario Gabelli, the investment objectives and diversification requirements of various clients differ from those of other clients so that one or more Reporting Persons may be acquiring Securities while others are disposing of Securities. With respect to voting of the Securities, the Reporting Persons have adopted general voting policies relating to voting on specified issues affecting corporate governance and shareholder values. Under these policies, the Reporting Persons generally vote all securities over which they have voting power in favor of cumulative voting, financially reasonable golden parachutes, one share one vote, management cash incentives and pre-emptive rights and against greenmail, poison pills, supermajority voting, blank check preferred stock and super-dilutive stock options. Exceptions may be made when management otherwise demonstrates superior sensitivity to the needs of shareholders. In the event that the aggregate voting position of all Reporting Persons exceeds 25% of the total voting position of the Issuer, one or more of the filing persons may transfer voting and/or dispositive power over shares to independent committees of directors or the owners of such shares. Such committees vote and/or consider disposition of such shares independently of the Reporting Persons. Each of the Covered Persons who is not a Reporting Person has purchased the Securities reported herein as beneficially owned by him for investment for his own account or that of one or more members of his immediate family. Each such person may acquire additional Securities or dispose of some or all of the Securities reported herein with respect to him. Other than as described above, none of the Reporting Persons and none of the Covered Persons who is not a Reporting Person has any present plans or proposals which relate to or would result in any transaction, change or event specified in clauses (a) through (j) of Item 4 of Schedule 13D.",
+    "documents": [
+      {
+        "document_id": "SEC-HEADER",
+        "filename": "submission.txt",
+        "type": "SEC-HEADER",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[1]",
+        "filename": "primary_doc.xml",
+        "type": "SCHEDULE 13D",
+        "status": "parsed_text"
+      }
+    ]
+  },
+  {
+    "accession": "0001640334-25-000152",
+    "filing_date": "2025-01-22",
+    "acceptance_datetime_et": "2025-01-22T20:19:47",
+    "filers": [
+      {
+        "name": "GILLEN FRANK",
+        "cik": "0001059555"
+      }
+    ],
+    "subjects": [
+      {
+        "name": "My City Builders, Inc.",
+        "cik": "0001556801"
+      }
+    ],
+    "cusip": "45250D103",
+    "event_date": "2025-01-22",
+    "item4_status": "xml_field_needs_review",
+    "ownership_status": "per_person_xml_no_aggregation",
+    "reporting_persons_xml": [
+      {
+        "reportingPersonCIK": [
+          "0001059555"
+        ],
+        "reportingPersonNoCIK": [
+          "N"
+        ],
+        "reportingPersonName": [
+          "GILLEN FRANK"
+        ],
+        "fundType": [
+          "OO"
+        ],
+        "legalProceedings": [
+          "N"
+        ],
+        "citizenshipOrOrganization": [
+          "X1"
+        ],
+        "soleVotingPower": [
+          "5252714.00"
+        ],
+        "sharedVotingPower": [
+          "0.00"
+        ],
+        "soleDispositivePower": [
+          "5252714.00"
+        ],
+        "sharedDispositivePower": [
+          "0.00"
+        ],
+        "aggregateAmountOwned": [
+          "5252714.00"
+        ],
+        "isAggregateExcludeShares": [
+          "N"
+        ],
+        "percentOfClass": [
+          "32.3"
+        ],
+        "typeOfReportingPerson": [
+          "IN"
+        ]
+      }
+    ],
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1059555/0001640334-25-000152.txt",
+    "source_sha256": "74f744db0d5d61ac78a48dfa518f7eaac5e8b0845b1ee25da7b80bd6030ca9b2",
+    "item4": "The Reporting Person acquired Shares of the Issuer for investment purposes in private transactions concerning the conversion of debt by PreCheck, and payment of compensation to, the Reporting Person, as an officer and director of PreCheck. As a result of the transactions, the Reporting Person has over 10% voting control of the Issuer. He intends to participate and influence the affairs of the Issuer with respect to his voting rights associated with his ownership of Shares. Subject to all relevant securities law provisions, the Reporting Person may acquire or dispose of securities of the Issuer from time to time in the open market or in privately negotiated transactions with third parties. Except as otherwise disclosed herein, the Reporting Person does not have any current plans or proposals that relate to or would result in: (a) the acquisition by any person of additional securities of the Issuer, or the disposition of securities of the Issuer; (b) any extraordinary corporate transaction, such as a merger, reorganization or liquidation, involving the Issuer or any of its subsidiaries; (c) a sale or transfer of a material amount of the assets of the Issuer or any of its subsidiaries; (d) any change in the present board of directors or management of the Issuer, including any plans or proposals to change the number or term of directors or to fill any existing vacancies on the board; (e) any material change in the present capitalization or dividend policy of the Issuer; (f) any other material change in the Issuers business or corporate structure including, but not limited to, if the Issuer is a registered closed-end investment company, any plans or proposals to make any changes in its investment policy for which a vote is required by Section 13 of the Investment Company Act of 1940; (g) changes in the Issuers charter, bylaws or instruments corresponding thereto or other actions which may impede acquisition of control of the Issuer by any person; (h) causing a class of securities of the Issuer to be delisted from a national securities exchange or to cease to be authorized to be quoted in an inter-dealer quotation system of a registered national securities association; (i) a class of equity securities of the Issuer becoming eligible for termination of registration pursuant to Section 12(g)(4) of the Act or; (j) any action similar to any of those enumerated above.",
+    "documents": [
+      {
+        "document_id": "SEC-HEADER",
+        "filename": "submission.txt",
+        "type": "SEC-HEADER",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[1]",
+        "filename": "primary_doc.xml",
+        "type": "SCHEDULE 13D",
+        "status": "parsed_text"
+      }
+    ]
+  },
+  {
+    "accession": "0001104659-25-014424",
+    "filing_date": "2025-02-14",
+    "acceptance_datetime_et": "2025-02-14T21:54:11",
+    "filers": [
+      {
+        "name": "Aldel Investors II LLC",
+        "cik": "0002031565"
+      }
+    ],
+    "subjects": [
+      {
+        "name": "Aldel Financial II Inc.",
+        "cik": "0002031561"
+      }
+    ],
+    "cusip": "G01558108",
+    "event_date": "2024-10-23",
+    "item4_status": "xml_field_needs_review",
+    "ownership_status": "per_person_xml_no_aggregation",
+    "reporting_persons_xml": [
+      {
+        "reportingPersonCIK": [
+          "0002031565"
+        ],
+        "reportingPersonNoCIK": [
+          "N"
+        ],
+        "reportingPersonName": [
+          "Aldel Investors II LLC"
+        ],
+        "memberOfGroup": [
+          "b"
+        ],
+        "fundType": [
+          "WC"
+        ],
+        "legalProceedings": [
+          "N"
+        ],
+        "citizenshipOrOrganization": [
+          "DE"
+        ],
+        "soleVotingPower": [
+          "5948214.00"
+        ],
+        "sharedVotingPower": [
+          "0.00"
+        ],
+        "soleDispositivePower": [
+          "5948214.00"
+        ],
+        "sharedDispositivePower": [
+          "0.00"
+        ],
+        "aggregateAmountOwned": [
+          "5948214.00"
+        ],
+        "isAggregateExcludeShares": [
+          "N"
+        ],
+        "percentOfClass": [
+          "19.9"
+        ],
+        "typeOfReportingPerson": [
+          "OO"
+        ],
+        "commentContent": [
+          "Consists of (i) 477,500 shares of the Issuer's Class A ordinary shares, $0.0001 par value (\"Class A Ordinary Shares\")  underlying the private placement units held directly by Aldel Investors II LLC and (ii) 5,470,714 shares of the Issuer's Class B ordinary shares, $0.0001 par value (\"Class B Ordinary Shares\") held directly by Aldel Investors II LLC, which will convert into Class A Ordinary Shares on a one-for-one basis, subject to adjustment pursuant to certain anti-dilution rights. Robert I. Kauffman is the manager of Aldel Investors II LLC and therefore has voting and investment power over the Class A Ordinary Shares and Class B Common Stock held by Aldel Investors II LLC.\n\nBased on 29,868,214 Class A Ordinary Shares deemed to be outstanding, including (i) 23,000,000 Class A Ordinary Shares currently issued and outstanding, (ii) 6,160,714 issuable upon conversion of Class B common stock held by Aldel Investors II LLC and other initial shareholders of the Issuer, and (iii) 707,500 Class A Ordinary Shares  underlying the units held by Aldel Investors II LLC and BTIG LLC, as set forth in the Issuer's final prospectus filed with the SEC pursuant to Rule 424(b)(4) on October 23, 2024."
+        ]
+      },
+      {
+        "reportingPersonCIK": [
+          "0001124462"
+        ],
+        "reportingPersonNoCIK": [
+          "N"
+        ],
+        "reportingPersonName": [
+          "Robert I. Kauffman"
+        ],
+        "memberOfGroup": [
+          "b"
+        ],
+        "fundType": [
+          "AF"
+        ],
+        "legalProceedings": [
+          "N"
+        ],
+        "citizenshipOrOrganization": [
+          "X1"
+        ],
+        "soleVotingPower": [
+          "6048214.00"
+        ],
+        "sharedVotingPower": [
+          "0.00"
+        ],
+        "soleDispositivePower": [
+          "6048214.00"
+        ],
+        "sharedDispositivePower": [
+          "0.00"
+        ],
+        "aggregateAmountOwned": [
+          "6048214.00"
+        ],
+        "isAggregateExcludeShares": [
+          "N"
+        ],
+        "percentOfClass": [
+          "20.2"
+        ],
+        "typeOfReportingPerson": [
+          "IN"
+        ],
+        "commentContent": [
+          "Consists of (i) 100,000 Class B Ordinary Shares held by Robert I. Kauffman, (ii) 477,500 Class A Ordinary Shares underlying the private placement units held by Aldel Investors II LLC and (iii) 5,470,714 Class B Ordinary Shares held by Aldel Investors II LLC. Robert I. Kauffman is the manager of Aldel Investors II LLC and therefore has voting and investment power over the Class A Ordinary Shares and Class B Common Stock held by Aldel Investors II LLC.\n\nBased on 29,868,214 Class A Ordinary Shares deemed to be outstanding, including (i) 23,000,000 Class A Ordinary Shares currently issued and outstanding, (ii) 6,160,714 issuable upon conversion of Class B common stock held by Aldel Investors II LLC and other initial shareholders of the Issuer, and (iii) 707,500 Class A Ordinary Shares  underlying the units held by Aldel Investors II LLC and BTIG LLC, as set forth in the Issuer's final prospectus filed with the SEC pursuant to Rule 424(b)(4) on October 23, 2024."
+        ]
+      }
+    ],
+    "source_url": "https://www.sec.gov/Archives/edgar/data/2031561/0001104659-25-014424.txt",
+    "source_sha256": "b03f3912fe1f61fb69b8753ea688d0498cce0202477019ca8b580a1462b6f5fd",
+    "item4": "In connection with the organization of the Issuer, on July 19, 2024, the Sponsor paid $25,000, or approximately $0.004 per share, to cover certain expenses on our behalf in consideration of 5,750,000 Class B Ordinary Shares (the \"Founder Shares\"), pursuant to a Securities Subscription Agreement by and between the Sponsor and the Issuer (the \"Founder Share Purchase Agreement\"), as more fully described in Item 6 of this Schedule 13D which information is incorporated herein by reference. On August 13, 2024, the Sponsor transferred 690,000 founder shares to our officers, directors, senior advisor, and FG Merchant Partner LP, resulting in the Sponsor holding 5,060,000 founder shares. On September 25, 2024, the Sposor purchased an additional 410,714 founder shares for $0.004 per share, resulting in our initial shareholders holding an aggregate of 6,160,714 founder shares (5,470,714 of which are held by the Sponsor). On October 23, 2024, simultaneously with the consummation of the Issuer's Initial Public Offering (the \"IPO\"), the Sponsor purchased 477,500 units (\"Placement Units\") of the Issuer at $10.00 per Placement Unit, pursuant to a Private Placement Units Purchase Agreement, dated as of October 21, 2024, by and between the Issuer and the Sponsor (the \"Placement Units Purchase Agreement\"), as more fully described in Item 6 of this Schedule 13D, which information is incorporated herein by reference. Each Placement Unit consists of one Class A Ordinary Share and one-half of one warrant, each whole warrant exercisable to purchase one Class A Ordinary Share, at an exercise price of $11.50 per share (as described more fully in the Issuer's Final Prospectus dated October 21, 2024). The Ordinary Shares owned by the Reporting Persons have been acquired for investment purposes. The Reporting Persons may make further acquisitions of the Ordinary Shares from time to time and, subject to certain restrictions, may dispose of any or all of the Ordinary Shares held by the Reporting Persons at any time depending on an ongoing evaluation of the investment in such securities, prevailing market conditions, other investment opportunities and other factors. However, certain of such shares are subject to certain lock-up restrictions as further described in Item 6 below. Except for the foregoing, the Reporting Persons have no plans or proposals which relate to, or could result in, any of the matters referred to in paragraphs (a) and (c) through (j) of Item 4 of Schedule 13D. With respect to paragraph (b) of Item 4, the Issuer is a newly organized blank check company formed for the purpose of effecting a merger, amalgamation, share exchange, asset acquisition, share purchase, reorganization or similar business combination with one or more businesses. Under various agreements between the Issuer and the Reporting Persons as further described in Item 6 below, the Sponsor and Robert I. Kauffman have agreed (A) to vote their shares in favor of any proposed business combination and (B) not to redeem any shares in connection with a shareholder vote (or tender offer) to approve (or in connection with) a proposed initial business combination. The Reporting Persons may, at any time and from time to time, review or reconsider their position, change their purpose or formulate plans or proposals with respect to the Issuer.",
+    "documents": [
+      {
+        "document_id": "SEC-HEADER",
+        "filename": "submission.txt",
+        "type": "SEC-HEADER",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[1]",
+        "filename": "primary_doc.xml",
+        "type": "SCHEDULE 13D",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[2]",
+        "filename": "tm256749d1_ex99-1.htm",
+        "type": "EX-99.1",
+        "status": "parsed_text"
+      }
+    ]
+  },
+  {
+    "accession": "0000950142-25-000685",
+    "filing_date": "2025-03-07",
+    "acceptance_datetime_et": "2025-03-07T21:31:13",
+    "filers": [
+      {
+        "name": "Resolute Compo Holdings LLC",
+        "cik": "0002037164"
+      }
+    ],
+    "subjects": [
+      {
+        "name": "Resolute Holdings Management, Inc.",
+        "cik": "0002039497"
+      }
+    ],
+    "cusip": "76134H101",
+    "event_date": "2025-02-28",
+    "item4_status": "xml_field_needs_review",
+    "ownership_status": "per_person_xml_no_aggregation",
+    "reporting_persons_xml": [
+      {
+        "reportingPersonCIK": [
+          "0002037164"
+        ],
+        "reportingPersonNoCIK": [
+          "N"
+        ],
+        "reportingPersonName": [
+          "Resolute Compo Holdings LLC"
+        ],
+        "fundType": [
+          "OO"
+        ],
+        "legalProceedings": [
+          "N"
+        ],
+        "citizenshipOrOrganization": [
+          "DE"
+        ],
+        "soleVotingPower": [
+          "0.00"
+        ],
+        "sharedVotingPower": [
+          "4107534.00"
+        ],
+        "soleDispositivePower": [
+          "0.00"
+        ],
+        "sharedDispositivePower": [
+          "4107534.00"
+        ],
+        "aggregateAmountOwned": [
+          "4107534.00"
+        ],
+        "isAggregateExcludeShares": [
+          "N"
+        ],
+        "percentOfClass": [
+          "48.2"
+        ],
+        "typeOfReportingPerson": [
+          "OO"
+        ],
+        "commentContent": [
+          "The percentage in Row (13) is based on 8,525,994 shares of Common Stock that were outstanding as of February 28, 2025."
+        ]
+      },
+      {
+        "reportingPersonNoCIK": [
+          "Y"
+        ],
+        "reportingPersonName": [
+          "Tungsten 2024 LLC"
+        ],
+        "fundType": [
+          "OO"
+        ],
+        "legalProceedings": [
+          "N"
+        ],
+        "citizenshipOrOrganization": [
+          "DE"
+        ],
+        "soleVotingPower": [
+          "0.00"
+        ],
+        "sharedVotingPower": [
+          "4180864.00"
+        ],
+        "soleDispositivePower": [
+          "0.00"
+        ],
+        "sharedDispositivePower": [
+          "4180864.00"
+        ],
+        "aggregateAmountOwned": [
+          "4180864.00"
+        ],
+        "isAggregateExcludeShares": [
+          "N"
+        ],
+        "percentOfClass": [
+          "49.0"
+        ],
+        "typeOfReportingPerson": [
+          "OO"
+        ],
+        "commentContent": [
+          "The percentage in Row (13) is based on 8,525,994 shares of Common Stock that were outstanding as of February 28, 2025."
+        ]
+      },
+      {
+        "reportingPersonNoCIK": [
+          "Y"
+        ],
+        "reportingPersonName": [
+          "Thomas R. Knott"
+        ],
+        "fundType": [
+          "OO"
+        ],
+        "legalProceedings": [
+          "N"
+        ],
+        "citizenshipOrOrganization": [
+          "X1"
+        ],
+        "soleVotingPower": [
+          "0.00"
+        ],
+        "sharedVotingPower": [
+          "4107534.00"
+        ],
+        "soleDispositivePower": [
+          "0.00"
+        ],
+        "sharedDispositivePower": [
+          "4107534.00"
+        ],
+        "aggregateAmountOwned": [
+          "4107534.00"
+        ],
+        "isAggregateExcludeShares": [
+          "N"
+        ],
+        "percentOfClass": [
+          "48.2"
+        ],
+        "typeOfReportingPerson": [
+          "IN"
+        ],
+        "commentContent": [
+          "The percentage in Row (13) is based on 8,525,994 shares of Common Stock that were outstanding as of February 28, 2025."
+        ]
+      },
+      {
+        "reportingPersonNoCIK": [
+          "Y"
+        ],
+        "reportingPersonName": [
+          "John D. Cote"
+        ],
+        "fundType": [
+          "OO"
+        ],
+        "legalProceedings": [
+          "N"
+        ],
+        "citizenshipOrOrganization": [
+          "X1"
+        ],
+        "soleVotingPower": [
+          "125000.00"
+        ],
+        "sharedVotingPower": [
+          "4180864.00"
+        ],
+        "soleDispositivePower": [
+          "125000.00"
+        ],
+        "sharedDispositivePower": [
+          "4180864.00"
+        ],
+        "aggregateAmountOwned": [
+          "4305864.00"
+        ],
+        "isAggregateExcludeShares": [
+          "N"
+        ],
+        "percentOfClass": [
+          "50.5"
+        ],
+        "typeOfReportingPerson": [
+          "IN"
+        ],
+        "commentContent": [
+          "The percentage in Row (13) is based on 8,525,994 shares of Common Stock that were outstanding as of February 28, 2025."
+        ]
+      }
+    ],
+    "source_url": "https://www.sec.gov/Archives/edgar/data/2037164/0000950142-25-000685.txt",
+    "source_sha256": "f748bf2b51e74fcd6a90a2e0f3d8491b09b7b68fa537442552e610348f6f4854",
+    "item4": "The information set forth or incorporated in Item 6 is hereby incorporated by reference in its entirety into this Item 4. On February 28, 2025, CompoSecure, Inc. (\"CompoSecure\"), completed a spin-off of the Issuer, by distributing 100% of the Common Stock of the Issuer to CompoSecure's stockholders (the \"Distribution\"). In connection with the Distribution (i) holders of record of CompoSecure's Class A common stock, par value $0.0001 per share (the \"CompoSecure Common Stock\"), as of the close of business, New York City time, on February 20, 2025 (the \"record date\"), received one share of the Issuer's Common Stock for every twelve shares of CompoSecure Common Stock held (subject to adjustment for fractional shares). As a result of the Distribution, on February 28, 2025, (i) Resolute Compo Holdings acquired 4,107,534 shares of Common Stock, (ii) Tungsten acquired 73,330 shares of Common Stock and (iii) Ridge Valley LLC acquired 125,000 shares of Common Stock. Tungsten is the managing member of Resolute Compo Holdings. Mr. John Cote is the manager of Tungsten. Mr. Knott is a member of Resolute Compo Holdings. Tungsten has the right to vote and dispose of the shares of Common Stock it holds of record and, as managing member, has the right to vote and dispose of the shares of Common Stock held of record by Resolute Compo Holdings, subject to certain consultation rights held by Mr. Knott. Accordingly, each of Tungsten and Mr. John Cote may be deemed to share beneficial ownership of the shares of Common Stock held of record by Tungsten, and each of Resolute Compo Holdings, Tungsten, Mr. John Cote and Mr. Knott may be deemed to share beneficial ownership of the shares of Common Stock held of record by Resolute Compo Holdings. Mr. John Cote serves as manager of Ridge Valley LLC and may be deemed to share beneficial ownership of the shares of Common Stock held of record by Ridge Valley LLC. The percentage in Row (13) is based on 8,525,994 shares of Common Stock that were outstanding as of February 28, 2025. The Reporting Persons intend to review their investments in the Issuer on a continuing basis. Any actions the Reporting Persons might undertake may be made at any time and from time to time without prior notice and will be dependent upon the Reporting Persons' review of numerous factors, including, but not limited to: an ongoing evaluation of the Issuer's business, financial condition, operations and prospects; price levels of the Issuer's securities; general market, industry and economic conditions; the relative attractiveness of alternative business and investment opportunities; and other future developments. The Reporting Persons at any time and from time to time may acquire additional securities of the Issuer, or retain, convert and/or sell all or a portion of the securities then held, in the open market or in privately negotiated transactions. In addition, the Reporting Persons, their affiliates or their designees to the Issuer's board of directors (the \"Board\") may engage in discussions with management, the Board, and stockholders of the Issuer and other relevant parties, encourage such persons to consider or explore, take a position regarding, make one or more proposals regarding, or participate in extraordinary corporate transactions and other corporate and management structures, such as mergers, sales, acquisitions or separations of assets or businesses; changes to the capitalization, dividend or governance policies of the Issuer; changes in the present business strategy of the Issuer; changes to the Issuer's Board, officers or other personnel; or other material changes to the Issuer's business or corporate structure. Other than as described in this Item 4, none of the Reporting Persons presently has any additional plans or proposals that relate to or that would result in any of the transactions or other matters specified in clauses (a) through (j) of Item 4 of Schedule 13D, but depending on the factors discussed herein, the Reporting Persons may change their purpose or formulate different plans or proposals with respect their investment in the Issuer at any time. Mr. John Cote serves as a director of the Board, and Mr. Knott serves as a director of the Board and the Issuer's Chief Executive Officer.",
+    "documents": [
+      {
+        "document_id": "SEC-HEADER",
+        "filename": "submission.txt",
+        "type": "SEC-HEADER",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[1]",
+        "filename": "primary_doc.xml",
+        "type": "SCHEDULE 13D",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[2]",
+        "filename": "eh250600413_annexa.htm",
+        "type": "EX-99",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[3]",
+        "filename": "eh250600413_ex9902.htm",
+        "type": "EX-99.2",
+        "status": "parsed_text"
+      }
+    ]
+  },
+  {
+    "accession": "0001477932-25-002177",
+    "filing_date": "2025-03-31",
+    "acceptance_datetime_et": "2025-03-31T12:23:09",
+    "filers": [
+      {
+        "name": "Zdanow Claude",
+        "cik": "0002056323"
+      }
+    ],
+    "subjects": [
+      {
+        "name": "Onar Holding Corp",
+        "cik": "0001682265"
+      }
+    ],
+    "cusip": "75955V108",
+    "event_date": "2024-06-14",
+    "item4_status": "xml_field_needs_review",
+    "ownership_status": "per_person_xml_no_aggregation",
+    "reporting_persons_xml": [
+      {
+        "reportingPersonCIK": [
+          "0002056323"
+        ],
+        "reportingPersonName": [
+          "Claude Zdanow"
+        ],
+        "fundType": [
+          "SC"
+        ],
+        "legalProceedings": [
+          "N"
+        ],
+        "citizenshipOrOrganization": [
+          "X1"
+        ],
+        "soleVotingPower": [
+          "75000000"
+        ],
+        "sharedVotingPower": [
+          "0"
+        ],
+        "soleDispositivePower": [
+          "75000000"
+        ],
+        "sharedDispositivePower": [
+          "0"
+        ],
+        "aggregateAmountOwned": [
+          "75000000"
+        ],
+        "isAggregateExcludeShares": [
+          "N"
+        ],
+        "percentOfClass": [
+          "67.9"
+        ],
+        "typeOfReportingPerson": [
+          "IN"
+        ],
+        "commentContent": [
+          "In addition to the shares of common stock reported herein, the Reporting Persons own (i) 1,000 shares of the Issuer's Series A Preferred Stock, which shares have the right, voting in aggregate, to vote on all stockholder matters equal to fifty-one percent (51%) of the total vote and (ii) 10,000 shares of Series C Preferred Stock having a \"Face Value\" of $1,000 per share, which shares of Series C Preferred Stock are convertible by the holder into the Issuer's common stock at a conversion price equal to 90% of the Volume Weighted Average Price of the Issuer's common stock for the 10 days prior to such conversion.\r Based on the number of shares of common stock outstanding as of the date of this Schedule 13D (110,485,465), as confirmed by the Issuer's Transfer Agent."
+        ]
+      },
+      {
+        "reportingPersonNoCIK": [
+          "Y"
+        ],
+        "reportingPersonName": [
+          "Mt Olympus Ventures, Inc."
+        ],
+        "fundType": [
+          "SC"
+        ],
+        "legalProceedings": [
+          "N"
+        ],
+        "citizenshipOrOrganization": [
+          "DE"
+        ],
+        "soleVotingPower": [
+          "75000000"
+        ],
+        "sharedVotingPower": [
+          "0"
+        ],
+        "soleDispositivePower": [
+          "75000000"
+        ],
+        "sharedDispositivePower": [
+          "0"
+        ],
+        "aggregateAmountOwned": [
+          "75000000"
+        ],
+        "isAggregateExcludeShares": [
+          "N"
+        ],
+        "percentOfClass": [
+          "67.9"
+        ],
+        "typeOfReportingPerson": [
+          "CO"
+        ],
+        "commentContent": [
+          "In addition to the shares of common stock reported herein, the Reporting Persons own (i) 1,000 shares of the Issuer's Series A Preferred Stock, which shares have the right, voting in aggregate, to vote on all stockholder matters equal to fifty-one percent (51%) of the total vote and (ii) 10,000 shares of Series C Preferred Stock having a \"Face Value\" of $1,000 per share, which shares of Series C Preferred Stock are convertible by the holder into the Issuer's common stock at a conversion price equal to 90% of the Volume Weighted Average Price of the Issuer's common stock for the 10 days prior to such conversion.\r Based on the number of shares of common stock outstanding as of the date of this Schedule 13D (110,485,465), as confirmed by the Issuer's Transfer Agent."
+        ]
+      }
+    ],
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1682265/0001477932-25-002177.txt",
+    "source_sha256": "ad631afe2fd88a78f80bd34180e615d81ab46d2bb0cd95997ad4b2a8bc3f7351",
+    "item4": "The information set forth in Item 3 is hereby incorporated by reference into this Item 4. The Reporting Persons acquired the securities for investment purposes. In the future, depending on general market and economic conditions affecting the Issuer and other relevant factors, the Reporting Persons may purchase additional securities of the Issuer or dispose of some or all of the securities they currently own from time to time in open market transactions, private transactions or otherwise. Mr. Zdanow currently serves as the (i) sole director of the Issuer and (ii) Chief Executive Officer of the Issuer. As a director and officer of the Issuer, Mr. Zdanow may have influence over the corporate activities of the Issuer, including activities which may relate to the transactions described in clauses (a) through (j) of Item 4 of Schedule 13D. Except as set forth in this Item 4, the Reporting Persons do not have any present plans or proposals that relate to or that would result in any of the actions specified in clauses (a) through (j) of Item 4 of Schedule 13D. The Reporting Persons retain the right to change their investment intent and may, from time to time, acquire additional shares of common stock or other securities of the Issuer, or sell or otherwise dispose of (or enter into plans or arrangements to sell or otherwise dispose of), all or part of the shares of common stock or other securities of the Issuer, if any, beneficially owned by the Reporting Persons, in any manner permitted by law.",
+    "documents": [
+      {
+        "document_id": "SEC-HEADER",
+        "filename": "submission.txt",
+        "type": "SEC-HEADER",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[1]",
+        "filename": "primary_doc.xml",
+        "type": "SCHEDULE 13D",
+        "status": "parsed_text"
+      },
+      {
+        "document_id": "DOCUMENT[2]",
+        "filename": "onar_ex991.htm",
+        "type": "EX-99.1",
+        "status": "parsed_text"
+      }
+    ]
+  }
+]

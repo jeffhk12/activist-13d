@@ -1,0 +1,112 @@
+[
+  {
+    "accession": "0001104659-24-000323",
+    "document_id": "DOCUMENT[1]",
+    "filename": "tm2333981d2_sc13d.htm",
+    "quote": "Chavant Capital expects to distribute to its members",
+    "start": 17373,
+    "end": 17425,
+    "text_sha256": "1afb0b824869af6d74e30cc797f313d8649104701a471f2cb463e654d27657ac",
+    "source_sha256": "2bd05f2572c5fc948a86f998872eaf8b9970a158f2419f0f2c2ca0e50091dff5",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1855467/0001104659-24-000323.txt"
+  },
+  {
+    "accession": "0001398344-24-000853",
+    "document_id": "DOCUMENT[3]",
+    "filename": "fp0086902-1_ex7b.htm",
+    "quote": "The stockholders urge the Board to seek stockholder approval",
+    "start": 856,
+    "end": 916,
+    "text_sha256": "a4c134531245ac61117aedca432dc2dcc983043847d27774e19795b128dac7d4",
+    "source_sha256": "243e4443d6b46bd403f8b79eff49a34bd286f418e85edeb006f6bf663159861d",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1504304/0001398344-24-000853.txt"
+  },
+  {
+    "accession": "0001104659-24-024047",
+    "document_id": "DOCUMENT[1]",
+    "filename": "tm246055d1_sc13d.htm",
+    "quote": "his position as Interim Principal Executive Officer",
+    "start": 6586,
+    "end": 6637,
+    "text_sha256": "a4e99bb97c027461bf91c9d5e782d91e2a22039f902e90abc8e3fcd2559422f8",
+    "source_sha256": "7703fe7fb2e7ace068c7762c3f3fde24011d2e12369304ffaea39875d7a77552",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/827871/0001104659-24-024047.txt"
+  },
+  {
+    "accession": "0001493152-24-008748",
+    "document_id": "DOCUMENT[1]",
+    "filename": "formsc13d.htm",
+    "quote": "investment purposes only",
+    "start": 4600,
+    "end": 4624,
+    "text_sha256": "ea1933b5f993719d54825d03e8bad7ca3293a053776ec21f6ce3445db13e1e19",
+    "source_sha256": "ee659f0afe18ee3760270ed5d43e5c306182d3eb42bbd706fe3410bf1c5d74fd",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1764243/0001493152-24-008748.txt"
+  },
+  {
+    "accession": "0001193125-24-081594",
+    "document_id": "DOCUMENT[1]",
+    "filename": "d744149dsc13d.htm",
+    "quote": "lock-up period as part of the Transaction",
+    "start": 11755,
+    "end": 11796,
+    "text_sha256": "5ee4e036025b1766d075c4b49b8edea6348416daa4479719a0f48e758de206f1",
+    "source_sha256": "d5a4d814af31e6f1b1f66c7dafbb57e73a1267fb0e17e08590087f90b1ed64cc",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1911254/0001193125-24-081594.txt"
+  },
+  {
+    "accession": "0000807249-25-000003",
+    "document_id": "DOCUMENT[1]",
+    "filename": "primary_doc.xml",
+    "quote": "may suggest or take a position",
+    "start": 11107,
+    "end": 11137,
+    "text_sha256": "e125e7a96802aceb5d3cba5a33d65d6274242bd599667ac0e7a02db03027501d",
+    "source_sha256": "43f65ac072b378ea23259e47e91d91e9760d60fc732ba8f2a03aa786a03645a8",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/807249/0000807249-25-000003.txt"
+  },
+  {
+    "accession": "0001640334-25-000152",
+    "document_id": "DOCUMENT[1]",
+    "filename": "primary_doc.xml",
+    "quote": "conversion of debt by PreCheck",
+    "start": 1788,
+    "end": 1818,
+    "text_sha256": "02e86a64660a32f50c6a9463514486e9bf949118e234084ded6cd7f25e22a321",
+    "source_sha256": "74f744db0d5d61ac78a48dfa518f7eaac5e8b0845b1ee25da7b80bd6030ca9b2",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1059555/0001640334-25-000152.txt"
+  },
+  {
+    "accession": "0001104659-25-014424",
+    "document_id": "DOCUMENT[1]",
+    "filename": "primary_doc.xml",
+    "quote": "Founder Shares",
+    "start": 4897,
+    "end": 4911,
+    "text_sha256": "79b4f3aa35c639a08e5cef3295438f1c449f3e49671061e9235f94ceb2a71544",
+    "source_sha256": "b03f3912fe1f61fb69b8753ea688d0498cce0202477019ca8b580a1462b6f5fd",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/2031561/0001104659-25-014424.txt"
+  },
+  {
+    "accession": "0000950142-25-000685",
+    "document_id": "DOCUMENT[1]",
+    "filename": "primary_doc.xml",
+    "quote": "completed a spin-off",
+    "start": 3077,
+    "end": 3097,
+    "text_sha256": "c4e6b4ab992aded1680978ea606510b1c9908b4daaae8106d014c925daf296d0",
+    "source_sha256": "f748bf2b51e74fcd6a90a2e0f3d8491b09b7b68fa537442552e610348f6f4854",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/2037164/0000950142-25-000685.txt"
+  },
+  {
+    "accession": "0001477932-25-002177",
+    "document_id": "DOCUMENT[1]",
+    "filename": "primary_doc.xml",
+    "quote": "sole director of the Issuer",
+    "start": 3371,
+    "end": 3398,
+    "text_sha256": "5930bba4c061a06a08aa1236a2d7aee418fa8181788014ed0fad1931693f0ad9",
+    "source_sha256": "ad631afe2fd88a78f80bd34180e615d81ab46d2bb0cd95997ad4b2a8bc3f7351",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1682265/0001477932-25-002177.txt"
+  }
+]

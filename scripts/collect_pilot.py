@@ -38,7 +38,7 @@ def pilot_compatible(record: dict) -> dict:
 
 def write_review(records: list[dict], audit: dict) -> None:
     """Render a readable inventory and full Item 4 review sheets from the JSONL."""
-    output = ROOT / "output"
+    output = ROOT / "research/runs"
     sheets = output / "pilot-filings"
     sheets.mkdir(parents=True, exist_ok=True)
     lines = [

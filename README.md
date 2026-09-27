@@ -1,5 +1,11 @@
 # Predicting Activist Campaign Duration and Outcome from Disclosed Intent
 
+Open [START-HERE.html](START-HERE.html) for current work.
+The active Mac project is `/Users/jefflu/Projects/activist-13d`.
+The ready review is in `review/current/`; the 52-candidate draft remains paused
+in `review/drafts/human-first-52/`. Follow the
+[workspace standard](research/WORKSPACE-STANDARD.md) when adding or moving files.
+
 Machine learning on Schedule 13D filings, 2013–2026.
 Advanced Machine Learning in Finance, Fall 2026.
 
@@ -25,12 +31,12 @@ to browse, compare, recommend, or refresh them.
 
 | File | Purpose |
 |---|---|
-| `docs/PROPOSAL.md` | The submission-shaped proposal |
-| `docs/DESIGN-RECORD.md` | Design rationale, rejected alternatives, decisions register, annotated reading list |
-| `docs/DATA-SOURCING.md` | Every variable, its source, and what must be built rather than downloaded |
+| `research/docs/PROPOSAL.md` | The submission-shaped proposal |
+| `research/docs/DESIGN-RECORD.md` | Design rationale, rejected alternatives, decisions register, annotated reading list |
+| `research/docs/DATA-SOURCING.md` | Every variable, its source, and what must be built rather than downloaded |
 | `STANDARDS.md` | How code here is written and what it must prove |
 
-`docs/build_docx.py` renders any of the markdown documents to a styled `.docx`.
+`research/docs/build_docx.py` renders any of the markdown documents to a styled `.docx`.
 The markdown is canonical; the `.docx` are build artefacts and are gitignored.
 
 ## Layout
@@ -46,7 +52,7 @@ src/activist13d/
     causal.py     heterogeneous treatment effects
     sizing.py     the decision-focused position-sizing layer
     validation/   purged splits and evaluation metrics
-protocol/         versioned codebooks, prompts and schemas
+research/protocol/         versioned codebooks, prompts and schemas
 data/             gitignored, deny-by-default. See data/README.md
 scripts/          one-off probes and week-1 actions
 tests/
@@ -70,7 +76,7 @@ contact address, and enforces roughly 10 requests per second.
 
 ## Run
 
-For the macOS SEC collection pilot, see [SEC-PILOT.md](docs/SEC-PILOT.md).
+For the macOS SEC collection pilot, see [SEC-PILOT.md](research/docs/SEC-PILOT.md).
 It collects ten complete submissions and produces source-backed JSONL records.
 The first live run requires `EDGAR_USER_AGENT` with a real contact email.
 
@@ -90,13 +96,13 @@ Disclosure-delay computation also has pinned tests. The latest check passed
 34 offline tests and lint; ten cached submissions reproduced identical parsed
 outputs. Modeling and campaign construction remain unimplemented.
 
-See [SEC-PILOT.md](docs/SEC-PILOT.md) for the collection checkpoint and
-[pilot evidence triage](docs/PILOT-TRIAGE-2026-09-09.md) for the preliminary,
+See [SEC-PILOT.md](research/docs/SEC-PILOT.md) for the collection checkpoint and
+[pilot evidence triage](research/docs/PILOT-TRIAGE-2026-09-09.md) for the preliminary,
 model-assisted review. Next: source-addressable referenced-section/exhibit
 bundles, then manager resolution and amendment chains. The triage is not a
 human-validated label set.
 
-Two open items gate the design — see `docs/DESIGN-RECORD.md` § 9:
+Two open items gate the design — see `research/docs/DESIGN-RECORD.md` § 9:
 
 1. Whether the university's WRDS subscription includes Audit Analytics, which
    decides whether the validation set is a download or a three-week build.

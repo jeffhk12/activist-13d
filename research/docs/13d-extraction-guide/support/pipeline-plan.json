@@ -1,0 +1,92 @@
+{
+  "version": "source-expansion-plan-v1",
+  "recorded_on": "2026-09-23",
+  "status": "accepted_scope_staged_implementation",
+  "purpose": "Expand source coverage around initial 13D events while preserving 13D as the first implementation and review priority.",
+  "runtime_integration": "Planning registry consumed by the explanatory report builder; not a collector configuration or scheduler.",
+  "primary_event": "initial_13D",
+  "shared_contract": {
+    "provenance": ["accession", "raw_form", "normalized_form", "source_url", "retrieved_at", "raw_sha256", "document_id", "canonical_text_sha256", "quote_start", "quote_end", "quote"],
+    "time": ["sec_filing_date", "acceptance_datetime_with_timezone", "reported_as_of_date", "transaction_or_event_date", "first_public_availability", "availability_verification_status"],
+    "linking": ["issuer_cik", "reporting_party_identity", "security_class", "historical_security_identifiers", "related_accession", "link_evidence", "link_status"],
+    "missingness": ["present", "not_found_in_supplied_text", "ambiguous", "unavailable", "not_reviewed"],
+    "rules": [
+      "Separate filing facts, normalized facts, interpretations and external enrichment.",
+      "No automatic aggregation of overlapping reporting-person holdings.",
+      "Do not equate an accession, an issuer, a reporting group and a campaign.",
+      "Initial-event features use only verified publicly available information at the decision cutoff.",
+      "Later filings are follow-up evidence, not retroactive initial-event features.",
+      "Preserve current human-first review cases and immutable v1 protocols.",
+      "Unknown reporting basis, identity or evidence remains unresolved; do not infer from filer reputation."
+    ]
+  },
+  "stages": [
+    {
+      "priority": 1,
+      "id": "13d_core",
+      "label": "13D first: ownership, purpose and specific action",
+      "forms": ["SC 13D", "SC 13D/A", "SCHEDULE 13D", "SCHEDULE 13D/A"],
+      "implementation_status": "Collection and candidate parsing exist; refined extraction and semantic validation remain development work.",
+      "execution_status": "first_to_act; no job launched by this plan",
+      "scope": "Initial 13D is the primary event; relevant exhibits complete evidence; amendments form separately timed updates.",
+      "fields": ["issuer and exact security class", "reporting people and fund/adviser roles", "issuer relationship and its timing", "person-level ownership and powers", "acquisition mechanism and funding", "stated purpose", "specific action, actor and target", "action topic, stage and channel", "agreements and constraints", "reference completeness and exact evidence"],
+      "next_action": "Draft the refined field definitions and review layout; then continue human-first 13D development review before model assessment.",
+      "gate": "Versioned extraction definitions, source/citation checks and independently evaluated field-level reliability before bulk semantic classification."
+    },
+    {
+      "priority": 2,
+      "id": "13g_history",
+      "label": "13G: linked ownership history and comparison context",
+      "forms": ["SC 13G", "SC 13G/A", "SCHEDULE 13G", "SCHEDULE 13G/A"],
+      "implementation_status": "Queued; no dedicated discovery, collector or parser added yet.",
+      "execution_status": "queued_after_13d_core",
+      "scope": "Start with earlier reports for the same reporting parties and security as reviewed 13D events; a broader comparison universe is a separately specified extension.",
+      "fields": ["reporting basis: qualified institution, passive or exempt, where evidenced", "reporting people and entity types", "issuer and security identifiers", "shares, class percentage and ownership date", "sole/shared voting and disposition powers", "group and ownership-chain disclosures", "amendment history", "candidate 13G-to-13D transition and supported reason"],
+      "next_action": "Design bounded linked-history discovery and a small parser pilot after the core 13D field contract stabilizes.",
+      "gate": "Validate historical identity links, reporting-basis interpretation and as-of/publication dates. Do not label all 13G passive or every transition activist."
+    },
+    {
+      "priority": 3,
+      "id": "proxy_and_8k",
+      "label": "Proxy materials and 8-K: demands, responses and developments",
+      "forms": ["DEF 14A", "DEFA14A", "DFAN14A", "PREC14A", "DEFC14A", "8-K", "8-K/A"],
+      "implementation_status": "Queued targeted retrieval and extraction; form list is a starting scope, not a complete proxy taxonomy.",
+      "execution_status": "queued_after_linked_ownership_design",
+      "scope": "Relevant documents for existing 13D situations, including referenced agreements; avoid an unrestricted proxy/8-K crawl.",
+      "fields": ["filing party and actor/target attribution", "proposals and nominations", "requested shareholder votes", "company response", "settlement/cooperation terms", "director appointments and departures", "transaction announcements and completion status", "voting results", "agreement dates, conditions and restrictions"],
+      "next_action": "Define relevance and retrieval bounds, source-specific evidence rules and distinct initial-context versus follow-up tables.",
+      "gate": "Verify relevance, party attribution and public availability; distinguish allegations, proposals, agreements and completed actions."
+    },
+    {
+      "priority": 4,
+      "id": "13f_context",
+      "label": "13F: manager portfolio context",
+      "forms": ["13F-HR", "13F-HR/A"],
+      "implementation_status": "Queued enrichment; not required for the first 13D review or baseline.",
+      "execution_status": "later_context",
+      "scope": "Matched managers and the reports public by each event cutoff; detect amendments, shared discretion and reporting limitations.",
+      "fields": ["manager identity", "report quarter and publication date", "reported security/class", "reported shares and value with schema-specific units", "put/call designation where present", "investment discretion and other managers", "amendment type", "concentration within the reported holdings subset"],
+      "next_action": "Specify manager crosswalk, amendment handling and a reported-portfolio denominator before deriving concentration.",
+      "gate": "Do not treat quarter-end holdings as known before filing, infer precise trade dates, or describe 13F as total AUM/net exposure."
+    },
+    {
+      "priority": 5,
+      "id": "insider_context",
+      "label": "Forms 3/4/5: insider roles and transactions",
+      "forms": ["3", "3/A", "4", "4/A", "5", "5/A"],
+      "implementation_status": "Queued enrichment; not required for the first 13D review or baseline.",
+      "execution_status": "later_context",
+      "scope": "Relevant reporting people and issuers, with separate direct/indirect and derivative records.",
+      "fields": ["reporting-person relationship to issuer", "security and derivative type", "transaction date and code", "quantity and price as disclosed", "direct/indirect ownership", "post-transaction holdings", "footnotes and amendment context"],
+      "next_action": "Design code/footnote extraction and identity matching after higher-priority filing work.",
+      "gate": "Distinguish purchases, sales, grants, exercises and other transfers; do not infer conviction from all acquisitions."
+    }
+  ],
+  "operational_limits": [
+    "This update records scope and sequence; it does not launch collection, schedulers or model calls.",
+    "Existing 13D collector, frozen manifests and raw files remain unchanged.",
+    "Retain existing resource guards; estimate volume/storage and set bounded manifests before new collection.",
+    "The 52-candidate human-first draft remains unclassified by models; its workbook is still pending.",
+    "No expansion stage is a silent prerequisite for the first 13D baseline."
+  ]
+}

@@ -19,7 +19,7 @@ def sha(path):
 
 
 if __name__ == '__main__':
-    folder = ROOT / 'output/extraction-prep/development-20260916'
+    folder = ROOT / 'research/runs/extraction-prep/development-20260916'
     complete = json.loads((folder / 'COMPLETE.json').read_text())
     for relative, digest in complete['outputs_sha256'].items():
         assert sha(folder / relative) == digest, relative
@@ -37,8 +37,8 @@ if __name__ == '__main__':
     result = {'sample_size': 32, 'output_hashes_verified': True, 'all_worksheets_blank': True, 'canonical_documents_verified': docs_n,
               'paid_model_api_calls': 0, 'original_packet_hash_verification': 'pending'}
     (folder / 'final-audit.json').write_text(json.dumps(result, indent=2) + '\n')
-    original = ROOT / 'output/phase1-prep/20260914T003050627334Z/packets'
-    baseline = json.loads((ROOT / 'output/phase1-prep/integrity-20260914T004440397334Z/audit.json').read_text())['packet_hashes_after']
+    original = ROOT / 'research/runs/phase1-prep/20260914T003050627334Z/packets'
+    baseline = json.loads((ROOT / 'research/runs/phase1-prep/integrity-20260914T004440397334Z/audit.json').read_text())['packet_hashes_after']
     current = {p.name: sha(p) for p in original.glob('*.html')}
     assert current == baseline
     result['original_packet_hash_verification'] = 'verified_unchanged'

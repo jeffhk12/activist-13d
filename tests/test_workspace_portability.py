@@ -24,7 +24,7 @@ def test_pilot_report_bytes_are_portable(tmp_path, monkeypatch):
     monkeypatch.setattr(Path, 'write_text', windows_write)
     module.write_review([], dict(n=0, item4_found=0, roles_found=0,
                                  cusip_found=0, event_date_found=0))
-    report = (tmp_path / 'output/SEC-PILOT-REPORT.md').read_bytes()
+    report = (tmp_path / 'research/runs/SEC-PILOT-REPORT.md').read_bytes()
     assert b'\n' in report
     assert b'\r\n' not in report
 

@@ -4,7 +4,7 @@ Inputs: frozen SEC manifest/submissions and WRDS cache. Outputs: isolated SQLite
 candidate records, failures, provenance, coverage and link reports; no labels.
 Identity: manifest n = parsed candidates + explicitly failed records + pending.
 Tier: 1
-Run: PYTHONNOUSERSITE=1 PYTHONIOENCODING=utf-8 .venv/bin/python scripts/phase1_overnight/run.py --output output/phase1-overnight/RUN
+Run: PYTHONNOUSERSITE=1 PYTHONIOENCODING=utf-8 .venv/bin/python scripts/phase1_overnight/run.py --output research/runs/phase1-overnight/RUN
 """
 import argparse
 import hashlib
@@ -24,6 +24,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'src'))
+from activist13d.local_paths import resolve_project_path
 MANIFEST = ROOT / 'data/interim/bulk-v1/sec-manifest.json'
 STOP = False
 RESERVE = 20 * 1024**3
@@ -61,16 +62,16 @@ def check_space(path):
 
 
 def packet_hashes():
-    folder = ROOT / 'output/phase1-prep/20260914T003050627334Z/packets'
+    folder = ROOT / 'research/runs/phase1-prep/20260914T003050627334Z/packets'
     actual = {p.name: digest(p) for p in folder.glob('*.html')}
-    baseline = json.loads((ROOT / 'output/phase1-prep/integrity-20260914T004440397334Z/audit.json').read_text())['packet_hashes_after']
+    baseline = json.loads((ROOT / 'research/runs/phase1-prep/integrity-20260914T004440397334Z/audit.json').read_text())['packet_hashes_after']
     if actual != baseline:
         raise RuntimeError('Original blank review packets differ from baseline')
     return actual
 
 
 def verify(row):
-    path = (ROOT / row['storage_path']).resolve()
+    path = resolve_project_path(row['storage_path'], ROOT)
     if not path.is_relative_to((ROOT / 'data/raw/edgar').resolve()):
         raise ValueError('Source path outside raw SEC cache')
     meta_path = path.with_suffix(path.suffix + '.meta.json')

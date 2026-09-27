@@ -12,7 +12,7 @@ from wrds_audit import DEFAULT_RAW, _production_cache_paths, run
 
 ROOT = Path(__file__).resolve().parents[2]
 if __name__ == '__main__':
-    pilot = ROOT / 'output/phase1-overnight/pilot-20260915'
+    pilot = ROOT / 'research/runs/phase1-overnight/pilot-20260915'
     raw = pilot / 'wrds-pilot-sources'
     paths = _production_cache_paths(DEFAULT_RAW)
     for table in ('crsp.dsf_v2', 'crsp.stocknames', 'comp.funda'):

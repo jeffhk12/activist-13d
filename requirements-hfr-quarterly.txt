@@ -1,0 +1,2 @@
+# Legacy HFR binary .xls reader; XLSX uses the standard-library XML parser.
+xlrd==2.0.2

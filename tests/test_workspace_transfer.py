@@ -57,6 +57,13 @@ def test_bad_content_hash_is_not_installed(tmp_path):
     assert not (root / "data/raw/sample.txt").exists()
 
 
+def test_legacy_output_is_restored_to_research_runs(tmp_path):
+    shared, root, part = bundle(tmp_path, name="output/pilot/example.txt")
+    assert transfer.install_part(shared, root, part) == 1
+    assert (root / "research/runs/pilot/example.txt").read_bytes() == b"preserved source bytes\n"
+    assert not (root / "output").exists()
+
+
 @pytest.mark.parametrize(
     "name", ["../escape", "data/../../escape", "C:/escape", "data/raw/../escape"]
 )

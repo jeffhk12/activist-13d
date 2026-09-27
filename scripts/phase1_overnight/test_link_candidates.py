@@ -5,8 +5,25 @@ import hashlib
 import json
 import sqlite3
 from pathlib import Path
+from types import SimpleNamespace
+
+import pytest
 
 import link_candidates
+
+
+@pytest.fixture(autouse=True)
+def synthetic_disk_capacity(monkeypatch):
+    """Tiny fixtures test linking independently of the host's current free disk."""
+    monkeypatch.setattr(link_candidates.shutil, "disk_usage",
+                        lambda _: SimpleNamespace(free=21 * 1024**3))
+
+
+def test_low_disk_reserve_refuses_work(tmp_path, monkeypatch):
+    monkeypatch.setattr(link_candidates.shutil, "disk_usage",
+                        lambda _: SimpleNamespace(free=19 * 1024**3))
+    with pytest.raises(RuntimeError, match="20 GiB reserve"):
+        link_candidates.run(tmp_path / "unused.sqlite", tmp_path / "out")
 
 
 def _db(path: Path, records: list[dict]) -> Path:

@@ -31,7 +31,7 @@ from activist13d.edgar.submission import evidence_bundle, parse_submission  # no
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "data/raw/edgar/overnight"
 INTERIM = ROOT / "data/interim/overnight"
-OUTPUT = ROOT / "output/overnight"
+OUTPUT = ROOT / "research/runs/overnight"
 PROGRESS = OUTPUT / "progress.json"
 SEED = "activist-13d-overnight-2026-09-09-v1"
 ALLOCATIONS = {"2013-2017": 23, "2018-2022": 23, "2023-2024": 22, "2025-2026": 22}
@@ -56,7 +56,7 @@ def progress(phase: str, status: str, **details: object) -> None:
 
 
 def task_hash() -> str:
-    return hashlib.sha256((ROOT / "docs/OVERNIGHT-TASK-2026-09-09.txt").read_bytes()).hexdigest()
+    return hashlib.sha256((ROOT / "research/docs/OVERNIGHT-TASK-2026-09-09.txt").read_bytes()).hexdigest()
 
 
 def period(year: int) -> str:

@@ -4,7 +4,7 @@ Reads the official FRED DTB3 CSV and Ken French U.S. Fama/French 3-factor
 daily/monthly ZIP archives over HTTPS, plus the user's supplied HFR workbook
 directory. Writes immutable raw responses, extracted archive members, and a
 JSON provenance/coverage record under data/raw/public-series/<run-id> and a
-human-readable report under output/data-collection/public-series-<run-id>.
+human-readable report under research/runs/data-collection/public-series-<run-id>.
 
 Identity: this collector copies source bytes and reports source coverage;
 it does not transform rates, accrue cash, choose a benchmark, or compute
@@ -27,7 +27,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 RAW_ROOT = ROOT / "data" / "raw" / "public-series"
-OUT_ROOT = ROOT / "output" / "data-collection"
+OUT_ROOT = ROOT / "research/runs" / "data-collection"
 SOURCES = {
     "fred_dtb3": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTB3",
     "ken_french_3factor_daily": (

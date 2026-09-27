@@ -28,7 +28,7 @@ REPO = Path(__file__).resolve().parents[2]
 AS_OF = "2026-09-13"
 RAW = REPO / "data" / "raw" / "hfr" / AS_OF
 INTERIM = REPO / "data" / "interim" / "hfr"
-OUTPUT = REPO / "output" / "data-collection"
+OUTPUT = REPO / "research/runs" / "data-collection"
 NS = {
     "m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main",
     "r": "http://schemas.openxmlformats.org/officeDocument/2006/relationships",

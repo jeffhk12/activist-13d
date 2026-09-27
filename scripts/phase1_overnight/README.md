@@ -5,7 +5,7 @@ The authorized run audits and parses the frozen SEC universe, audits WRDS covera
 Run from the project root:
 
 ```sh
-PYTHONNOUSERSITE=1 PYTHONIOENCODING=utf-8 .venv/bin/python scripts/phase1_overnight/launch.py --output output/phase1-overnight/full-20260915
+PYTHONNOUSERSITE=1 PYTHONIOENCODING=utf-8 .venv/bin/python scripts/phase1_overnight/launch.py --output research/runs/phase1-overnight/full-20260915
 ```
 
 The launcher records the worker and supervisor PIDs in `launch.json`; `progress.json` records stages and counts. `collection.log` contains progress and failures. The process continues after the interactive turn ends. `caffeinate` prevents idle system sleep while the supervisor runs; keep the laptop plugged in and the lid open.

@@ -9,7 +9,7 @@ on:
     branches: [main, 'jl/**']
     paths-ignore:
       - '**/*.md'
-      - 'docs/**'
+      - 'research/docs/**'
   pull_request:
     branches: [main]
   workflow_dispatch:

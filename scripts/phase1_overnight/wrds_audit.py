@@ -9,7 +9,7 @@ Identity: total rows = sum(rows yielded by each response's ``results`` array);
 duplicate keys are counted whenever a ``(permno, dlycaldt)`` key repeats.
 Tier: 1
 Run: ``PYTHONNOUSERSITE=1 PYTHONIOENCODING=utf-8 .venv/bin/python
-scripts/phase1_overnight/wrds_audit.py --output output/data-collection/wrds-audit``
+scripts/phase1_overnight/wrds_audit.py --output research/runs/data-collection/wrds-audit``
 """
 
 from __future__ import annotations
@@ -189,7 +189,7 @@ def _file_record(path: Path, raw_root: Path, production: bool = False) -> dict:
 
 def _production_cache_paths(raw_root: Path) -> set[str]:
     """Return cache paths recorded by completed collector task envelopes."""
-    task_dir = ROOT / "output/data-collection/wrds/tasks"
+    task_dir = ROOT / "research/runs/data-collection/wrds/tasks"
     paths: set[str] = set()
     for task in task_dir.glob("*.json"):
         try:
@@ -290,7 +290,7 @@ def run(output: Path, raw_root: Path = DEFAULT_RAW, disk_reserve_bytes: int = RE
                          "rows_by_year": dict(sorted(year_rows.items())), "rows_by_date": dict(sorted(date_counts.items())),
                          "observed_fields": dict(sorted(observed_fields.items())),
                          "opening_price_fields_nonnull": dict(sorted(opening_fields.items()))},
-               "provenance": {"task_source": "scripts/data_collection/wrds_collect.py:tasks", "metadata_source": str(ROOT / "output/data-collection/wrds/metadata.json"),
+               "provenance": {"task_source": "scripts/data_collection/wrds_collect.py:tasks", "metadata_source": str(ROOT / "research/runs/data-collection/wrds/metadata.json"),
                               "hash": "sha256 of decompressed JSON bytes, compared with sidecar sha256", "network_calls": 0},
                "limitations": ["Vendor count and next metadata remain unresolved; this audit does not certify complete coverage.",
                                "Observed dates and fields describe rows present in frozen responses only.",

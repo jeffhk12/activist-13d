@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-PROTOCOL = ROOT / 'protocol'
+PROTOCOL = ROOT / 'research/protocol'
 
 
 def save_new(path, text):

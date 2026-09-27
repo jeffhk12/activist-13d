@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "output/overnight"
+OUTPUT = ROOT / "research/runs/overnight"
 
 
 def now():
@@ -43,7 +43,7 @@ def supervise():
         for key in ("OPENAI_API_KEY", "ANTHROPIC_API_KEY", "DEEPSEEK_API_KEY",
                     "GEMINI_API_KEY", "GOOGLE_API_KEY", "MISTRAL_API_KEY"):
             env.pop(key, None)
-        task = ROOT / "docs/OVERNIGHT-TASK-2026-09-09.txt"
+        task = ROOT / "research/docs/OVERNIGHT-TASK-2026-09-09.txt"
         with task.open("rb") as source, (OUTPUT / "worker.log").open("ab") as log:
             worker = subprocess.Popen(command, stdin=source, stdout=log, stderr=log,
                                       cwd=ROOT, env=env, start_new_session=True)
