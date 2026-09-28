@@ -48,4 +48,4 @@ have been added to it. Workspace organization does not resume research processin
 The preservation archive at
 `/Users/jefflu/Archives/icloud-retired/activist-13d-20260923` is outside this working
 project. The small old iCloud code/environment remainder is a retired location.
-Windows has a separate checkout; this reorganization has not been applied there.
+Windows has a separate checkout at `C:\Users\jeffh\Projects\activist-13d`. Its source and preserved review layout were applied on September 28. Use the workspace Setup activation and handoff receipts for current receiving/backup readiness; the reorganization does not resume research.

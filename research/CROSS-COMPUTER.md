@@ -1,3 +1,5 @@
+> **Current workspace (September 28, 2026):** code lives in local `Projects/activist-13d` on each computer; personal Google Drive → Workspace is the shared hub. Use [the current handoff guide](WORKSPACE-HANDOFF.md) and workspace Setup receipts for receiving readiness. The older setup notes below remain as history; do not restore competing working locations from them.
+
 # Current workspace layout
 
 Open `/Users/jefflu/Projects/activist-13d/START-HERE.html`. The completed 200-filing review is at `review/current/`. The unfinished 52-candidate pack is at `review/drafts/human-first-52/`; its workbook is pending and research remains paused. Previous `output/` runs are under `research/runs/`; previous `outputs/` packs are under `review/archive/`, except the current and draft packs. Migration records are in `maintenance/migration-20260923/records/`. The historical notes below retain paths valid when written. Windows was not reorganized by this task.

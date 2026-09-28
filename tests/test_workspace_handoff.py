@@ -195,3 +195,29 @@ def test_new_database_requires_separate_snapshot(pair):
     (a / 'data/raw/new.sqlite').write_bytes(b'new database')
     with pytest.raises(ValueError, match='Private settings or live database'):
         h.publish(a, shared, {})
+
+
+def test_receiver_refuses_a_live_journal_even_if_database_hash_matches(pair):
+    a, b, shared = pair
+    name = 'research/runs/saved/audit.sqlite'
+    for root in [a, b]:
+        p = root / name
+        p.parent.mkdir(parents=True)
+        p.write_bytes(b'unchanged archived bytes')
+    folder, m = h.load_snapshot(shared, 'baseline')
+    m['files'].append({'path': name, 'bytes': len(b'unchanged archived bytes'), 'sha256': h.digest(a / name)})
+    h.atomic_json(folder / 'manifest.json', m)
+    h.atomic_json(shared / 'latest.json', {'id': 'baseline', 'sha256': h.digest(folder / 'manifest.json')})
+    for root in [a, b]:
+        h.state_path(root).unlink()
+        h.initialize(root, shared)
+    journal = Path(str(b / name) + '-wal')
+    journal.write_bytes(b'local database work')
+    with pytest.raises(ValueError, match='journal is present'):
+        h.receive(b, shared)
+    (a / 'review/current/answers.csv').write_text('new review')
+    h.publish(a, shared, {})
+    with pytest.raises(ValueError, match='journal is present'):
+        h.receive(b, shared)
+    assert (b / 'review/current/answers.csv').read_text() == 'filing,label\n1,\n'
+    assert journal.read_bytes() == b'local database work'

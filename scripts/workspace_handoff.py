@@ -34,6 +34,12 @@ def digest(path):
     return h.hexdigest()
 
 
+def refuse_database_journal(path):
+    if path.suffix.lower() in {'.db', '.sqlite', '.sqlite3'}:
+        if any(Path(str(path) + suffix).exists() for suffix in ('-wal', '-shm', '-journal')):
+            raise ValueError('A database journal is present; close it and preserve a consistent snapshot first')
+
+
 def destination(root, name):
     p = PurePosixPath(name)
     if (not p.parts or p.is_absolute() or '..' in p.parts or '\\' in name
@@ -122,6 +128,7 @@ def inventory(root, omitted=(), archived_databases=None):
 def verify_local(root, manifest):
     for name, row in records(manifest).items():
         p = destination(root, name)
+        refuse_database_journal(p)
         if not p.is_file() or digest(p) != row['sha256']:
             raise ValueError('Local file differs; preserved: ' + name)
 
@@ -225,6 +232,7 @@ def receive_one(root, shared, marker, manifest):
     applied = set()
     for name, row in before.items():
         target = destination(root, name)
+        refuse_database_journal(target)
         actual = digest(target) if target.is_file() else None
         if actual == row['sha256']:
             continue
