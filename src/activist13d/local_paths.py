@@ -21,10 +21,12 @@ LAYOUT_MOVES = (
 def resolve_project_path(value: str | Path, root: Path) -> Path:
     root = root.resolve()
     path = Path(value)
-    if path.is_absolute():
-        if path.is_relative_to(LEGACY_ROOT):
-            path = root / path.relative_to(LEGACY_ROOT)
-        elif not path.is_relative_to(root):
+    # A preserved /Users/... path is rooted but not drive-qualified on Windows.
+    # Recognize provenance before native absolute-path classification.
+    if path.is_relative_to(LEGACY_ROOT):
+        path = root / path.relative_to(LEGACY_ROOT)
+    elif path.anchor:
+        if not path.is_absolute() or not path.is_relative_to(root):
             raise ValueError(f'Path is outside the project: {path}')
     else:
         path = root / path

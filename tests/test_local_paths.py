@@ -20,7 +20,12 @@ def test_refuses_escape(tmp_path, path):
 
 
 def test_refuses_symlink_to_legacy(tmp_path):
-    (tmp_path / 'raw').symlink_to(LEGACY_ROOT / 'data/raw', target_is_directory=True)
+    try:
+        (tmp_path / 'raw').symlink_to(LEGACY_ROOT / 'data/raw', target_is_directory=True)
+    except OSError as exc:
+        if getattr(exc, 'winerror', None) == 1314:
+            pytest.skip('Windows account lacks symbolic-link creation privilege')
+        raise
     with pytest.raises(ValueError):
         resolve_project_path('raw/file.txt', tmp_path)
 
