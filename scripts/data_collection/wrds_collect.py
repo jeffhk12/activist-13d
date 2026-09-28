@@ -9,7 +9,6 @@ Run: PYTHONNOUSERSITE=1 PYTHONIOENCODING=utf-8 .venv/bin/python scripts/data_col
 """
 
 import argparse
-import fcntl
 import gzip
 import hashlib
 import json
@@ -26,6 +25,8 @@ import requests
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "src"))
+from activist13d.file_lock import acquire_exclusive, release  # noqa: E402
 from wrds_access.client import load_token  # noqa: E402
 
 BASE = "https://wrds-api.wharton.upenn.edu/data/"
@@ -216,8 +217,9 @@ def collect(client):
     OUT.mkdir(parents=True, exist_ok=True)
     lock = (OUT / "worker.lock").open("a+")
     try:
-        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        acquire_exclusive(lock)
     except BlockingIOError:
+        lock.close()
         raise Refusal("WRDS collector already running") from None
     lock.seek(0)
     lock.truncate()
@@ -264,7 +266,7 @@ def collect(client):
         raise
     finally:
         heartbeat(state.get("current", {}))
-        fcntl.flock(lock, fcntl.LOCK_UN)
+        release(lock)
         lock.close()
 
 
