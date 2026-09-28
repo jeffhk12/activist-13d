@@ -120,7 +120,7 @@ def main() -> None:
                 raise ValueError("Submission accession does not match index")
             record.update({
                 "source_url": url,
-                "source_path": str((folder / "submission.txt").relative_to(ROOT)),
+                "source_path": (folder / "submission.txt").relative_to(ROOT).as_posix(),
                 "source_sha256": hashlib.sha256(payload).hexdigest(),
                 "index_filing_date": filing.date_filed.date().isoformat(),
                 "universe_status": "unscreened_initial_13d",
