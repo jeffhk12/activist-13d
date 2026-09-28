@@ -79,3 +79,6 @@ __pycache__/
 /research/runs/
 /research/docs/*.docx
 /maintenance/
+
+# Per-computer handoff state and recovery copies
+/.workspace-local/
