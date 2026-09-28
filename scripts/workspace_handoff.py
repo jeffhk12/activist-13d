@@ -19,6 +19,8 @@ import subprocess
 import tempfile
 import uuid
 import zipfile
+from concurrent.futures import ThreadPoolExecutor
+from itertools import islice
 
 ROOT = Path(__file__).resolve().parents[1]
 AREAS = ('data', 'review', 'research/runs')
@@ -95,42 +97,55 @@ def latest(shared):
     return marker, manifest
 
 
+def checked_reads(function, values):
+    """Bound concurrent read-only checks; propagate failures before any mutation."""
+    values = iter(values)
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        while batch := list(islice(values, 64)):
+            yield from pool.map(function, batch)
+
+
 def inventory(root, omitted=(), archived_databases=None):
     omitted = set(omitted)
     archived_databases = archived_databases or {}
-    rows = []
-    for area in AREAS:
-        for current, dirs, names in os.walk(root / area, followlinks=False):
-            dirs[:] = sorted(n for n in dirs if n not in SKIP_DIRS and not (Path(current) / n).is_symlink())
-            for name in sorted(names):
-                p = Path(current) / name
-                rel = p.relative_to(root).as_posix()
-                if (p.is_symlink() or rel in omitted or name in SKIP_NAMES
-                        or name.startswith('~$') or name.endswith(('.partial', '.lock'))):
-                    continue
-                database = p.suffix.lower() in {'.db', '.sqlite', '.sqlite3'}
-                if (name.lower().startswith('.env') or p.suffix.lower() in {'.pem', '.key'}
-                        or (database and (rel not in archived_databases
-                            or any(Path(str(p) + suffix).exists() for suffix in ('-wal', '-shm', '-journal'))))):
-                    raise ValueError('Private settings or live database require separate handling: ' + rel)
-                destination(root, rel)
-                before = p.stat()
-                sha = digest(p)
-                if database and sha != archived_databases[rel]:
-                    raise ValueError('Archived database changed; create a consistent snapshot separately: ' + rel)
-                after = p.stat()
-                if (before.st_size, before.st_mtime_ns) != (after.st_size, after.st_mtime_ns):
-                    raise ValueError('File changed while reading: ' + rel)
-                rows.append({'path': rel, 'bytes': after.st_size, 'sha256': sha})
-    return sorted(rows, key=lambda r: r['path'])
+    def paths():
+        for area in AREAS:
+            for current, dirs, names in os.walk(root / area, followlinks=False):
+                dirs[:] = sorted(n for n in dirs if n not in SKIP_DIRS and not (Path(current) / n).is_symlink())
+                for name in sorted(names):
+                    yield Path(current) / name
+    def inspect(p):
+        name = p.name
+        rel = p.relative_to(root).as_posix()
+        if (p.is_symlink() or rel in omitted or name in SKIP_NAMES
+                or name.startswith('~$') or name.endswith(('.partial', '.lock'))):
+            return None
+        database = p.suffix.lower() in {'.db', '.sqlite', '.sqlite3'}
+        if (name.lower().startswith('.env') or p.suffix.lower() in {'.pem', '.key'}
+                or (database and (rel not in archived_databases
+                    or any(Path(str(p) + suffix).exists() for suffix in ('-wal', '-shm', '-journal'))))):
+            raise ValueError('Private settings or live database require separate handling: ' + rel)
+        destination(root, rel)
+        before = p.stat()
+        sha = digest(p)
+        if database and sha != archived_databases[rel]:
+            raise ValueError('Archived database changed; create a consistent snapshot separately: ' + rel)
+        after = p.stat()
+        if (before.st_size, before.st_mtime_ns) != (after.st_size, after.st_mtime_ns):
+            raise ValueError('File changed while reading: ' + rel)
+        return {'path': rel, 'bytes': after.st_size, 'sha256': sha}
+    return sorted((row for row in checked_reads(inspect, paths()) if row is not None), key=lambda r: r['path'])
 
 
 def verify_local(root, manifest):
-    for name, row in records(manifest).items():
+    def inspect(item):
+        name, row = item
         p = destination(root, name)
         refuse_database_journal(p)
         if not p.is_file() or digest(p) != row['sha256']:
             raise ValueError('Local file differs; preserved: ' + name)
+    for _ in checked_reads(inspect, records(manifest).items()):
+        pass
 
 
 def state_path(root):
@@ -229,19 +244,19 @@ def receive_one(root, shared, marker, manifest):
     resuming = journal.exists()
     if resuming and json.loads(journal.read_text(encoding='utf-8')) != {'marker': marker, 'parent': parent}:
         raise ValueError('Recovery journal differs')
-    applied = set()
-    for name, row in before.items():
+    def inspect_prior(item):
+        name, row = item
         target = destination(root, name)
         refuse_database_journal(target)
         actual = digest(target) if target.is_file() else None
         if actual == row['sha256']:
-            continue
+            return None
         preserved = destination(backup, name)
         if (resuming and name in changed and actual == after[name]['sha256']
                 and preserved.is_file() and digest(preserved) == row['sha256']):
-            applied.add(name)
-            continue
+            return name
         raise ValueError('Local file differs; preserved: ' + name)
+    applied = {name for name in checked_reads(inspect_prior, before.items()) if name is not None}
     seen = set()
     for part in manifest['parts']:
         if not re.fullmatch(r'part-[0-9]{4}\.zip', part['name']):

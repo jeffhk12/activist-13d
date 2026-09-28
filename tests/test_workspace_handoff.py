@@ -221,3 +221,41 @@ def test_receiver_refuses_a_live_journal_even_if_database_hash_matches(pair):
         h.receive(b, shared)
     assert (b / 'review/current/answers.csv').read_text() == 'filing,label\n1,\n'
     assert journal.read_bytes() == b'local database work'
+
+
+@pytest.mark.parametrize('operation', ['inventory', 'verify'])
+def test_independent_file_reads_overlap_without_omitting_checks(tmp_path, monkeypatch, operation):
+    import hashlib
+    import threading
+    root = tmp_path / 'project'
+    (root / 'data/raw').mkdir(parents=True)
+    expected = []
+    for n in range(8):
+        payload = f'preserved evidence {n}'.encode()
+        name = f'data/raw/{n}.txt'
+        (root / name).write_bytes(payload)
+        expected.append({'path': name, 'bytes': len(payload), 'sha256': hashlib.sha256(payload).hexdigest()})
+    original = h.digest
+    barrier = threading.Barrier(4)
+    def read_together(path):
+        barrier.wait(timeout=5)
+        return original(path)
+    monkeypatch.setattr(h, 'digest', read_together)
+    if operation == 'inventory':
+        assert h.inventory(root) == expected
+    else:
+        h.verify_local(root, {'files': expected})
+
+
+def test_change_during_parallel_hashing_refuses_publication(pair, monkeypatch):
+    a, b, shared = pair
+    original = h.digest
+    def concurrent_edit(path):
+        sha = original(path)
+        if path == a / 'data/raw/filing.txt':
+            path.write_bytes(path.read_bytes() + b'concurrent edit')
+        return sha
+    monkeypatch.setattr(h, 'digest', concurrent_edit)
+    with pytest.raises(ValueError, match='File changed while reading'):
+        h.publish(a, shared, {})
+    assert h.latest(shared)[0]['id'] == 'baseline'

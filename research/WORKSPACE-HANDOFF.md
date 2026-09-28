@@ -23,3 +23,5 @@ The initial baseline must be verified on each computer before these routines are
 Per-computer state and pre-replacement review copies live in `.workspace-local/handoff/`. Shared snapshots are immutable directories under `Handoffs/snapshots/`; `latest.json` is published only after payload verification. Do not edit these manifests manually or run Finish Work on both computers concurrently. Drive synchronization is not a distributed lock or an independent backup.
 
 These instructions describe the routine. The workspace Setup migration receipts record whether baseline initialization, both-computer tests and the first handoff have actually completed. Do not infer completion from this guide alone.
+
+File verification uses at most four concurrent readers, queued in bounded batches. Every file still receives the same path, hash, database and concurrent-edit checks. Publication and receiving mutations remain sequential, and the second full inventory before publication is retained.
