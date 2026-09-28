@@ -160,3 +160,38 @@ def test_new_local_edit_after_interruption_is_not_overwritten(pair, monkeypatch)
     with pytest.raises(ValueError, match='replace local work'):
         h.receive(b, shared)
     assert (b / 'data/raw/new.txt').read_text() == 'Local edit after interruption'
+
+
+def test_verified_archived_database_is_allowed_but_not_changed(pair):
+    import sqlite3
+    import shutil
+    a, b, shared = pair
+    database = a / 'data/raw/archive.sqlite'
+    with sqlite3.connect(database) as con:
+        con.execute('create table evidence (id integer)')
+    shutil.copy2(database, b / 'data/raw/archive.sqlite')
+    folder, m = h.load_snapshot(shared, 'baseline')
+    m['files'].append({'path': 'data/raw/archive.sqlite', 'bytes': database.stat().st_size, 'sha256': h.digest(database)})
+    h.atomic_json(folder / 'manifest.json', m)
+    h.atomic_json(shared / 'latest.json', {'id': 'baseline', 'sha256': h.digest(folder / 'manifest.json')})
+    for root in [a, b]:
+        h.state_path(root).unlink()
+        h.initialize(root, shared)
+    h.publish(a, shared, {})
+    h.receive(b, shared)
+    sidecar = Path(str(database) + '-wal')
+    sidecar.write_bytes(b'pending journal')
+    with pytest.raises(ValueError, match='live database'):
+        h.publish(a, shared, {})
+    sidecar.unlink()
+    with sqlite3.connect(database) as con:
+        con.execute('insert into evidence values (1)')
+    with pytest.raises(ValueError, match='Archived database changed'):
+        h.publish(a, shared, {})
+
+
+def test_new_database_requires_separate_snapshot(pair):
+    a, b, shared = pair
+    (a / 'data/raw/new.sqlite').write_bytes(b'new database')
+    with pytest.raises(ValueError, match='Private settings or live database'):
+        h.publish(a, shared, {})

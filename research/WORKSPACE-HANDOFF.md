@@ -16,7 +16,7 @@ If the tool stops, keep both versions and read its reason. It refuses unsaved so
 
 ## Scope and recovery
 
-Managed directories are `data/`, `review/`, and `research/runs/`. Per-machine validation runs, OS metadata, transient locks, partial files and symbolic-link aliases are outside payload transfer. Private environment files, keys and live database files are refused if encountered in these directories. Environments and credentials remain local.
+Managed directories are `data/`, `review/`, and `research/runs/`. Per-machine validation runs, OS metadata, transient locks, partial files and symbolic-link aliases are outside payload transfer. Private environment files, keys and new or changed database files are refused if encountered in these directories. The seven previously archived SQLite files may remain in the verified baseline only while their hashes are unchanged and no journal/WAL sidecars exist; they are not treated as live shared databases. Environments and credentials remain local.
 
 The initial baseline must be verified on each computer before these routines are enabled. Older extra Windows files are recorded as local-only and preserved outside routine handoff. Their presence does not authorize deletion or replacement. Local symlink aliases require separately verified setup on Windows.
 

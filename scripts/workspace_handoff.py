@@ -89,8 +89,9 @@ def latest(shared):
     return marker, manifest
 
 
-def inventory(root, omitted=()):
+def inventory(root, omitted=(), archived_databases=None):
     omitted = set(omitted)
+    archived_databases = archived_databases or {}
     rows = []
     for area in AREAS:
         for current, dirs, names in os.walk(root / area, followlinks=False):
@@ -101,11 +102,16 @@ def inventory(root, omitted=()):
                 if (p.is_symlink() or rel in omitted or name in SKIP_NAMES
                         or name.startswith('~$') or name.endswith(('.partial', '.lock'))):
                     continue
-                if name.startswith('.env') or p.suffix.lower() in {'.pem', '.key', '.db', '.sqlite', '.sqlite3'}:
+                database = p.suffix.lower() in {'.db', '.sqlite', '.sqlite3'}
+                if (name.lower().startswith('.env') or p.suffix.lower() in {'.pem', '.key'}
+                        or (database and (rel not in archived_databases
+                            or any(Path(str(p) + suffix).exists() for suffix in ('-wal', '-shm', '-journal'))))):
                     raise ValueError('Private settings or live database require separate handling: ' + rel)
                 destination(root, rel)
                 before = p.stat()
                 sha = digest(p)
+                if database and sha != archived_databases[rel]:
+                    raise ValueError('Archived database changed; create a consistent snapshot separately: ' + rel)
                 after = p.stat()
                 if (before.st_size, before.st_mtime_ns) != (after.st_size, after.st_mtime_ns):
                     raise ValueError('File changed while reading: ' + rel)
@@ -126,10 +132,14 @@ def state_path(root):
 
 def initialize(root, shared):
     marker, manifest = latest(shared)
-    verify_local(root, manifest)
-    known = set(records(manifest))
+    expected = records(manifest)
+    known = set(expected)
     aliases = {x['path'] for x in manifest.get('links', [])}
-    extras = [x['path'] for x in inventory(root, aliases) if x['path'] not in known]
+    current = records({'files': inventory(root, aliases, {n: r['sha256'] for n, r in expected.items()})})
+    for name, row in expected.items():
+        if name not in current or current[name] != row:
+            raise ValueError('Local file differs; preserved: ' + name)
+    extras = [name for name in current if name not in known]
     state = {'id': marker['id'], 'manifest_sha256': marker['sha256'], 'local_only': extras}
     if state_path(root).exists():
         raise ValueError('Already initialized; use start or finish')
@@ -143,8 +153,9 @@ def publish(root, shared, code):
     if marker['id'] != state['id'] or marker['sha256'] != state['manifest_sha256']:
         raise ValueError('A different handoff exists. Start Work before making another handoff.')
     old = records(base)
+    archived_databases = {n: r['sha256'] for n, r in old.items()}
     aliases = {x['path'] for x in base.get('links', [])}
-    current = inventory(root, set(state['local_only']) | aliases)
+    current = inventory(root, set(state['local_only']) | aliases, archived_databases)
     new = records({'files': current})
     if set(old) - set(new):
         raise ValueError('Managed files were deleted. Restore or archive them before handoff.')
@@ -181,7 +192,7 @@ def publish(root, shared, code):
     if latest(shared)[0] != marker:
         raise ValueError('Another computer published during packaging; incomplete snapshot retained.')
     # A second inventory detects intervening edits, additions and removals.
-    if inventory(root, set(state['local_only']) | aliases) != current:
+    if inventory(root, set(state['local_only']) | aliases, archived_databases) != current:
         raise ValueError('Local files changed during handoff. Close project editors and retry.')
     next_marker = {'id': snapshot, 'sha256': digest(folder / 'manifest.json')}
     atomic_json(shared / 'latest.json', next_marker)
