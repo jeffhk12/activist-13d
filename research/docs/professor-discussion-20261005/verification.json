@@ -1,0 +1,89 @@
+{
+  "pages": 6,
+  "figures": 6,
+  "data_graphs": 5,
+  "schematics": 1,
+  "tables": 12,
+  "source_hashes": {
+    "returns": "6316c19f52c55181de2743e70c14e267173443b1433027800f5ac7f2b8c3d5ac",
+    "controls": "e4059095d09a6d9bb4570d6df96fbdeb6fb629afd64aade3256c06693c6cae80",
+    "coverage": "09b4672a174f3de96c379f0c26b9713f28ce2ec4f68213fd0dd7c6401382e8d7",
+    "universe": "6579b180b56773a5b8e4c078e15880164b06e709c77e684a04d4fb8cc2180fdf",
+    "selection": "184ec95b33dbcdf2fa4d9181079e3f106aea90e8b75074240cdab3a3fead710a",
+    "protection": "45068aa77268d70878f520ba13ac4bd741c4b3d5cd27e44e0e5f89e19aa4996f",
+    "funded_account": "dcd6e53d6d83405fd34c4a23aa0e3b0b777c894d8b2da71fe66e21e493a80a21",
+    "phase1_selection": "145d94ad644148c615d728d179fe4907da74cf381622ffe224550ad243893242",
+    "phase1_registry_summary": "6a86e8d72d44a11d52cfa13ea31585484dac444ba6f092703cab632f8d68e822",
+    "hfr_matching": "9f0626240f93d4a6ddb1e66c956a3a8f7725b1113f5f7ad9a9faf15f6624c2ea",
+    "hfr_match_rules": "23132c59951517a11dbab64a923de56fa77bacad9e7a7844283128912f54362d",
+    "hfr_cohort_rules": "2de6d25146f5f7fc495abe88dabd6a7b401dde720ddad9f0e38c563c66e75dd4"
+  },
+  "selection_reproduced": {
+    "not_initial_candidate": 53070,
+    "protected_or_user_excluded": 3107,
+    "unresolved_source_or_primary": 28,
+    "after_2025": 3613
+  },
+  "phase1_sample_bridge": {
+    "metadata_initial_registry": 17795,
+    "basic_screened_records": 4673,
+    "first_pair_records": 4440,
+    "scheduled_24_month_events": 2107,
+    "focused_before_schedule": 89,
+    "focused_scheduled": 67,
+    "focused_assigned": 58,
+    "focused_calculated": 56,
+    "base_exclusions": {
+      "outside_candidate_entry_window": 8396,
+      "fails_prior_basic_readiness": 4049,
+      "not_standalone_initial": 187,
+      "protected_human_review_issuer": 490
+    },
+    "history_exclusions": {
+      "previously_observed_pair": 196,
+      "prior_history_in_document": 37
+    },
+    "schedule_exclusions": {
+      "overlapping_issuer_position": 878,
+      "simultaneous_multiple_securities": 3,
+      "insufficient_calendar": 1114
+    },
+    "merged_record_reduction": 338
+  },
+  "research_status": "rendered preserved statistics; no new return calculation",
+  "visual_review": "passed: all six final renders inspected",
+  "pdf_sha256": "608bd83b80a09d39be9588766fc69f9d623a46467def997c62479dd323c86589",
+  "local_links_checked": 19,
+  "body_and_footer_positions": [
+    {
+      "page": 1,
+      "lowest_body_glyph_bottom_from_top": 711.09,
+      "footer_rule_from_top": 762
+    },
+    {
+      "page": 2,
+      "lowest_body_glyph_bottom_from_top": 688.8,
+      "footer_rule_from_top": 762
+    },
+    {
+      "page": 3,
+      "lowest_body_glyph_bottom_from_top": 701.6,
+      "footer_rule_from_top": 762
+    },
+    {
+      "page": 4,
+      "lowest_body_glyph_bottom_from_top": 672.05,
+      "footer_rule_from_top": 762
+    },
+    {
+      "page": 5,
+      "lowest_body_glyph_bottom_from_top": 592.8,
+      "footer_rule_from_top": 762
+    },
+    {
+      "page": 6,
+      "lowest_body_glyph_bottom_from_top": 732.5,
+      "footer_rule_from_top": 762
+    }
+  ]
+}

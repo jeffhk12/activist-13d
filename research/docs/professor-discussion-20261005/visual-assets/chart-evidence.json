@@ -1,0 +1,524 @@
+{
+  "horizons_months": [
+    12,
+    18,
+    24,
+    36
+  ],
+  "focused": [
+    {
+      "calculated": 65,
+      "fraction_beating_benchmark": 0.47692307692307695,
+      "issuer_bootstrap_95": [
+        -0.11251590613048236,
+        0.1363655652083467
+      ],
+      "mean_benchmark": 0.11654422024754435,
+      "mean_excess": -0.0007702844347844014,
+      "mean_stock": 0.11577393581275995,
+      "median_excess": -0.041718513603155705,
+      "median_stock": 0.010668299532450076,
+      "scheduled": 77,
+      "statuses": {
+        "assignment:missing_historical_security": 2,
+        "assignment:no_constituent_match": 10,
+        "calculated_common_sample": 65
+      },
+      "unique_issuers": 64
+    },
+    {
+      "calculated": 60,
+      "fraction_beating_benchmark": 0.35,
+      "issuer_bootstrap_95": [
+        -0.1981614605697162,
+        0.23452311747966684
+      ],
+      "mean_benchmark": 0.15335759714390723,
+      "mean_excess": -0.018140768522878388,
+      "mean_stock": 0.13521682862102885,
+      "median_excess": -0.08968380159582123,
+      "median_stock": 0.002122304740112324,
+      "scheduled": 72,
+      "statuses": {
+        "assignment:missing_historical_security": 1,
+        "assignment:no_constituent_match": 9,
+        "calculated_common_sample": 60,
+        "original:stock:missing_or_invalid_total_return": 2
+      },
+      "unique_issuers": 59
+    },
+    {
+      "calculated": 56,
+      "fraction_beating_benchmark": 0.4107142857142857,
+      "issuer_bootstrap_95": [
+        -0.17340713932478535,
+        0.4042905593026914
+      ],
+      "mean_benchmark": 0.1915358479525591,
+      "mean_excess": 0.08664106840384729,
+      "mean_stock": 0.2781769163564064,
+      "median_excess": -0.1490506980465715,
+      "median_stock": 0.04455008777884517,
+      "scheduled": 67,
+      "statuses": {
+        "assignment:missing_historical_security": 1,
+        "assignment:no_constituent_match": 8,
+        "calculated_common_sample": 56,
+        "original:stock:missing_or_invalid_total_return": 2
+      },
+      "unique_issuers": 56
+    },
+    {
+      "calculated": 50,
+      "fraction_beating_benchmark": 0.32,
+      "issuer_bootstrap_95": [
+        -0.2087428409231678,
+        0.842119112526986
+      ],
+      "mean_benchmark": 0.32736553454749495,
+      "mean_excess": 0.20834360149563497,
+      "mean_stock": 0.53570913604313,
+      "median_excess": -0.3174125890582895,
+      "median_stock": 0.10327178914534041,
+      "scheduled": 59,
+      "statuses": {
+        "assignment:missing_historical_security": 1,
+        "assignment:no_constituent_match": 6,
+        "calculated_common_sample": 50,
+        "original:stock:missing_or_invalid_total_return": 2
+      },
+      "unique_issuers": 50
+    }
+  ],
+  "matched_24_month": {
+    "calculated": 17,
+    "fraction_beating_benchmark": 0.4117647058823529,
+    "issuer_bootstrap_95": [
+      -0.29869698068071576,
+      0.14028689092906174
+    ],
+    "mean_benchmark": 0.05006912455146433,
+    "mean_excess": -0.08078657172390438,
+    "mean_stock": -0.03071744717244005,
+    "median_excess": -0.17992228407224786,
+    "median_stock": -0.030698923021408975,
+    "scheduled": 17,
+    "statuses": {
+      "matched": 17
+    },
+    "unique_issuers": 17
+  },
+  "filing_coverage": {
+    "filing_entities.cik": {
+      "denominator_filings": 15813,
+      "field": "filing_entities.cik",
+      "files_with_field": 15813,
+      "files_with_present": 15813,
+      "opportunities": {
+        "present": 15813
+      },
+      "year": "all"
+    },
+    "securities.cusip": {
+      "denominator_filings": 15813,
+      "field": "securities.cusip",
+      "files_with_field": 15813,
+      "files_with_present": 14515,
+      "opportunities": {
+        "ambiguous": 3,
+        "invalid_format": 22,
+        "not_found_in_supplied_text": 1273,
+        "present": 14515
+      },
+      "year": "all"
+    },
+    "ownership.percent_of_class": {
+      "denominator_filings": 15813,
+      "field": "ownership.percent_of_class",
+      "files_with_field": 15497,
+      "files_with_present": 12673,
+      "opportunities": {
+        "invalid_format": 9338,
+        "not_found_in_supplied_text": 198,
+        "present": 44367
+      },
+      "year": "all"
+    },
+    "reporting_persons.cik": {
+      "denominator_filings": 15813,
+      "field": "reporting_persons.cik",
+      "files_with_field": 15497,
+      "files_with_present": 1132,
+      "opportunities": {
+        "not_found_in_supplied_text": 51696,
+        "present": 2207
+      },
+      "year": "all"
+    }
+  },
+  "source_sha256": {
+    "returns": "6316c19f52c55181de2743e70c14e267173443b1433027800f5ac7f2b8c3d5ac",
+    "controls": "e4059095d09a6d9bb4570d6df96fbdeb6fb629afd64aade3256c06693c6cae80",
+    "coverage": "09b4672a174f3de96c379f0c26b9713f28ce2ec4f68213fd0dd7c6401382e8d7",
+    "universe": "6579b180b56773a5b8e4c078e15880164b06e709c77e684a04d4fb8cc2180fdf",
+    "selection": "184ec95b33dbcdf2fa4d9181079e3f106aea90e8b75074240cdab3a3fead710a",
+    "protection": "45068aa77268d70878f520ba13ac4bd741c4b3d5cd27e44e0e5f89e19aa4996f",
+    "funded_account": "dcd6e53d6d83405fd34c4a23aa0e3b0b777c894d8b2da71fe66e21e493a80a21",
+    "phase1_selection": "145d94ad644148c615d728d179fe4907da74cf381622ffe224550ad243893242",
+    "phase1_registry_summary": "6a86e8d72d44a11d52cfa13ea31585484dac444ba6f092703cab632f8d68e822",
+    "hfr_matching": "9f0626240f93d4a6ddb1e66c956a3a8f7725b1113f5f7ad9a9faf15f6624c2ea",
+    "hfr_match_rules": "23132c59951517a11dbab64a923de56fa77bacad9e7a7844283128912f54362d",
+    "hfr_cohort_rules": "2de6d25146f5f7fc495abe88dabd6a7b401dde720ddad9f0e38c563c66e75dd4"
+  },
+  "status": "rendered preserved statistics; no new return calculation",
+  "universe_by_year": {
+    "2013": 5710,
+    "2014": 5536,
+    "2015": 5710,
+    "2016": 5676,
+    "2017": 5478,
+    "2018": 5477,
+    "2019": 4919,
+    "2020": 5286,
+    "2021": 5445,
+    "2022": 5176,
+    "2023": 5867,
+    "2024": 6006,
+    "2025": 5629,
+    "2026": 3716
+  },
+  "archive_records": 75631,
+  "archive_initial_candidates_before_staging_filters": 17420,
+  "staging_selection": {
+    "selected": 15813,
+    "exclusions": {
+      "not_initial_candidate": 53070,
+      "protected_or_user_excluded": 3107,
+      "unresolved_source_or_primary": 28,
+      "after_2025": 3613
+    }
+  },
+  "archive_accepted_dates": [
+    "2013-01-02T07:05:17",
+    "2026-09-11T21:57:14"
+  ],
+  "selected_accepted_dates": [
+    "2013-01-02T16:01:54",
+    "2025-12-31T20:35:50"
+  ],
+  "phase1_sample_bridge": {
+    "metadata_initial_registry": 17795,
+    "basic_screened_records": 4673,
+    "first_pair_records": 4440,
+    "scheduled_24_month_events": 2107,
+    "focused_before_schedule": 89,
+    "focused_scheduled": 67,
+    "focused_assigned": 58,
+    "focused_calculated": 56,
+    "base_exclusions": {
+      "outside_candidate_entry_window": 8396,
+      "fails_prior_basic_readiness": 4049,
+      "not_standalone_initial": 187,
+      "protected_human_review_issuer": 490
+    },
+    "history_exclusions": {
+      "previously_observed_pair": 196,
+      "prior_history_in_document": 37
+    },
+    "schedule_exclusions": {
+      "overlapping_issuer_position": 878,
+      "simultaneous_multiple_securities": 3,
+      "insufficient_calendar": 1114
+    },
+    "merged_record_reduction": 338
+  },
+  "cohort_returns_24_month": {
+    "focused": {
+      "calculated": 56,
+      "fraction_beating_benchmark": 0.4107142857142857,
+      "issuer_bootstrap_95": [
+        -0.17340713932478535,
+        0.4042905593026914
+      ],
+      "mean_benchmark": 0.1915358479525591,
+      "mean_excess": 0.08664106840384729,
+      "mean_stock": 0.2781769163564064,
+      "median_excess": -0.1490506980465715,
+      "median_stock": 0.04455008777884517,
+      "scheduled": 67,
+      "statuses": {
+        "assignment:missing_historical_security": 1,
+        "assignment:no_constituent_match": 8,
+        "calculated_common_sample": 56,
+        "original:stock:missing_or_invalid_total_return": 2
+      },
+      "unique_issuers": 56
+    },
+    "other_event_driven": {
+      "calculated": 14,
+      "fraction_beating_benchmark": 0.2857142857142857,
+      "issuer_bootstrap_95": [
+        -0.4355028575863812,
+        0.06505081276455825
+      ],
+      "mean_benchmark": 0.15612650309182033,
+      "mean_excess": -0.20332899575266516,
+      "mean_stock": -0.04720249266084483,
+      "median_excess": -0.36859686812883286,
+      "median_stock": -0.18710942931256302,
+      "scheduled": 22,
+      "statuses": {
+        "assignment:no_constituent_match": 8,
+        "calculated_common_sample": 14
+      },
+      "unique_issuers": 14
+    },
+    "new_other_hfr": {
+      "calculated": 46,
+      "fraction_beating_benchmark": 0.41304347826086957,
+      "issuer_bootstrap_95": [
+        -0.2359281027562933,
+        2.0674572099500907
+      ],
+      "mean_benchmark": 0.190391970289903,
+      "mean_excess": 0.6142738655117757,
+      "mean_stock": 0.8046658358016787,
+      "median_excess": -0.1555351302138091,
+      "median_stock": -0.01601201962559362,
+      "scheduled": 81,
+      "statuses": {
+        "assignment:missing_historical_security": 4,
+        "assignment:no_constituent_match": 30,
+        "calculated_common_sample": 46,
+        "original:stock:missing_or_invalid_total_return": 1
+      },
+      "unique_issuers": 45
+    },
+    "other_unresolved": {
+      "calculated": 578,
+      "fraction_beating_benchmark": 0.3806228373702422,
+      "issuer_bootstrap_95": [
+        -0.12646021620839484,
+        0.059420623298120916
+      ],
+      "mean_benchmark": 0.19073213259415733,
+      "mean_excess": -0.039788829372351925,
+      "mean_stock": 0.1509433032218054,
+      "median_excess": -0.23399254372913236,
+      "median_stock": -0.009829669388898288,
+      "scheduled": 1937,
+      "statuses": {
+        "assignment:missing_historical_security": 212,
+        "assignment:no_constituent_match": 1132,
+        "calculated_common_sample": 578,
+        "original:stock:missing_or_invalid_total_return": 15
+      },
+      "unique_issuers": 558
+    },
+    "expanded": {
+      "calculated": 116,
+      "fraction_beating_benchmark": 0.39655172413793105,
+      "issuer_bootstrap_95": [
+        -0.12352643112535266,
+        0.8760212426018106
+      ],
+      "mean_benchmark": 0.1868086996721063,
+      "mean_excess": 0.26087837675534326,
+      "mean_stock": 0.44768707642744954,
+      "median_excess": -0.16122273519559532,
+      "median_stock": -0.01320099606162578,
+      "scheduled": 170,
+      "statuses": {
+        "assignment:missing_historical_security": 5,
+        "assignment:no_constituent_match": 46,
+        "calculated_common_sample": 116,
+        "original:stock:missing_or_invalid_total_return": 3
+      },
+      "unique_issuers": 115
+    },
+    "all": {
+      "calculated": 694,
+      "fraction_beating_benchmark": 0.38328530259365995,
+      "issuer_bootstrap_95": [
+        -0.09751168323613521,
+        0.14178685795120655
+      ],
+      "mean_benchmark": 0.1900763426532958,
+      "mean_excess": 0.01046678433198905,
+      "mean_stock": 0.20054312698528484,
+      "median_excess": -0.22436456210764716,
+      "median_stock": -0.012135187830397742,
+      "scheduled": 2107,
+      "statuses": {
+        "assignment:missing_historical_security": 217,
+        "assignment:no_constituent_match": 1178,
+        "calculated_common_sample": 694,
+        "original:stock:missing_or_invalid_total_return": 18
+      },
+      "unique_issuers": 665
+    }
+  },
+  "hfr_matching_summary": {
+    "archive_records": 75631,
+    "candidate_rate_among_all_records": 0.041795031138025414,
+    "candidate_rate_among_prior_snapshot_records": 0.06844213489228104,
+    "cohorts": {
+      "all_hfr": {
+        "amendments": 2636,
+        "filings": 3161,
+        "initials": 525
+      },
+      "all_hfr_plus_supplement": {
+        "amendments": 3848,
+        "filings": 4536,
+        "initials": 688
+      },
+      "cross_manager_ambiguous": {
+        "amendments": 10,
+        "filings": 10,
+        "initials": 0
+      },
+      "hfr_supplement_overlap": {
+        "amendments": 0,
+        "filings": 0,
+        "initials": 0
+      },
+      "manager_has_activist": {
+        "amendments": 1101,
+        "filings": 1261,
+        "initials": 160
+      },
+      "manager_has_event_driven": {
+        "amendments": 1509,
+        "filings": 1750,
+        "initials": 241
+      },
+      "new_hfr_links_beyond_previous_screen": {
+        "amendments": 1127,
+        "filings": 1411,
+        "initials": 284
+      },
+      "new_links_beyond_previous_combined": {
+        "amendments": 1127,
+        "filings": 1411,
+        "initials": 284
+      },
+      "no_event_driven_offering_in_matched_managers": {
+        "amendments": 1127,
+        "filings": 1411,
+        "initials": 284
+      },
+      "only_fund_of_funds_managers_matched": {
+        "amendments": 92,
+        "filings": 116,
+        "initials": 24
+      },
+      "other_or_unresolved_after_expansion": {
+        "amendments": 53988,
+        "filings": 71095,
+        "initials": 17107
+      },
+      "previous_hfr_event_driven_screen": {
+        "amendments": 1509,
+        "filings": 1750,
+        "initials": 241
+      },
+      "snapshot_not_strictly_before_acceptance_date": {
+        "amendments": 1,
+        "filings": 2,
+        "initials": 1
+      },
+      "supplement": {
+        "amendments": 1212,
+        "filings": 1375,
+        "initials": 163
+      }
+    },
+    "fund_observations": 217954,
+    "historical_firm_ids": 3372,
+    "latest_firm_ids": 1601,
+    "matched_firm_ids": 180,
+    "observations_missing_firm_id": 0,
+    "prior_snapshot_counts": {
+      "no_prior_snapshot": 29446,
+      "with_prior_snapshot": 46185
+    },
+    "returns_recalculated": false,
+    "snapshot_count": 35,
+    "strategy_counts": {
+      "Equity Hedge": {
+        "amendments": 780,
+        "filings": 982,
+        "initials": 202
+      },
+      "Event-Driven": {
+        "amendments": 1509,
+        "filings": 1750,
+        "initials": 241
+      },
+      "Fund of Funds": {
+        "amendments": 757,
+        "filings": 897,
+        "initials": 140
+      },
+      "Macro": {
+        "amendments": 41,
+        "filings": 54,
+        "initials": 13
+      },
+      "Relative Value": {
+        "amendments": 1165,
+        "filings": 1341,
+        "initials": 176
+      },
+      "Risk Parity": {
+        "amendments": 27,
+        "filings": 39,
+        "initials": 12
+      },
+      "Risk Premia: Credit": {
+        "amendments": 0,
+        "filings": 1,
+        "initials": 1
+      },
+      "Risk Premia: Multi-Asset": {
+        "amendments": 2,
+        "filings": 3,
+        "initials": 1
+      }
+    },
+    "strategy_fund_observations": {
+      "Blockchain": 2181,
+      "Cryptocurrency/Blockchain": 1150,
+      "Equity Hedge": 85025,
+      "Event-Driven": 16122,
+      "Fund of Funds": 22922,
+      "HFR": 6,
+      "HFRA": 20,
+      "HFRB": 98,
+      "HFRC": 2,
+      "HFRI": 3809,
+      "HFRI4": 396,
+      "HFRI5": 891,
+      "HFRII": 416,
+      "HFRIN": 216,
+      "HFRL": 15,
+      "HFRN": 2,
+      "HFRP": 220,
+      "HFRT": 2,
+      "HFRU": 325,
+      "HFRX": 3049,
+      "Macro": 36475,
+      "Relative Value": 41262,
+      "Risk Parity": 1025,
+      "Risk Premia: Commodity": 343,
+      "Risk Premia: Credit": 228,
+      "Risk Premia: Currency": 119,
+      "Risk Premia: Equity": 190,
+      "Risk Premia: Multi-Asset": 1129,
+      "Risk Premia: Rates": 72,
+      "Risk Premia: Volatility": 244
+    },
+    "verified_economic_manager_count": null
+  }
+}
