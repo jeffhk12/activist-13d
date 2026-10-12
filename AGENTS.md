@@ -6,6 +6,8 @@ Before writing project chat explanations, updates, reports, proposals, dashboard
 or handoffs, read and follow [the output standard](research/OUTPUT-STANDARD.md).
 Lead with the investment question and plain-English meaning for Jeff's investment
 research and performance background; put technical evidence after the explanation.
+For ML and LLM work, teach each new concept as it is used, following the output
+standard's teaching guidance; Jeff is learning the methods through this project.
 
 ## Workspace organization
 

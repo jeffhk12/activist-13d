@@ -17,6 +17,19 @@ basic investment concepts unnecessarily. Explain project-specific data decisions
 statistical methods and software terminology when they affect interpretation.
 Plain English should preserve precision, not remove the reasoning.
 
+### Teaching machine learning as the project progresses
+
+Jeff requested explicit teaching on October 12, 2026. Treat ML and LLM methodology
+as material to learn from foundations, while retaining the investment calibration
+above. Before using a new method or concept, explain it in plain language, give a
+small 13D example, and connect it to the current modeling decision. Introduce
+features, targets, losses, training, validation, regularization and neural-network
+architecture when needed rather than assuming familiarity. Build intuition before
+equations or code, then explain what each implementation step measures. Keep lessons
+short and tied to the work; allow questions and revisit concepts as they recur.
+When reporting model results, explain how the metric was calculated and what it
+can establish. Record unresolved learning questions alongside the experiment.
+
 ## Required order of explanation
 
 1. **Investment question:** What are we trying to learn or decide?

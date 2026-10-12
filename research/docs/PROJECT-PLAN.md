@@ -1,6 +1,73 @@
-# Activist 13D Investment Strategy Project Plan
+# Activist 13D Machine Learning Class Project Plan
 
-## Current direction — September 24, 2026
+## Current priority — October 12, 2026
+
+**User-confirmed objective:** this is a machine learning class project. The central
+question is whether supervised learning improves investment selection after an
+initial 13D disclosure, and whether adding information extracted from filing text
+improves the same models. LLM processing supports feature construction and measurement.
+The main deliverable is a credible comparison of ML methods and information sets;
+positive investment performance is not required for project success.
+
+Existing Phase 1 research supplies context and comparison rules. Simple following
+and a possible top-quartile manager rule are benchmarks. A separate manager-ranking
+strategy is not a prerequisite for the first ML experiment. HFR reported performance
+and prior disclosure-following returns are distinct potential features, each requiring
+historical identity and availability checks.
+
+### Deterministic processing and LLM interpretation
+
+| Component | Role | Evidence requirement |
+|---|---|---|
+| Deterministic processing | Recover explicit identifiers, dates and separate ownership rows; construct prior histories and lagged company features; validate schemas and citations | Versioned rules and reproducible source-backed outputs; deterministic extraction can still be wrong or incomplete |
+| LLM interpretation | Interpret ownership relationships and stated Item 4 objectives; convert them into structured ML inputs | Supporting passages, actor/company attribution, explicit uncertainty and separate human-reference evaluation |
+| LLM variability assessment | Measure changes in features and downstream predictions across repeated interpretations on a bounded development sample | Fixed input/prompt/model/settings, archived outputs and a predeclared aggregation/abstention rule; agreement measures stability, not correctness |
+
+Code can deterministically validate, normalize and replay saved LLM outputs; that
+does not make fresh interpretation deterministic. Treat stochastic variation as
+extraction/measurement uncertainty, separate from future-return uncertainty and
+downstream training-seed variation. Repeated-run category frequencies are not
+calibrated probabilities of truth. Repetition count and settings remain proposed;
+changed extraction behavior requires a new protocol before use.
+
+### Central ML comparisons and next work
+
+Begin with regularized regression and gradient-boosted trees. A small feedforward
+neural network is now a central planned method, per Jeff's October 12 preference,
+with capacity constrained by usable sample size. Compare it with the simpler methods
+to measure its contribution. Neural-network recency is not the selection criterion.
+If classification is selected, use a regularized logistic baseline. The target,
+horizon and regression-versus-classification choice remain to be frozen.
+
+Compare each model on (A) deterministic structured features, (B) those features
+plus validated LLM-assisted ownership/identity information, and (C) the same
+preparation plus validated intent features. This separates improved attribution
+from the contribution of intentions. Use comparable samples, chronological folds,
+tuning budgets and investment rules; report coverage changes separately.
+Out-of-sample prediction/ranking performance is the central class result;
+extraction quality supports it, and after-cost investment results assess economic
+relevance. Negative or inconclusive incremental results remain valid outcomes.
+
+**Next deliverable:** an ML experiment specification and usable-panel assessment:
+observation unit, candidate target/horizon, dated feature dictionary, security/manager
+links, matured outcome counts by year and chronological development folds. Two-year
+labels must finish before their training cutoff; address overlapping outcomes and
+fit preprocessing within training folds. Previously inspected history remains
+development data. Start the deterministic-feature ML baseline before expanding
+LLM processing, then add a bounded validated extraction comparison. Aratana
+accounting remains a separate limitation on affected portfolio results.
+
+This priority update supersedes older sequencing for current work. It changes no
+frozen protocols, prior returns, source evidence, human answers or investor lists.
+No model fitting or LLM calls have been run; paid model APIs remain off.
+
+Method references: [regularized models](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)
+and [chronological validation](https://scikit-learn.org/stable/modules/cross_validation.html#time-series-split).
+Ordinary time-series splitting alone does not resolve outcome maturity or overlapping
+windows. Preserve the [extraction workflow](../protocol/extraction-workflow-v1.md)
+and [V4 proposal](PROFESSOR-PROPOSAL-v4.md) as supporting records.
+
+## Preserved direction and progress — September 24, 2026
 
 **Final Phase 1 historical conclusion published:** [Final conclusion](PHASE1-FINAL-CONCLUSION-20260924.md). The simple-following baseline is established, with mixed evidence and no demonstrated reliable investable edge. Historical research is concluded with explicit qualifications; Aratana remains an open accounting exception and the primary longer-horizon account is not complete. Elanco's acquisition-completion 8-K confirms replacement shares and a contingent value right, not a simple cash exit; no revised proceeds or exit policy implemented. Preserve results and investor lists. Future work: source-backed accounting addendum; structured-data ML; incremental NLP; separate amendment-driven strategy tests and prospective registration. No claim of fresh confirmation.
 
