@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>13D machine learning experiment and learning plan</title>
+<style>body{font:17px/1.6 system-ui,sans-serif;color:#203448;background:#f4f6f8;margin:0}main{max-width:960px;margin:36px auto;padding:24px;background:white}h1{font-size:30px}h2{font-size:23px;margin-top:32px}table{border-collapse:collapse;width:100%;font-size:15px}th,td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid #dde3e8}th{background:#edf3f7}a{color:#155c99}.note{background:#edf3f7;padding:16px}code{overflow-wrap:anywhere}li{margin:8px 0}</style></head>
+<body><main>
+<h1>13D machine learning experiment and learning plan</h1>
+<p>October 12, 2026 | Draft experiment design and completed coverage assessment</p>
+<p><strong>Can a neural network improve investment selection after an initial 13D, and does LLM-extracted information improve its predictions?</strong> Compare a small feedforward network with simpler supervised methods. Learn the methods through the implementation. Existing return research supplies development labels and economic comparisons; the experiment specification remains to be frozen before fitting.</p>
+
+<h2>Four investment decisions and the model target</h2>
+<p>A <strong>feature</strong> is an input known at the decision time. A <strong>target</strong> is the answer attached to a historical training example. A <strong>prediction</strong> is the model's estimate for a new example. A <strong>policy</strong> converts estimates into actions under costs and risk limits.</p>
+<table><thead><tr><th>Investment decision</th><th>First experiment</th><th>Possible later learning task</th></tr></thead><tbody>
+<tr><td>Whether to invest</td><td>Predict benchmark-relative return, then apply a predeclared selection rule</td><td>Classification of a defined investment outcome or utility-based selection</td></tr>
+<tr><td>How long to hold</td><td>Use a specified holding period; two years is the proposed primary target</td><td>Predict returns at several horizons on a consistent entry sample and compare horizon policies</td></tr>
+<tr><td>When to enter</td><td>Use the existing delayed-entry convention consistently</td><td>Predict results for specified entry delays using only information available at each decision</td></tr>
+<tr><td>How much to allocate</td><td>Retain 5% position targets and existing liquidity/risk constraints</td><td>Use validated return/risk estimates in an allocation rule; directly learned sizing requires its own objective and constraints</td></tr>
+</tbody></table>
+<p>These decisions jointly define a strategy, but do not automatically supply one supervised-learning label. Historical returns do not uniquely establish the best size or timing: a larger winning position also consumes capital and increases risk. A joint action model requires defined utility, constraints and comparable action outcomes. The first experiment isolates selection so we can understand and measure it.</p>
+
+<h2>The broader 13D universe remains available</h2>
+<p>Use the broader eligible, covered 13D universe for the first model, with focused activists as a separately reported subgroup. Unknown investor identity remains unknown. A missing HFR link does not establish that a filer is not a hedge fund or activist. Investor features must pass historical-availability checks before use.</p>
+<table><thead><tr><th>Existing two-year cohort</th><th>Valid Russell-relative events</th><th>Single-filing events with prepared facts</th></tr></thead><tbody>
+<tr><td>Focused activist candidates</td><td>56</td><td>55</td></tr>
+<tr><td>Other Event-Driven candidates</td><td>14</td><td>12</td></tr>
+<tr><td>Other HFR candidates</td><td>46</td><td>44</td></tr>
+<tr><td>Other / unresolved identities</td><td>578</td><td>556</td></tr>
+<tr><td>Total, disjoint groups</td><td>694</td><td>667</td></tr>
+</tbody></table>
+<p>The frozen two-year schedule contains 2,107 events. Of these, 694 have calculated common stock/Russell labels; 27 of those combine multiple filings and need a feature-aggregation rule, leaving 667 single-filing candidates. These are events, not independent managers or verified campaigns. The factual staging set has 15,813 filings from 2013-2025, but current return schedules begin in 2018. Broader benchmark/security coverage or earlier labels require new work.</p>
+<p>Missing labels remain missing. Most scheduled events lack a Russell assignment. Training on the covered subset may change the population we can describe, so report exclusions and coverage by year and investor group. Matched filing receipts and fact hashes establish artifact availability, not completed security joins or semantic correctness.</p>
+
+<h2>Training data must be available at the training date</h2>
+<p>For a two-year target, a late-2022 filing cannot teach a model predicting in early 2023. Its outcome is still in the future. The following counts use only completed earlier labels; they are candidate development folds before feature checks and inner validation.</p>
+<table><thead><tr><th>Prediction year</th><th>Completed earlier training events</th><th>Prediction events with eventual labels</th><th>Issuers shared across the two groups</th></tr></thead><tbody>
+<tr><td>2021</td><td>118</td><td>106</td><td>3</td></tr>
+<tr><td>2022</td><td>254</td><td>110</td><td>6</td></tr>
+<tr><td>2023</td><td>365</td><td>86</td><td>6</td></tr>
+</tbody></table>
+<p>There are no matured two-year training labels at January 1, 2020 in this schedule, and no fully followed 2024 entry events. A one-year alternative has 843 single-filing candidates and more completed training history, but horizon schedules differ. Horizon choice must reflect the research question and feasibility rather than observed profits. Treat previously examined outcomes as development history, including predictions evaluated outside their training folds; they are not an untouched final holdout.</p>
+
+<h2>Model comparison and what each method teaches</h2>
+<table><thead><tr><th>Method</th><th>Intuition</th><th>Role</th></tr></thead><tbody>
+<tr><td>Training-mean baseline</td><td>Predict the average known training outcome for every new example</td><td>Check whether learning features helps at all</td></tr>
+<tr><td>Regularized regression</td><td>Combine features with learned weights while penalizing excessive weights</td><td>Transparent supervised comparison</td></tr>
+<tr><td>Gradient-boosted trees</td><td>Combine small decision trees that successively improve predictions</td><td>Comparison for nonlinear relationships and interactions</td></tr>
+<tr><td>Small feedforward neural network</td><td>Learn weighted combinations of inputs through a hidden layer and a prediction output</td><td>Central neural method, with capacity constrained by the sample</td></tr>
+</tbody></table>
+<p>Start with a continuous return target rather than inventing an invest/not-invest label from hindsight. The proposed first output is 504-session cumulative stock return minus its assigned Russell ETF-proxy return. Consider one small hidden layer; freeze architecture, regularization, loss, seeds and tuning budget after counting features and usable inner folds. A neural network's method is learned from training examples; being newer is not evidence of better performance.</p>
+<p>Teach <strong>loss</strong> as the error the model tries to reduce; <strong>overfitting</strong> as learning historical quirks that fail on new examples; and <strong>regularization</strong> as limiting that flexibility. Fit scaling, imputation and any feature selection using training observations only. Use chronological inner validation for tuning and stopping, not a random early-stopping split. Specify dependencies between issuers/managers and overlapping return windows explicitly.</p>
+<p>Proposed reported metrics are mean absolute prediction error, root mean squared error and rank correlation, alongside the mean-prediction baseline and results by fold. Ranking asks whether higher predictions identify better subsequent outcomes. Economic evaluation translates a frozen selection rule into portfolio results with existing costs, cash and capacity constraints. Aratana accounting remains a limitation on affected funded accounts.</p>
+
+<h2>Deterministic and LLM feature experiments</h2>
+<ol><li><strong>A: deterministic features.</strong> Filing facts and strictly prior history, plus verified pre-entry company features as they become ready. Keep reporter ownership separate; CIKs are identifiers, not numerical magnitudes. Preserve missingness and distinguish source gaps from zero values.</li>
+<li><strong>B: A plus ownership/identity interpretation.</strong> Add validated, evidence-backed LLM information about attribution and overlapping holdings.</li>
+<li><strong>C: B plus stated intentions.</strong> Add validated Item 4 categories with actor and company attribution. Compare identical model families, folds and tuning budgets on common observations; separately report changes in usable coverage.</li></ol>
+<p>Use a bounded, human-reviewed extraction pilot before expanding. Record model/prompt/settings and each raw interpretation. Repeated extraction can measure disagreement and how it changes model results; disagreement is measurement uncertainty, and agreement does not prove correctness. Preserve empirical label distributions and abstentions without calling them calibrated probabilities. A proposed repeat scheme requires a new versioned protocol and has not been run.</p>
+
+<h2>Learning sequence and remaining decisions</h2>
+<p>At each implementation step, explain one new concept, show a small 13D example, connect it to the code, and interpret the resulting diagnostic. Begin with features/targets and chronological training; then regression and loss; then hidden layers, activations, gradient descent and backpropagation; then validation, regularization, comparisons and LLM measurement uncertainty. Learn equations and code after the intuition is clear.</p>
+<p>The course syllabus emphasizes deep learning and financial predictive analytics and states that LLM topics are outside its coverage. Jeff selected a neural-network method on October 12. No exact submission date or compulsory architecture is specified in the supplied syllabus. The remaining consequential choices are the primary horizon and whether the first experiment fixes timing/sizing while isolating selection. Architecture, feature definitions and fold feasibility can be resolved through a bounded technical design before fitting.</p>
+<p class="note"><strong>Next:</strong> verify the candidate feature join and feature availability, settle those modeling choices, then create the frozen first-experiment protocol. The coverage assessment is complete and replays exactly. No supervised model has been fitted and no LLM extraction has been started by this work.</p>
+
+<h2>Supporting evidence</h2>
+<ul><li><a href="../runs/ml-feasibility/20261012-v1/summary.json">Coverage by horizon and status</a> and <a href="../runs/ml-feasibility/20261012-v1/candidate-folds.csv">candidate training folds</a></li>
+<li><a href="../runs/ml-feasibility/20261012-v1/event-coverage.csv">Event-level coverage ledger</a> and <a href="../runs/ml-feasibility/20261012-v1/provenance.json">source and artifact hashes</a></li>
+<li><a href="../../scripts/ml_experiment/assess_existing_labels.py">Re-runnable coverage assessment with estimator/refusal checks</a></li>
+<li><a href="../runs/phase1-baseline/20260924-long-horizon-analysis-v1/outcomes.json">Frozen outcomes</a>: cohort table counts calculated-common-sample events by disjoint_cohort, then filters accessions to length one</li>
+<li><a href="PROJECT-PLAN.md">Current project priorities</a> and <a href="PHASE2-DETAILED-PROGRESS-20260925.md">factual preparation and limitations</a></li>
+<li><a href="/Users/jefflu/Library/CloudStorage/OneDrive-Personal/Documents/MSQF Fordham/Fall 2026/00_Semester_Admin/Syllabi/Advanced_Machine_Learning_Syllabus_Fall_2026.pdf">Supplied course syllabus</a></li>
+<li><a href="https://scikit-learn.org/stable/modules/cross_validation.html#time-series-split">Chronological validation documentation</a> and <a href="https://scikit-learn.org/stable/modules/neural_networks_supervised.html">feedforward neural-network documentation</a></li></ul>
+<p>AI-assisted design, writing and local tooling. Prior evidence and human review records are preserved.</p>
+</main></body></html>

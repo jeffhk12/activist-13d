@@ -30,6 +30,12 @@ short and tied to the work; allow questions and revisit concepts as they recur.
 When reporting model results, explain how the metric was calculated and what it
 can establish. Record unresolved learning questions alongside the experiment.
 
+Each completed ML stage ends with a catch-up checkpoint: what changed, why,
+the method with a small example, verification, limits and the next step. Maintain
+[the learning checkpoints](docs/ml-checkpoints.html) as the current index and link
+its dated evidence. Keep learning questions optional. Explain a new model's method
+before interpreting its results, and give major modeling stages separate checkpoints.
+
 ## Required order of explanation
 
 1. **Investment question:** What are we trying to learn or decide?

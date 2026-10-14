@@ -2,6 +2,45 @@
 
 ## Current priority — October 12, 2026
 
+**Professor update:** The four-page [Machine Learning brief](professor-discussion-20261013/13D_Machine_Learning_Brief_20261013.pdf)
+remains focused on supervised methods and neural-network evaluation. Jeff requested
+that the Private Markets discussion center on the data idea. The revised two-page
+[13D data discussion](professor-discussion-20261013/13D_Data_Research_Discussion_20261013.pdf)
+asks for input on HFR investor definitions, observation construction, broader sample
+coverage, deterministic and LLM extraction, and industry relevance. The one-page
+[speaking guide](professor-discussion-20261013/13D_Five_Minute_Speaking_Notes_20261013.pdf)
+budgets three minutes of explanation and two for feedback; [timed notes and sources](professor-discussion-20261013/five-minute-discussion.html)
+provide the supporting evidence. Existing ML and earlier valuation PDFs are preserved.
+The inherited portfolio non-overlap filter is flagged for discussion, not changed
+in the frozen sample or protocol. No predictive model or LLM contribution is claimed.
+
+**Checkpoint 2 completed:** [Learning checkpoints](ml-checkpoints.html) now provide
+the catch-up sequence Jeff requested. The [preprocessing lesson](../runs/ml-preprocessing/20261012-v1/index.html)
+records three chronological input preparations with training-only medians, log
+transforms, scaling, category encoding and constant-column masks. The 2023 fold
+has 365 earlier training events, 86 later events and 69 encoded columns. Original
+missingness is retained; no numerical targets were read and no predictive model
+was fitted. Next freeze the first predictive experiment and comparisons, then
+train a small neural network with separate method/results checkpoints.
+
+**Feature preview completed:** [Inputs, targets and lesson](../runs/ml-feature-preview/20261012-v1/index.html).
+All 667 single-filing two-year candidates join to source-checked facts, prior histories
+and dated size/industry observations. Ten input columns are separated from future
+targets and diagnostic investor cohorts. Ownership summaries are present for 557
+events; 110 are missing, including 14 unresolved security-attribution cases. Frozen
+source hashes, exact citations, issuer/reporter joins and pre-disclosure dates pass;
+this is candidate data preparation, not certified semantic extraction or model
+performance. Next review the gaps and freeze the first model's preprocessing,
+chronological validation and capacity settings before fitting. Missing inputs remain
+missing in preparation; fill/scaling rules must be learned within training folds.
+
+[Current ML experiment and learning plan](ml-experiment-20261012.html) records the
+neural-network preference, teaching approach, four investment decisions and completed
+coverage assessment. The broader eligible 13D universe includes unresolved investor
+identities; focused activist candidates are a separately reported subgroup. Current
+two-year single-filing candidates number 667, including 55 focused candidates, before
+feature validation. The first-experiment target and trading-policy choices remain draft.
+
 **User-confirmed objective:** this is a machine learning class project. The central
 question is whether supervised learning improves investment selection after an
 initial 13D disclosure, and whether adding information extracted from filing text
