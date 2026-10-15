@@ -1,0 +1,42 @@
+{
+  "outputs": {
+    "13D_Data_Research_Discussion_20261013.pdf": {
+      "pages": 2,
+      "sha256": "b597f54583aa85e37e6d3d237926e69a4b43529c8a61aa29b2f5ed66c33c01bc",
+      "body_bounds": [
+        {
+          "page": 1,
+          "lowest_body_from_top": 687.89
+        },
+        {
+          "page": 2,
+          "lowest_body_from_top": 683.49
+        }
+      ]
+    },
+    "13D_Five_Minute_Speaking_Notes_20261013.pdf": {
+      "pages": 1,
+      "sha256": "fe2f7ff5c2005503778039f8dcd21c21f3192d6038d558311e8f337481d8627c",
+      "body_bounds": [
+        {
+          "page": 1,
+          "lowest_body_from_top": 645.69
+        }
+      ]
+    }
+  },
+  "source_hashes": "pass",
+  "earlier_pdfs": "byte-for-byte preserved",
+  "public_source_pdf_links": "all four present",
+  "visual_review": "passed: both handout pages and the speaking-guide page inspected after final build",
+  "rendered_pages": [
+    "qa/data-discussion-final-1.png",
+    "qa/data-discussion-final-2.png",
+    "qa/five-minute-final-1.png"
+  ],
+  "local_links": {
+    "five-minute-discussion.html": 19,
+    "discussion-notes.html": 17,
+    "START-HERE.html": 6
+  }
+}

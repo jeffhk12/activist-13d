@@ -1,0 +1,53 @@
+{
+  "version": "ml-baselines-v1",
+  "frozen_on": "2026-10-15",
+  "status": "frozen before the first predictive baseline fit; previously inspected development history",
+  "purpose": "Checkpoint 3: establish transparent deterministic-feature prediction comparisons before the neural network and LLM additions",
+  "user_direction": "Continue the current design; no professor-requested changes, confirmed 15 October 2026",
+  "input_contracts": ["ml-feature-preview-v1", "ml-preprocessing-v1"],
+  "observation": "Use the existing 667 single-filing, first-observed issuer-entry event candidates and their inherited 504-session schedule. Preserve human-review exclusions, coverage restrictions, deferred merged events and issuer non-overlap rules. Do not reinterpret a row as a validated independent campaign.",
+  "population": "All covered investor groups, including other/unresolved; HFR groups, issuer IDs and reporter IDs are diagnostics only, never model inputs",
+  "target": {
+    "column": "target_russell_excess_504",
+    "formula": "frozen cumulative stock total return minus assigned Russell ETF-proxy cumulative return",
+    "unit": "decimal cumulative return difference; report errors multiplied by 100 in percentage points",
+    "horizon_sessions": 504,
+    "entry_rule": "Inherited delayed entry at the opening of the second exchange session after public acceptance; entry counts as session one",
+    "return_conventions": "Inherit phase1-long-horizon-v1 and phase1-rebuild-v1 event-return conventions. Read frozen labels, do not recompute returns. This is an event-level gross target, not a funded-account result or risk-adjusted alpha.",
+    "missing": "Refuse absent, nonfinite or misaligned labels; never replace a missing outcome with zero",
+    "transforms": "No target clipping, winsorization, scaling, log transform or selection based on outcomes"
+  },
+  "prediction_years": [2021, 2022, 2023],
+  "training": "entry and scheduled label_end both strictly before January 1 of prediction year; one model fitted at the beginning of each year",
+  "evaluation": "All covered entries in that prediction calendar year, scored using eventual labels. These are chronological development evaluations, not untouched final tests or prospective forecasts.",
+  "expected_fold_counts": [[2021, 118, 106, 51], [2022, 254, 110, 63], [2023, 365, 86, 69]],
+  "preprocessing": "Reuse and independently reconstruct the checkpoint-2 training-only matrices and fitted states exactly; transformations and column masks must agree before any model fits",
+  "models": [
+    {"name": "training_mean", "formula": "predict mean of matured training y for every later row", "role": "primary naive comparison; no feature discrimination"},
+    {"name": "zero_excess", "formula": "predict 0 for every row", "role": "secondary zero benchmark-relative return reference"},
+    {"name": "ridge", "formula": "minimize mean((y - b - X beta)^2) + lambda * sum(beta^2)", "lambda": 1.0, "intercept_penalized": false, "fit": "Center training X and y; solve (Xc.T Xc + n*lambda*I) beta = Xc.T yc, then b = mean(y) - mean(X) beta", "role": "first feature-based supervised method; fixed untuned reference"}
+  ],
+  "regularization_choice": "lambda=1 is a declared first reference, not an estimated optimal setting. Numeric inputs retain checkpoint-2 scaling; binary industry and missingness columns are not rescaled. Standard sum-of-squares Ridge alpha would equal n*lambda, not lambda.",
+  "tuning": "None in checkpoint 3: no grid search, no early stopping, no random split and no use of evaluation labels to choose features, penalties or model specifications. A future tuned experiment requires separately defined matured inner folds and a new protocol.",
+  "primary_metric": "RMSE = sqrt(mean((prediction - target)^2)); lower is better",
+  "secondary_metrics": ["MAE = mean(abs(prediction - target))", "Spearman correlation using average ranks for ties, within each prediction year; refuse constant or fewer-than-two inputs", "MSE skill versus training_mean = 1 - model SSE / training_mean SSE, on identical scored rows; not conventional R-squared"],
+  "aggregation": "Pool event errors across the three disjoint prediction-entry years, weighting each event equally. Compute pooled RMSE from pooled squared errors, not an average of yearly RMSE. Do not pool rank correlations across years. Report every fold, not only the best.",
+  "diagnostics": "Report target distributions, training versus later loss, shared issuer/reporter counts, unknown industry coverage and concentration of evaluation squared error. No trimming, exclusions or model changes based on these diagnostics.",
+  "investor_subgroups": "Report pooled diagnostics for all four pre-existing disjoint groups with n. Small groups are descriptive; do not choose investor inclusion based on these results.",
+  "dependence": "Outcomes overlap across events and prediction years; issuers/reporters may recur. No IID confidence intervals, significance claims, shuffled folds or independent-sample claims. Training outcomes must end before the forecast-year cutoff.",
+  "execution": "Offline NumPy float64 linear algebra; no stochastic fitting, no paid API, no LLM, no stock orders and no neural network in this checkpoint. Snapshot this protocol, code, inputs and environment before fitting; persist predictions before scoring evaluation labels.",
+  "reproducibility": "Byte-exact replay in the recorded environment; cross-environment numerical parity within atol=1e-10 and rtol=1e-10. Fail on stale source hashes, changed row order, invalid dates, wrong dimensions or nonfinite matrices/predictions.",
+  "limits": [
+    "Covered outcome availability and inherited portfolio scheduling restrict the research population; all archive filings are not independent labeled observations.",
+    "Rule-based extraction is not certified semantic accuracy; missing-value fills remain computational placeholders.",
+    "Dated market history does not certify original vendor publication timing.",
+    "Historical labels were inspected in prior research; no untouched evaluation is created here.",
+    "Prediction errors and correlations are not evidence of after-cost investment performance; portfolio evaluation and the separate Aratana accounting exception remain outside this checkpoint.",
+    "A fixed ridge baseline does not establish that other penalties, nonlinear models or neural networks cannot work. Negative results must remain visible."
+  ],
+  "method_sources": [
+    "https://scikit-learn.org/stable/modules/linear_model.html#ridge-regression-and-classification",
+    "https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics",
+    "https://numpy.org/doc/stable/reference/generated/numpy.linalg.solve.html"
+  ]
+}

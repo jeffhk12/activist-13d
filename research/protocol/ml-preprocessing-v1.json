@@ -1,0 +1,16 @@
+{
+  "version": "ml-preprocessing-v1",
+  "status": "frozen preprocessing-only development contract; no predictive fitting or target selection",
+  "input_contract": "ml-feature-preview-v1",
+  "prediction_years": [2021, 2022, 2023],
+  "train_rule": "entry strictly before January 1 of prediction year AND label_end strictly before that date",
+  "later_rows_rule": "entry within prediction calendar year; previously examined development observations, not a final holdout",
+  "log1p_columns": ["snapshot_security_market_cap_usd", "parsed_reporting_person_count", "filing_event_lag_calendar_days", "header_reporter_count", "prior_header_submission_count_max", "prior_header_other_issuer_count_max", "prior_issuer_other_reporter_count"],
+  "imputation": "Median of observed transformed training values per numerical column. Preserve a missing flag for every numerical column before filling. A column missing throughout training contributes no numerical signal.",
+  "scaling": "Subtract mean and divide by population standard deviation of imputed transformed training values, ddof=0. Use scale 1 for constant columns.",
+  "categorical": "One binary column per industry category observed in training, in sorted order. Unseen or missing later categories encode as all zero and are recorded in diagnostics.",
+  "constant_columns": "Remove columns with no variation in the encoded training table; apply the same saved mask later. Retain source missingness and dropped-column names in diagnostics.",
+  "transforms": "No clipping, winsorization, learned target transform or outcome-driven feature selection. Fit medians, means, scales, category vocabulary and constant mask only on training inputs; read no numerical targets.",
+  "reuse": "Re-fit for each chronological fold and every later inner validation fold; never re-fit on the later evaluation rows.",
+  "scope_limits": "Preprocessing does not certify extraction accuracy, point-in-time vendor publication, valid neural-network tuning folds, investment performance or an independent final evaluation."
+}

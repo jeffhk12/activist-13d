@@ -1,0 +1,21 @@
+{
+  "failed": 0,
+  "failure_reasons": {},
+  "field_statuses": {
+    "ambiguous": 7308,
+    "invalid_format": 68958,
+    "not_found_in_supplied_text": 153471,
+    "present": 1042260
+  },
+  "pending": 0,
+  "processed": 15813,
+  "selected_initial_filings": 15813,
+  "selection_exclusions": {
+    "after_2025": 3613,
+    "not_initial_candidate": 53070,
+    "protected_or_user_excluded": 3107,
+    "unresolved_source_or_primary": 28
+  },
+  "status": "completed",
+  "updated_utc": "2026-09-25T02:42:09.837045+00:00"
+}

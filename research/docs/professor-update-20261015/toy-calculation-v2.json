@@ -1,0 +1,29 @@
+{
+  "status": "invented teaching example; no model fit",
+  "x": 2.0,
+  "w": 0.5,
+  "b": 0.0,
+  "v": 0.1,
+  "c": 0.0,
+  "y": 0.2,
+  "lambda": 0.01,
+  "z": 1.0,
+  "h": 1.0,
+  "prediction": 0.1,
+  "error": -0.1,
+  "loss": 0.012600000000000002,
+  "gradients": {
+    "v": -0.198,
+    "c": -0.2,
+    "w": -0.030000000000000006,
+    "b": -0.020000000000000004
+  },
+  "illustrative_gradient_descent_rate": 0.1,
+  "after_step": {
+    "v": 0.1198,
+    "c": 0.020000000000000004,
+    "w": 0.503,
+    "b": 0.0020000000000000005
+  },
+  "after_prediction": 0.1407584
+}

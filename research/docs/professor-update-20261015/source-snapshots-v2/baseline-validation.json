@@ -1,0 +1,28 @@
+{
+  "recorded_on": "2026-10-15",
+  "scope": "Post-fit validation companion; preserves the 13 calculation artifacts",
+  "offline_suite": {
+    "command": "PYTHONNOUSERSITE=1 PYTHONIOENCODING=utf-8 .venv/bin/python -m pytest -m 'not network'",
+    "exit_code": 0,
+    "passed": 250,
+    "deselected": 1
+  },
+  "new_code_lint": {
+    "command": "PYTHONNOUSERSITE=1 PYTHONIOENCODING=utf-8 .venv/bin/python -m ruff check scripts/ml_experiment/run_baselines.py scripts/ml_experiment/verify_baselines.py tests/test_ml_baselines.py",
+    "exit_code": 0,
+    "status": "passed"
+  },
+  "repository_wide_lint": {
+    "command": "PYTHONNOUSERSITE=1 PYTHONIOENCODING=utf-8 .venv/bin/python -m ruff check .",
+    "exit_code": 1,
+    "findings": 263,
+    "scope": "Existing findings in other files; none in the new checkpoint scripts or tests. No unrelated lint rewrites performed."
+  },
+  "replay": {
+    "command": "PYTHONNOUSERSITE=1 PYTHONIOENCODING=utf-8 .venv/bin/python scripts/ml_experiment/run_baselines.py --output research/runs/ml-baselines/20261015-v1 --verify",
+    "exit_code": 0,
+    "exact_artifacts": 13
+  },
+  "independent_arithmetic_audit": "verification.json",
+  "remote_ci_claimed": false
+}

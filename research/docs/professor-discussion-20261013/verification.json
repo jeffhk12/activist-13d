@@ -1,0 +1,76 @@
+{
+  "pdfs": {
+    "13D_Machine_Learning_Brief_20261013.pdf": {
+      "pages": 4,
+      "sha256": "cccecebcbdfb255e2b24e236c6fc8cbf9af877972e6823c103f8ed0d68f561db"
+    },
+    "13D_Private_Markets_Modeling_Brief_20261013.pdf": {
+      "pages": 4,
+      "sha256": "3ab2c447fac2ec001af9c40efaa9cfb9dcebf4e6c5cfed83498439efa0d5cf6b"
+    }
+  },
+  "python": "3.12.14",
+  "packages": {
+    "reportlab": "4.4.9",
+    "pypdf": "6.10.0",
+    "pdfplumber": "0.11.9"
+  },
+  "checks": "source counts and illustrative scenario arithmetic pinned; rendered review pending",
+  "visual_review": "passed: all eight final page renders inspected",
+  "source_hashes_checked": true,
+  "local_links_checked": 13,
+  "body_bounds": {
+    "13D_Machine_Learning_Brief_20261013.pdf": [
+      {
+        "page": 1,
+        "min_x": 40.0,
+        "max_x": 556.96,
+        "lowest_body_from_top": 608.59
+      },
+      {
+        "page": 2,
+        "min_x": 40.0,
+        "max_x": 563.53,
+        "lowest_body_from_top": 604.79
+      },
+      {
+        "page": 3,
+        "min_x": 40.0,
+        "max_x": 572.0,
+        "lowest_body_from_top": 612.99
+      },
+      {
+        "page": 4,
+        "min_x": 40.0,
+        "max_x": 572.0,
+        "lowest_body_from_top": 695.59
+      }
+    ],
+    "13D_Private_Markets_Modeling_Brief_20261013.pdf": [
+      {
+        "page": 1,
+        "min_x": 40.0,
+        "max_x": 567.85,
+        "lowest_body_from_top": 539.49
+      },
+      {
+        "page": 2,
+        "min_x": 40.0,
+        "max_x": 569.48,
+        "lowest_body_from_top": 560.39
+      },
+      {
+        "page": 3,
+        "min_x": 40.0,
+        "max_x": 572.0,
+        "lowest_body_from_top": 612.19
+      },
+      {
+        "page": 4,
+        "min_x": 40.0,
+        "max_x": 566.72,
+        "lowest_body_from_top": 653.89
+      }
+    ]
+  }
+}

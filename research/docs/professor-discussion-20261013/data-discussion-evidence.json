@@ -1,0 +1,63 @@
+{
+  "discussion_date": "2026-10-13",
+  "evidence_as_of": "2026-10-12",
+  "purpose": "Refocus Private Markets professor discussion on investment data and signal research",
+  "outputs": {
+    "13D_Data_Research_Discussion_20261013.pdf": {
+      "pages": 2,
+      "sha256": "b597f54583aa85e37e6d3d237926e69a4b43529c8a61aa29b2f5ed66c33c01bc"
+    },
+    "13D_Five_Minute_Speaking_Notes_20261013.pdf": {
+      "pages": 1,
+      "sha256": "fe2f7ff5c2005503778039f8dcd21c21f3192d6038d558311e8f337481d8627c"
+    },
+    "five-minute-discussion.html": {}
+  },
+  "source_sha256": {
+    "E1 historical baseline": "6316c19f52c55181de2743e70c14e267173443b1433027800f5ac7f2b8c3d5ac",
+    "E2 factual staging": "184ec95b33dbcdf2fa4d9181079e3f106aea90e8b75074240cdab3a3fead710a",
+    "E3 ML sample feasibility": "c85228a1388bbb1c0b07a6acc8be7ce2ac86cf3d72f397ddd3cee64b10bba07d",
+    "E4 feature preview": "4d22a7fb11b6c789838f6f5f1ed7c164af2850a02a78cd22fc654073d3d7a464",
+    "E5 preprocessing": "fd2bf8b030d0e33e3a34fd8775b40d84caeb1d9c0f6fb1762a7b19e24f2f4811",
+    "feature definitions": "b54fafdc91766ef9d4d76360bf85f6ae4876dd9d879281f9f949d76ef771a4d1",
+    "preprocessing protocol": "fe818db4c7fa493ae5e0cefe1f0c7643919b2db2425278d275a7761cb5f3393d",
+    "baseline conventions": "2ff4920b8e236668f07ca909af06584fe2470376d2c4f73adb751a905e97d2ef",
+    "historical qualifications": "806ce8e2cd16d7d65bb876962c48055a7557056f6f6fa9b2869fbb4597f6d193",
+    "learning checkpoints": "e2d868c1a5c3c65ed761053ca395f7f20ecd003f8cb3095e4429e81c6a2e3a01",
+    "archive and sample bridge": "6cb720788bde67366850a31ee697817d68d681235670ad9363b5af4486a6a970",
+    "HFR matching summary": "9f0626240f93d4a6ddb1e66c956a3a8f7725b1113f5f7ad9a9faf15f6624c2ea",
+    "HFR matching qualifications": "866caecab238dfa7ff9a3add2e0e10e16d9254bc06805b4d07d5656f4ce2e775"
+  },
+  "preserved_earlier_pdf_sha256": {
+    "13D_Machine_Learning_Brief_20261013.pdf": "cccecebcbdfb255e2b24e236c6fc8cbf9af877972e6823c103f8ed0d68f561db",
+    "13D_Private_Markets_Modeling_Brief_20261013.pdf": "3ab2c447fac2ec001af9c40efaa9cfb9dcebf4e6c5cfed83498439efa0d5cf6b"
+  },
+  "spoken_pitch_words": 283,
+  "speaking_budget": "3 minutes explanation + 2 minutes discussion",
+  "public_sources": {
+    "HFR": {
+      "title": "HFR strategy definitions",
+      "url": "https://www.hfr.com/hfr-indices/hfr-hedge-fund-strategy-classifications/",
+      "checked": "2026-10-12"
+    },
+    "13D Monitor": {
+      "title": "13D Monitor: About Us",
+      "url": "https://www.13dmonitor.com/AboutUs.aspx",
+      "checked": "2026-10-12"
+    },
+    "BlackRock Systematic": {
+      "title": "BlackRock: How AI is Transforming Investing",
+      "url": "https://www.blackrock.com/sg/en/insights/ai-investing",
+      "checked": "2026-10-12"
+    },
+    "Aladdin / eFront": {
+      "title": "Aladdin: Turning Tables on Automation",
+      "url": "https://www.blackrock.com/aladdin/discover/blog/nlp-aladdin-private-markets-blog",
+      "checked": "2026-10-12"
+    }
+  },
+  "predictive_model_fitted": false,
+  "llm_extraction_run": false,
+  "research_data_changed": false,
+  "visual_qa": "passed: both handout pages and the speaking-guide page inspected after final build"
+}

@@ -1,0 +1,36 @@
+{
+  "pages": 4,
+  "text_and_numeric_checks": "passed",
+  "body_bounds": [
+    {
+      "page": 1,
+      "lowest_body_from_top": 641.29
+    },
+    {
+      "page": 2,
+      "lowest_body_from_top": 648.89
+    },
+    {
+      "page": 3,
+      "lowest_body_from_top": 606.89
+    },
+    {
+      "page": 4,
+      "lowest_body_from_top": 622.79
+    }
+  ],
+  "visual_review": "passed: all four final page renders inspected",
+  "source_hashes": "passed",
+  "prior_ml_pdf": "byte-for-byte preserved",
+  "local_links_checked": {
+    "index.html": 22,
+    "START-HERE.html": 2,
+    "ml-checkpoints.html": 23
+  },
+  "final_renders": [
+    "qa/ml-update-final-1.png",
+    "qa/ml-update-final-2.png",
+    "qa/ml-update-final-3.png",
+    "qa/ml-update-final-4.png"
+  ]
+}

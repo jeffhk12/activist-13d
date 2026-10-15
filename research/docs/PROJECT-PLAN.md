@@ -2,6 +2,33 @@
 
 ## Current priority — October 15, 2026
 
+**ML professor update expanded:** Jeff removed the four-page limit. The
+[expanded nine-page update](professor-update-20261015/13D_Machine_Learning_Project_Update_20261015_v2.pdf)
+keeps a concise summary first, then gives the observation/sample bridge, all ten
+input definitions and coverage, preprocessing, completed baseline results, proposed
+four-neuron ReLU network, parameter counts, forward/backward equations and labelled
+toy arithmetic, initialization/optimization, evaluation and LLM additions. Length
+follows the content, without a fixed page cap. The network remains an unimplemented,
+untrained draft; no new research fit was run. [Contents and evidence](professor-update-20261015/index-v2.html)
+include professor prompts and source snapshots. The four-page October 15 version
+and October 13 handouts are preserved unchanged.
+
+**Input lesson and open HFR question:** Jeff reviewed the actual ten source fields,
+distinct from the invented neuron examples. The 2023 preparation contains 69 model
+inputs: 58 industry indicators, eight varying numerical measurements and three
+missing-value indicators. Each proposed hidden neuron receives the full encoded
+input vector; no neuron is assigned a predetermined economic role.
+
+HFR classifications remain diagnostic groups in the current frozen experiment.
+Jeff asked why they are excluded as predictors. A separate comparison with and
+without historical HFR indicators is a proposed extension, not an approved or
+implemented feature change. It first requires checking historical availability,
+firm/fund-to-filing attribution and overlapping strategy offerings; unmatched
+investors must remain unknown rather than being labelled non-hedge-fund or passive.
+Keep present-day classifications and retrospective activist supplements out of
+historical predictors. Preserve the current baseline and report any extension
+under a new protocol on comparable observations and chronological folds.
+
 **Checkpoint 3 completed:** The [first fixed prediction comparisons](../runs/ml-baselines/20261015-v1/index.html)
 now have saved forecasts and chronological development results under
 [ml-baselines-v1](../protocol/ml-baselines-v1.json), frozen before fitting.
@@ -13,8 +40,12 @@ and fixed ridge regression were evaluated on the same 302 later entries in
 ridge fails to improve training-mean RMSE in all three years. This is a negative
 development result, not an optimized-model conclusion or evidence of alpha.
 The 667 candidate rows remain unchanged; only 302 are later entries in these folds.
-No neural network, boosted-tree model or LLM extraction was run. Next checkpoint 4
-teaches and specifies a small neural network, preserving these comparisons.
+No neural network, boosted-tree model or LLM extraction was run. Checkpoint 4
+teaching now has neuron/ReLU diagrams and a [proposed four-neuron design](neural-network-lessons/20261015/network-plan.html):
+one hidden ReLU layer and a linear output, 213-285 parameters across folds,
+fixed-budget regularized training and five declared starting seeds. This is a draft,
+not a frozen experiment. Next explain one forward/backward update and verify the
+implementation before freezing and fitting, preserving checkpoint 3's comparisons.
 
 **Verification:** 250 offline tests pass, one network test deselected; the new code
 passes lint. Repository-wide lint still reports 263 existing findings in other

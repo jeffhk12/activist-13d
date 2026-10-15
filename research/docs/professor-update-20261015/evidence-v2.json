@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-15",
+  "pdf": "13D_Machine_Learning_Project_Update_20261015_v2.pdf",
+  "pages": 9,
+  "fixed_page_cap": null,
+  "sections": [
+    "Project summary and current status",
+    "Data and the unit of observation",
+    "Inputs, source limitations and preprocessing",
+    "Prediction target and completed baseline experiment",
+    "Proposed network and learned activation boundaries",
+    "Forward pass, loss and backpropagation",
+    "Initialization, optimization and random starts",
+    "Evaluation, LLM additions and next deliverables",
+    "Evidence, reproducibility and method references"
+  ],
+  "source_sha256": {
+    "research/runs/ml-feature-preview/20261012-v1/summary.json": "4d22a7fb11b6c789838f6f5f1ed7c164af2850a02a78cd22fc654073d3d7a464",
+    "research/runs/ml-preprocessing/20261012-v1/summary.json": "fd2bf8b030d0e33e3a34fd8775b40d84caeb1d9c0f6fb1762a7b19e24f2f4811",
+    "research/runs/ml-baselines/20261015-v1/summary.json": "f6ac589df9ce709ea0157219b45c6449a71b5fefd608d14b1f34c1cf62313f8e",
+    "research/runs/ml-baselines/20261015-v1/evaluation.json": "fc48ccded0707f61e54a9e958abe2269edbb3508f28a184fc2a64a5696228ff5",
+    "research/runs/ml-baselines/20261015-v1/verification.json": "3f86ba7729afb6afb78e14e7b1aa9a49bb2b28662e8ee8d79a9ff264927181e5",
+    "research/protocol/ml-baselines-v1.json": "51c55e42515cdef0e802bdc1f8a3dcd81f6a007495a2a01579428d193f0ace87",
+    "research/docs/neural-network-lessons/20261015/network-plan.html": "c38a57f8b0c013cb495fbff68c9338eb446c37a00cc670f2ff60a7be1d979153",
+    "research/runs/phase2-overnight/20260924-full-v1/progress.json": "184ec95b33dbcdf2fa4d9181079e3f106aea90e8b75074240cdab3a3fead710a",
+    "research/runs/ml-feature-preview/20261012-v1/feature-dictionary.json": "03e10ccac2b824677cf4dcc7a1141be53a57460539a261d824e25ec11ff13296",
+    "research/docs/professor-discussion-20261005/visual-assets/chart-evidence.json": "6cb720788bde67366850a31ee697817d68d681235670ad9363b5af4486a6a970",
+    "research/runs/hfr-all-managers/20260924-v1/summary.json": "9f0626240f93d4a6ddb1e66c956a3a8f7725b1113f5f7ad9a9faf15f6624c2ea",
+    "research/docs/HFR-ALL-MANAGERS-HANDOFF-20260924.md": "866caecab238dfa7ff9a3add2e0e10e16d9254bc06805b4d07d5656f4ce2e775",
+    "research/runs/ml-baselines/20261015-v1/validation-notes.json": "a6578b2a70a4ac32082e415bcb381a3d86e9f0a78ddb652c8a44c84da907899a"
+  },
+  "preserved_pdf_sha256": {
+    "13D_Machine_Learning_Project_Update_20261015.pdf": "e63ae57194ab832b7ee2c7f0cd56d48c167e73aeab7e501b4bf903ac27398393",
+    "13D_Machine_Learning_Brief_20261013.pdf": "cccecebcbdfb255e2b24e236c6fc8cbf9af877972e6823c103f8ed0d68f561db"
+  },
+  "pdf_sha256": "825a80c378a4c4f65c4f35ade527f7d0b92b777ca4633faa9b36c1895e2cc148",
+  "code_sha256": {
+    "research/docs/professor-update-20261015/build_expanded_update.py": "1bbe0bd35b8746ce81c3855ff86864956964f8c563ed844d92336013dfdaa915",
+    "research/docs/professor-update-20261015/build_update.py": "8fee2ec25d0b55d966031afa76fae5ec65d287b30e343ed029cd7819aa40f2d2",
+    "research/docs/professor-discussion-20261013/build_briefs.py": "ea34e987d15d95dd97268b1f70edcc315bd68d48f5164d3f11c4bbecdb4b4f2e"
+  },
+  "neural_network_fitted": false,
+  "new_llm_or_return_run": false,
+  "teaching_arithmetic_checked": true,
+  "visual_review": "passed: all 9 final page renders inspected"
+}

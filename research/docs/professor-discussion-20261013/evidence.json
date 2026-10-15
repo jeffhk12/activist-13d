@@ -1,0 +1,54 @@
+{
+  "source_sha256": {
+    "E1 historical baseline": "6316c19f52c55181de2743e70c14e267173443b1433027800f5ac7f2b8c3d5ac",
+    "E2 factual staging": "184ec95b33dbcdf2fa4d9181079e3f106aea90e8b75074240cdab3a3fead710a",
+    "E3 ML sample feasibility": "c85228a1388bbb1c0b07a6acc8be7ce2ac86cf3d72f397ddd3cee64b10bba07d",
+    "E4 feature preview": "4d22a7fb11b6c789838f6f5f1ed7c164af2850a02a78cd22fc654073d3d7a464",
+    "E5 preprocessing": "fd2bf8b030d0e33e3a34fd8775b40d84caeb1d9c0f6fb1762a7b19e24f2f4811",
+    "feature definitions": "b54fafdc91766ef9d4d76360bf85f6ae4876dd9d879281f9f949d76ef771a4d1",
+    "preprocessing protocol": "fe818db4c7fa493ae5e0cefe1f0c7643919b2db2425278d275a7761cb5f3393d",
+    "baseline conventions": "2ff4920b8e236668f07ca909af06584fe2470376d2c4f73adb751a905e97d2ef",
+    "historical qualifications": "806ce8e2cd16d7d65bb876962c48055a7557056f6f6fa9b2869fbb4597f6d193",
+    "learning checkpoints": "e2d868c1a5c3c65ed761053ca395f7f20ecd003f8cb3095e4429e81c6a2e3a01"
+  },
+  "source_paths": {
+    "E1 historical baseline": "research/runs/phase1-baseline/20260924-long-horizon-analysis-v1/summary.json",
+    "E2 factual staging": "research/runs/phase2-overnight/20260924-full-v1/progress.json",
+    "E3 ML sample feasibility": "research/runs/ml-feasibility/20261012-v1/summary.json",
+    "E4 feature preview": "research/runs/ml-feature-preview/20261012-v1/summary.json",
+    "E5 preprocessing": "research/runs/ml-preprocessing/20261012-v1/summary.json",
+    "feature definitions": "research/protocol/ml-feature-preview-v1.json",
+    "preprocessing protocol": "research/protocol/ml-preprocessing-v1.json",
+    "baseline conventions": "research/protocol/phase1-long-horizon-v1.md",
+    "historical qualifications": "research/docs/PHASE1-FINAL-CONCLUSION-20260924.md",
+    "learning checkpoints": "research/docs/ml-checkpoints.html"
+  },
+  "source_units": "Filing records, staged filing candidates and scheduled investment events are distinct.",
+  "scenario_illustration": {
+    "status": "hypothetical teaching assumptions, not research results",
+    "initial_wealth": 100,
+    "horizon_years": 2,
+    "scenarios": [
+      [
+        "Base",
+        0.5,
+        120
+      ],
+      [
+        "Upside",
+        0.25,
+        160
+      ],
+      [
+        "Downside",
+        0.25,
+        70
+      ]
+    ],
+    "expected_terminal_wealth": 117.5,
+    "assumed_required_return": 0.1,
+    "discounted_value": 97.10743801652892
+  },
+  "new_return_estimates": false,
+  "model_fitting": false
+}

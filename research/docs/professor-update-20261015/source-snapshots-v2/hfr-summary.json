@@ -1,0 +1,163 @@
+{
+  "archive_records": 75631,
+  "candidate_rate_among_all_records": 0.041795031138025414,
+  "candidate_rate_among_prior_snapshot_records": 0.06844213489228104,
+  "cohorts": {
+    "all_hfr": {
+      "amendments": 2636,
+      "filings": 3161,
+      "initials": 525
+    },
+    "all_hfr_plus_supplement": {
+      "amendments": 3848,
+      "filings": 4536,
+      "initials": 688
+    },
+    "cross_manager_ambiguous": {
+      "amendments": 10,
+      "filings": 10,
+      "initials": 0
+    },
+    "hfr_supplement_overlap": {
+      "amendments": 0,
+      "filings": 0,
+      "initials": 0
+    },
+    "manager_has_activist": {
+      "amendments": 1101,
+      "filings": 1261,
+      "initials": 160
+    },
+    "manager_has_event_driven": {
+      "amendments": 1509,
+      "filings": 1750,
+      "initials": 241
+    },
+    "new_hfr_links_beyond_previous_screen": {
+      "amendments": 1127,
+      "filings": 1411,
+      "initials": 284
+    },
+    "new_links_beyond_previous_combined": {
+      "amendments": 1127,
+      "filings": 1411,
+      "initials": 284
+    },
+    "no_event_driven_offering_in_matched_managers": {
+      "amendments": 1127,
+      "filings": 1411,
+      "initials": 284
+    },
+    "only_fund_of_funds_managers_matched": {
+      "amendments": 92,
+      "filings": 116,
+      "initials": 24
+    },
+    "other_or_unresolved_after_expansion": {
+      "amendments": 53988,
+      "filings": 71095,
+      "initials": 17107
+    },
+    "previous_hfr_event_driven_screen": {
+      "amendments": 1509,
+      "filings": 1750,
+      "initials": 241
+    },
+    "snapshot_not_strictly_before_acceptance_date": {
+      "amendments": 1,
+      "filings": 2,
+      "initials": 1
+    },
+    "supplement": {
+      "amendments": 1212,
+      "filings": 1375,
+      "initials": 163
+    }
+  },
+  "fund_observations": 217954,
+  "historical_firm_ids": 3372,
+  "latest_firm_ids": 1601,
+  "matched_firm_ids": 180,
+  "observations_missing_firm_id": 0,
+  "prior_snapshot_counts": {
+    "no_prior_snapshot": 29446,
+    "with_prior_snapshot": 46185
+  },
+  "returns_recalculated": false,
+  "snapshot_count": 35,
+  "strategy_counts": {
+    "Equity Hedge": {
+      "amendments": 780,
+      "filings": 982,
+      "initials": 202
+    },
+    "Event-Driven": {
+      "amendments": 1509,
+      "filings": 1750,
+      "initials": 241
+    },
+    "Fund of Funds": {
+      "amendments": 757,
+      "filings": 897,
+      "initials": 140
+    },
+    "Macro": {
+      "amendments": 41,
+      "filings": 54,
+      "initials": 13
+    },
+    "Relative Value": {
+      "amendments": 1165,
+      "filings": 1341,
+      "initials": 176
+    },
+    "Risk Parity": {
+      "amendments": 27,
+      "filings": 39,
+      "initials": 12
+    },
+    "Risk Premia: Credit": {
+      "amendments": 0,
+      "filings": 1,
+      "initials": 1
+    },
+    "Risk Premia: Multi-Asset": {
+      "amendments": 2,
+      "filings": 3,
+      "initials": 1
+    }
+  },
+  "strategy_fund_observations": {
+    "Blockchain": 2181,
+    "Cryptocurrency/Blockchain": 1150,
+    "Equity Hedge": 85025,
+    "Event-Driven": 16122,
+    "Fund of Funds": 22922,
+    "HFR": 6,
+    "HFRA": 20,
+    "HFRB": 98,
+    "HFRC": 2,
+    "HFRI": 3809,
+    "HFRI4": 396,
+    "HFRI5": 891,
+    "HFRII": 416,
+    "HFRIN": 216,
+    "HFRL": 15,
+    "HFRN": 2,
+    "HFRP": 220,
+    "HFRT": 2,
+    "HFRU": 325,
+    "HFRX": 3049,
+    "Macro": 36475,
+    "Relative Value": 41262,
+    "Risk Parity": 1025,
+    "Risk Premia: Commodity": 343,
+    "Risk Premia: Credit": 228,
+    "Risk Premia: Currency": 119,
+    "Risk Premia: Equity": 190,
+    "Risk Premia: Multi-Asset": 1129,
+    "Risk Premia: Rates": 72,
+    "Risk Premia: Volatility": 244
+  },
+  "verified_economic_manager_count": null
+}

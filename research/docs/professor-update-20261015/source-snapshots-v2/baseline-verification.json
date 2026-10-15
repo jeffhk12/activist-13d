@@ -1,0 +1,25 @@
+{
+  "calculation_artifacts_verified": 12,
+  "checkpoint_links_checked": 18,
+  "checkpoint_table_matches_saved_metrics": true,
+  "csv_event_model_rows_checked": 906,
+  "current_home_links_checked": 4,
+  "frozen_calculations_changed": false,
+  "largest_frozen_target_checked": {
+    "meaning": "Reconciles to frozen stock minus benchmark return; not a new raw-price audit",
+    "row_id": "0000921895-19-002546|2019-10-17|2019-10-15",
+    "target": 29.602405739435504
+  },
+  "local_report_links_checked": 11,
+  "maximum_ridge_first_order_error_by_year": {
+    "2021": 1.1102230246251565e-16,
+    "2022": 7.771561172376096e-16,
+    "2023": 3.7470027081099033e-16
+  },
+  "original_target_subtractions_checked": 667,
+  "prediction_parity": "scalar weighted sums versus saved NumPy forecasts, rtol=atol=1e-10",
+  "scored_events": 302,
+  "source_outcomes_sha256": "aa3f63cc4ac7273554c761220d00e75d45ed0779a485accbbd03d8fde51d4c24",
+  "status": "passed",
+  "verification_script_sha256": "a35c1dd1cb4eca9a3be98fb58fcdff98a4389f73f9240b6be88b192ceef6db0a"
+}

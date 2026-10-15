@@ -1,0 +1,68 @@
+{
+  "pages": 9,
+  "body_bounds": [
+    {
+      "page": 1,
+      "lowest_body_from_top": 573.59
+    },
+    {
+      "page": 2,
+      "lowest_body_from_top": 601.09
+    },
+    {
+      "page": 3,
+      "lowest_body_from_top": 622.99
+    },
+    {
+      "page": 4,
+      "lowest_body_from_top": 631.39
+    },
+    {
+      "page": 5,
+      "lowest_body_from_top": 639.99
+    },
+    {
+      "page": 6,
+      "lowest_body_from_top": 572.19
+    },
+    {
+      "page": 7,
+      "lowest_body_from_top": 612.09
+    },
+    {
+      "page": 8,
+      "lowest_body_from_top": 670.59
+    },
+    {
+      "page": 9,
+      "lowest_body_from_top": 674.19
+    }
+  ],
+  "text_and_arithmetic_checks": "passed",
+  "visual_review": "passed: all 9 final page renders inspected",
+  "source_and_code_hashes": "passed",
+  "earlier_pdfs": "byte-for-byte preserved",
+  "local_links_checked": {
+    "index-v2.html": 34,
+    "START-HERE.html": 3,
+    "ml-checkpoints.html": 23
+  },
+  "toy_derivative_absolute_errors": {
+    "v": 7.323031070427533e-13,
+    "c": 5.469513730815834e-13,
+    "w": 1.781699787706259e-13,
+    "b": 1.1877998584708394e-13
+  },
+  "toy_check_scope": "Invented report arithmetic only; not a neural implementation or training suite",
+  "final_renders": [
+    "qa/expanded-final-1.png",
+    "qa/expanded-final-2.png",
+    "qa/expanded-final-3.png",
+    "qa/expanded-final-4.png",
+    "qa/expanded-final-5.png",
+    "qa/expanded-final-6.png",
+    "qa/expanded-final-7.png",
+    "qa/expanded-final-8.png",
+    "qa/expanded-final-9.png"
+  ]
+}

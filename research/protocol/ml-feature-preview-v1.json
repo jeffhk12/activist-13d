@@ -1,0 +1,22 @@
+{
+  "version": "ml-feature-preview-v1",
+  "status": "frozen feature-preview contract; not a model-fitting or trading protocol",
+  "scope": "Existing first-observed, single-filing, 504-session Russell-labelled development events",
+  "features": {
+    "snapshot_security_market_cap_usd": {"kind": "numeric", "unit": "USD", "description": "CRSP dlycap times 1000 from the dated pre-disclosure benchmark snapshot; security-level, not consolidated company value"},
+    "pre_disclosure_industry_sic2": {"kind": "categorical", "unit": "two-digit SIC code", "description": "Industry category from pre-disclosure SIC; 0 and 9999 are missing, and categories are not numerical magnitudes"},
+    "parsed_reporting_person_count": {"kind": "numeric", "unit": "extracted rows", "description": "Number of parsed cover-page reporting persons; not independent investors or completeness certification"},
+    "reported_ownership_pct_max": {"kind": "numeric", "unit": "percent", "description": "Largest valid reported percentage for the uniquely matched security; not summed holdings or verified economic ownership"},
+    "ownership_pct_valid_fraction": {"kind": "numeric", "unit": "fraction", "description": "Valid percentages divided by extracted ownership rows for the matched security; no rows means missing"},
+    "filing_event_lag_calendar_days": {"kind": "numeric", "unit": "calendar days", "description": "Filing date minus the cover-page event date; negative or missing dates yield missing, not a legal deadline assessment"},
+    "header_reporter_count": {"kind": "numeric", "unit": "header CIKs", "description": "Count of distinct observed header reporter CIKs, not validated economic managers"},
+    "prior_header_submission_count_max": {"kind": "numeric", "unit": "prior submissions", "description": "Maximum strictly prior submission count among header CIKs; never summed across potentially related reporters"},
+    "prior_header_other_issuer_count_max": {"kind": "numeric", "unit": "prior issuers", "description": "Maximum strictly prior other-issuer count among header CIKs; restricted history starts in 2013"},
+    "prior_issuer_other_reporter_count": {"kind": "numeric", "unit": "prior header CIKs", "description": "Strictly prior reporter CIKs at this issuer outside the current header group; not evidence of continuing positions"}
+  },
+  "ownership_rule": "Use only rows for one security whose extracted CUSIP agrees with the frozen historical snapshot prefix. Otherwise ownership summaries are missing. Preserve each original row and evidence; never sum shares or percentages.",
+  "missing_rule": "Keep null and source statuses; no imputation, scaling or dropping all incomplete rows during preparation. Learned transformations must be fitted separately within training folds.",
+  "excluded_inputs": ["future returns", "target sign", "exit date", "post-disclosure amendments", "current HFR classifications", "retrospective focused-manager labels", "raw identifiers as numeric values"],
+  "target": "Existing gross 504-session cumulative stock return minus assigned Russell ETF-proxy return, kept separately from features",
+  "limits": "Source hashes, citations, identifiers and chronology are checked; semantic extraction, vendor publication timing and economic manager identities are not certified. This covered sample has selective benchmark availability."
+}

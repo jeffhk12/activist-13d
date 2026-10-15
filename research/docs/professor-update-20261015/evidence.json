@@ -1,0 +1,29 @@
+{
+  "as_of": "2026-10-15",
+  "pdf": "13D_Machine_Learning_Project_Update_20261015.pdf",
+  "pages": 4,
+  "source_sha256": {
+    "research/runs/ml-feature-preview/20261012-v1/summary.json": "4d22a7fb11b6c789838f6f5f1ed7c164af2850a02a78cd22fc654073d3d7a464",
+    "research/runs/ml-preprocessing/20261012-v1/summary.json": "fd2bf8b030d0e33e3a34fd8775b40d84caeb1d9c0f6fb1762a7b19e24f2f4811",
+    "research/runs/ml-baselines/20261015-v1/summary.json": "f6ac589df9ce709ea0157219b45c6449a71b5fefd608d14b1f34c1cf62313f8e",
+    "research/runs/ml-baselines/20261015-v1/evaluation.json": "fc48ccded0707f61e54a9e958abe2269edbb3508f28a184fc2a64a5696228ff5",
+    "research/runs/ml-baselines/20261015-v1/verification.json": "3f86ba7729afb6afb78e14e7b1aa9a49bb2b28662e8ee8d79a9ff264927181e5",
+    "research/protocol/ml-baselines-v1.json": "51c55e42515cdef0e802bdc1f8a3dcd81f6a007495a2a01579428d193f0ace87",
+    "research/docs/neural-network-lessons/20261015/network-plan.html": "c38a57f8b0c013cb495fbff68c9338eb446c37a00cc670f2ff60a7be1d979153",
+    "research/runs/phase2-overnight/20260924-full-v1/progress.json": "184ec95b33dbcdf2fa4d9181079e3f106aea90e8b75074240cdab3a3fead710a"
+  },
+  "pdf_sha256": "e63ae57194ab832b7ee2c7f0cd56d48c167e73aeab7e501b4bf903ac27398393",
+  "code_sha256": {
+    "research/docs/professor-update-20261015/build_update.py": "8fee2ec25d0b55d966031afa76fae5ec65d287b30e343ed029cd7819aa40f2d2",
+    "research/docs/professor-discussion-20261013/build_briefs.py": "ea34e987d15d95dd97268b1f70edcc315bd68d48f5164d3f11c4bbecdb4b4f2e"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "reportlab": "4.4.9",
+    "pypdf": "6.10.0"
+  },
+  "preserved_prior_pdf_sha256": "cccecebcbdfb255e2b24e236c6fc8cbf9af877972e6823c103f8ed0d68f561db",
+  "new_research_or_training_run": false,
+  "neural_network_status": "draft plan, not frozen, implemented or trained",
+  "visual_review": "passed: all four final page renders inspected"
+}
