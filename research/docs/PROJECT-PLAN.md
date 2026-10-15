@@ -1,6 +1,28 @@
 # Activist 13D Machine Learning Class Project Plan
 
-## Current priority — October 12, 2026
+## Current priority — October 15, 2026
+
+**Checkpoint 3 completed:** The [first fixed prediction comparisons](../runs/ml-baselines/20261015-v1/index.html)
+now have saved forecasts and chronological development results under
+[ml-baselines-v1](../protocol/ml-baselines-v1.json), frozen before fitting.
+Jeff confirmed no professor-requested design changes on October 15: retain the
+two-year benchmark-relative return target, all covered investor groups and the
+inherited observation rules. The training-mean reference, zero-excess reference
+and fixed ridge regression were evaluated on the same 302 later entries in
+2021-2023. Pooled RMSE is 89.90, 87.08 and 93.68 percentage points respectively;
+ridge fails to improve training-mean RMSE in all three years. This is a negative
+development result, not an optimized-model conclusion or evidence of alpha.
+The 667 candidate rows remain unchanged; only 302 are later entries in these folds.
+No neural network, boosted-tree model or LLM extraction was run. Next checkpoint 4
+teaches and specifies a small neural network, preserving these comparisons.
+
+**Verification:** 250 offline tests pass, one network test deselected; the new code
+passes lint. Repository-wide lint still reports 263 existing findings in other
+files. All 13 calculation artifacts replay exactly. A separate
+[scalar audit](../runs/ml-baselines/20261015-v1/verification.json) reconciles all
+667 targets with original frozen stock-minus-benchmark arithmetic, 302 forecasts,
+906 exported event/model errors and ridge first-order conditions. No observations
+were trimmed after seeing outcomes; large training targets remain visible.
 
 **Professor update:** The four-page [Machine Learning brief](professor-discussion-20261013/13D_Machine_Learning_Brief_20261013.pdf)
 remains focused on supervised methods and neural-network evaluation. Jeff requested
@@ -12,7 +34,9 @@ coverage, deterministic and LLM extraction, and industry relevance. The one-page
 budgets three minutes of explanation and two for feedback; [timed notes and sources](professor-discussion-20261013/five-minute-discussion.html)
 provide the supporting evidence. Existing ML and earlier valuation PDFs are preserved.
 The inherited portfolio non-overlap filter is flagged for discussion, not changed
-in the frozen sample or protocol. No predictive model or LLM contribution is claimed.
+in the frozen sample or protocol. These professor materials preserve the October 12
+pre-model status; the first predictive comparison is now recorded above. No LLM
+contribution is claimed.
 
 **Checkpoint 2 completed:** [Learning checkpoints](ml-checkpoints.html) now provide
 the catch-up sequence Jeff requested. The [preprocessing lesson](../runs/ml-preprocessing/20261012-v1/index.html)
@@ -20,8 +44,8 @@ records three chronological input preparations with training-only medians, log
 transforms, scaling, category encoding and constant-column masks. The 2023 fold
 has 365 earlier training events, 86 later events and 69 encoded columns. Original
 missingness is retained; no numerical targets were read and no predictive model
-was fitted. Next freeze the first predictive experiment and comparisons, then
-train a small neural network with separate method/results checkpoints.
+was fitted during preprocessing. Checkpoint 3 has since fitted the fixed ridge
+baseline; the neural network remains next, with a separate method/results checkpoint.
 
 **Feature preview completed:** [Inputs, targets and lesson](../runs/ml-feature-preview/20261012-v1/index.html).
 All 667 single-filing two-year candidates join to source-checked facts, prior histories
@@ -30,16 +54,18 @@ targets and diagnostic investor cohorts. Ownership summaries are present for 557
 events; 110 are missing, including 14 unresolved security-attribution cases. Frozen
 source hashes, exact citations, issuer/reporter joins and pre-disclosure dates pass;
 this is candidate data preparation, not certified semantic extraction or model
-performance. Next review the gaps and freeze the first model's preprocessing,
-chronological validation and capacity settings before fitting. Missing inputs remain
-missing in preparation; fill/scaling rules must be learned within training folds.
+performance. The gaps remain open; checkpoint 3 reuses the frozen preprocessing
+and chronological folds exactly. Missing inputs remain missing in source preparation;
+fill/scaling rules are learned within training folds.
 
 [Current ML experiment and learning plan](ml-experiment-20261012.html) records the
 neural-network preference, teaching approach, four investment decisions and completed
 coverage assessment. The broader eligible 13D universe includes unresolved investor
 identities; focused activist candidates are a separately reported subgroup. Current
 two-year single-filing candidates number 667, including 55 focused candidates, before
-feature validation. The first-experiment target and trading-policy choices remain draft.
+semantic feature validation. The first baseline now fixes a continuous two-year
+relative-return target and inherited entry/scheduling rules. New horizons or policies
+require a separately specified experiment.
 
 **User-confirmed objective:** this is a machine learning class project. The central
 question is whether supervised learning improves investment selection after an
@@ -71,12 +97,12 @@ changed extraction behavior requires a new protocol before use.
 
 ### Central ML comparisons and next work
 
-Begin with regularized regression and gradient-boosted trees. A small feedforward
-neural network is now a central planned method, per Jeff's October 12 preference,
+The first fixed ridge regression is complete. Gradient-boosted trees remain a
+planned nonlinear comparison. A small feedforward neural network is a central planned method, per Jeff's October 12 preference,
 with capacity constrained by usable sample size. Compare it with the simpler methods
 to measure its contribution. Neural-network recency is not the selection criterion.
-If classification is selected, use a regularized logistic baseline. The target,
-horizon and regression-versus-classification choice remain to be frozen.
+The first experiment uses regression on the 504-session benchmark-relative return;
+classification or another horizon requires a new specification.
 
 Compare each model on (A) deterministic structured features, (B) those features
 plus validated LLM-assisted ownership/identity information, and (C) the same
@@ -87,20 +113,22 @@ Out-of-sample prediction/ranking performance is the central class result;
 extraction quality supports it, and after-cost investment results assess economic
 relevance. Negative or inconclusive incremental results remain valid outcomes.
 
-**Next deliverable:** an ML experiment specification and usable-panel assessment:
-observation unit, candidate target/horizon, dated feature dictionary, security/manager
-links, matured outcome counts by year and chronological development folds. Two-year
-labels must finish before their training cutoff; address overlapping outcomes and
-fit preprocessing within training folds. Previously inspected history remains
-development data. Start the deterministic-feature ML baseline before expanding
-LLM processing, then add a bounded validated extraction comparison. Aratana
-accounting remains a separate limitation on affected portfolio results.
+**Next deliverable:** checkpoint 4's neural-network method lesson and frozen design:
+hidden-layer size, activation, optimizer, learning rate, regularization, stopping
+rule and seeds, with sample size and target-tail behavior explicitly considered.
+Keep the target, feature sets and chronological evaluation comparable to checkpoint 3.
+Any tuning must use inner folds with fully matured earlier labels, not random splits
+or the evaluated years; fixed untuned designs must be described as such. Previously
+inspected history remains development data. LLM additions follow separately validated
+human-reference work. Aratana accounting remains a separate limitation on portfolio
+results; no funded account was evaluated in checkpoint 3.
 
 This priority update supersedes older sequencing for current work. It changes no
 frozen protocols, prior returns, source evidence, human answers or investor lists.
-No model fitting or LLM calls have been run; paid model APIs remain off.
+Only the fixed linear predictive baseline has been fitted; neural networks,
+boosted trees and LLM calls have not been run. Paid model APIs remain off.
 
-Method references: [regularized models](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)
+Method references: [ridge regression](https://scikit-learn.org/stable/modules/linear_model.html#ridge-regression-and-classification)
 and [chronological validation](https://scikit-learn.org/stable/modules/cross_validation.html#time-series-split).
 Ordinary time-series splitting alone does not resolve outcome maturity or overlapping
 windows. Preserve the [extraction workflow](../protocol/extraction-workflow-v1.md)
