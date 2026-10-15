@@ -1,5 +1,31 @@
 > **Current workspace (September 28, 2026):** code lives in local `Projects/activist-13d` on each computer; personal Google Drive → Workspace is the shared hub. Use [the current handoff guide](WORKSPACE-HANDOFF.md) and workspace Setup receipts for receiving readiness. The older setup notes below remain as history; do not restore competing working locations from them.
 
+## October 15, 2026 — current ML work and handoff reconciliation
+
+Checkpoint 3's fixed prediction comparisons are complete. Checkpoint 4 has teaching
+diagrams and a proposed four-ReLU-neuron network; the neural network is not yet
+implemented or trained. Resume with the forward/backward-update lesson, then verify
+the implementation and freeze the experiment before fitting. The expanded professor
+update is linked from `START-HERE.html`. HFR predictor additions remain proposed;
+the frozen baseline still uses HFR only for diagnostic comparisons.
+
+An unrelated browser screenshot had replaced
+`research/runs/proposal-review/20260926-v4/qa/proposal-top.png`, preventing Finish
+Work. The original proposal image was recovered from the September 27 preservation
+archive and matched exactly to the immutable handoff hash. Both images and a repair
+receipt are retained in
+`research/runs/workspace-reconciliation/20261015-v1/`. The original image was restored;
+no raw data, research calculations, protocols or human answers changed. The handoff
+tool and previous shared manifests were not modified.
+
+Use the normal Finish Work / Start Work routine described in
+[the handoff guide](WORKSPACE-HANDOFF.md). Publication is established by a successful
+Finish Work result and the shared `Handoffs/latest.json` marker, not by this note.
+On Windows, allow Drive to synchronize, run Start Work, and begin editing only after
+it verifies the exact source commit and research payload. Python environments and
+credentials remain machine-local; Windows receiving and model-environment checks
+must be completed there before training.
+
 # Current workspace layout
 
 Open `/Users/jefflu/Projects/activist-13d/START-HERE.html`. The completed 200-filing review is at `review/current/`. The unfinished 52-candidate pack is at `review/drafts/human-first-52/`; its workbook is pending and research remains paused. Previous `output/` runs are under `research/runs/`; previous `outputs/` packs are under `review/archive/`, except the current and draft packs. Migration records are in `maintenance/migration-20260923/records/`. The historical notes below retain paths valid when written. Windows was not reorganized by this task.
