@@ -1,5 +1,47 @@
 # Activist 13D Machine Learning Class Project Plan
 
+## Returned Bloomberg data review — October 18, 2026
+
+The [read-only return audit](../runs/bloomberg-return-audit/20261018-v1/index.html)
+matches all 667 requested event IDs and cutoff dates in the downloaded
+`13D_Bloomberg_9_Field_Extraction.xlsx`. There are 587 events with nine numeric raw
+fields, 57 partial events and 23 with no numeric raw fields. Internal summary links
+and ratio-derived debt arithmetic reconcile. These checks establish internal
+consistency, not vendor accuracy or historical availability.
+
+The workbook selects cutoff calendar year minus one as its annual fiscal period.
+The BHE January 3, 2019 row selects FY2018 results that the company announced on
+February 7, a concrete availability conflict. Revision vintage, historical
+security mapping and returned currency/scale metadata remain unverified.
+Comparable prior-year revenue, operating cash flow and company market cap are
+absent; annual flows also differ from requested actual TTM measures. Next validate
+the pilot queries and availability controls, then complete the missing core fields
+before specifying a separate ML feature extension. The original download, existing
+targets, frozen baseline and protocols are unchanged. No model was fitted.
+
+## Bloomberg collection preparation — October 17, 2026
+
+Jeff requested a detailed handoff for a separate Bloomberg computer and ChatGPT
+session to create the Excel extraction template. The
+[standalone handoff](../runs/bloomberg-extraction-handoff/20261017-v2/handoff.md)
+embeds all 667 event rows, includes a complete lookup inventory for 639 CRSP
+securities and 641 SEC issuer CIKs, and supplies historical name/ticker/CUSIP
+evidence plus a ten-event pilot and nine core fundamental measures (6,003 logical
+requests). The [ZIP](../runs/bloomberg-extraction-handoff/20261017-v2/13D_Bloomberg_Handoff_20261017.zip)
+adds CSV inputs, schemas, a ChatGPT prompt and source/hash evidence. Copies are in
+the Fordham Drive root folder `13D_Bloomberg_Handoff_20261017`.
+
+All 667 events have a unique cached name record covering the existing prior-session
+cutoff. Bloomberg security/company mappings, field definitions, actual TTM periods
+and historical information/revision controls still require terminal validation.
+666 events have a qualifying extracted filing CUSIP9 candidate; one BioScrip/Option
+Care transition requires manual review. Historical tickers are lookup aids, not
+confirmed Bloomberg identifiers. No return targets or investor-cohort labels are
+exported. Existing S&P 500 dashboard snapshots do not establish historical PIT
+fundamental coverage of this sample. No Bloomberg extraction, new ML fit or frozen
+feature/protocol change was run. Returned raw exports will be preserved and checked
+before any separately specified model extension.
+
 ## Current priority — October 15, 2026
 
 **ML professor update expanded:** Jeff removed the four-page limit. The
