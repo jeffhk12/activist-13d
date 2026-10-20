@@ -1,5 +1,52 @@
 # Activist 13D Machine Learning Class Project Plan
 
+## Neural network and tree comparison completed on Windows — October 19, 2026
+
+**Checkpoint 4B complete:** Jeff-ROG fitted the fixed comparison under Windows
+Python 3.13.12. All 43 checks pass there and on the Mac, and all 15 completed run
+artifacts replay exactly in the recorded Windows environment. The returned run is
+[preserved locally](../runs/ml-nonlinear/20261019-windows-v1/index.html), with a
+[catch-up lesson and independent audit](../runs/ml-nonlinear-verification/20261019-windows-v1/index.html).
+Across the same 302 later events, pooled RMSE is 108.96 percentage points for the
+five-seed neural average, 92.42 for forest, 96.29 for tree and 94.77 for boosting,
+versus 89.90 for the earlier-training mean and 87.08 for zero excess. None of these
+fixed nonlinear specifications improves those simple references.
+
+The initial bootstrap selected Python 3.12; the already installed Python 3.13 was
+used in a separate environment under C:\_dev. The first actual fit stopped before
+scoring because exported forest predictions disagreed with the library. A
+[two-observation reproducer](../runs/ml-nonlinear-debug/20261019-boundary-v1/diagnosis.html)
+isolated float32 scalar rounding of a float64 threshold. The corrected code, new
+package and new output retain all statistical settings, seeds, inputs and targets.
+The failed attempt is preserved. Corrected results returned to the personal Drive
+workspace → `Active/13D/Model Runs/20261019/Windows Results Corrected`.
+The standalone execution does not advance the regular workspace handoff marker.
+
+Jeff selected **prepare and verify for Windows**, rather than fitting the new
+comparison on this Mac. [Checkpoint 4A's worked lesson](neural-network-lessons/20261019/comparison-plan.html)
+explains the forward/backward pass, regularization and Adam, and introduces shallow
+trees, random forests and gradient boosting. The small network stays central to
+the class project. The [fixed nonlinear protocol](../protocol/ml-nonlinear-v1.json)
+inherits the same features, matured-label folds, 504-session target and 302 later
+reference rows from checkpoints 2–3. Bloomberg and LLM additions remain excluded.
+
+The first implementation is PyTorch CPU float64, four hidden ReLU neurons, one
+linear output, explicit mean-MSE plus 0.01 times weight squares, 500 full-batch Adam
+updates and five fixed seeds. Report all seeds and their equal-weight ensemble.
+Comparators are a depth-two tree, 200 depth-three forest trees and 100 depth-two
+gradient-boosting stages; all require at least 20 training rows per leaf. No
+hyperparameter search, randomized validation split or later-year early stopping.
+
+[Corrected preparation evidence and the standalone Windows package](../runs/ml-nonlinear-preparation/20261019-v2/index.html)
+include pinned dependencies, synthetic verification, source hashes, exact
+preparation replay and separate setup/check and actual-fit launchers. All actual
+nonlinear fitting was performed on Windows; the Mac audit uses saved states and
+scalar arithmetic without fitting. Next review loss/gradient curves, inactive
+neurons, seed variation and influential targets before specifying any separate
+tuning, loss or feature extension. This is previously inspected development
+history, not an untouched final test or a portfolio-alpha claim. Preserve all
+baselines, fixed-model results and failed evidence.
+
 ## Returned Bloomberg data review — October 18, 2026
 
 The [read-only return audit](../runs/bloomberg-return-audit/20261018-v1/index.html)

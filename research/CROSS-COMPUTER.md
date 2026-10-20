@@ -1,5 +1,44 @@
 > **Current workspace (September 28, 2026):** code lives in local `Projects/activist-13d` on each computer; personal Google Drive → Workspace is the shared hub. Use [the current handoff guide](WORKSPACE-HANDOFF.md) and workspace Setup receipts for receiving readiness. The older setup notes below remain as history; do not restore competing working locations from them.
 
+## October 19, 2026 — Windows nonlinear comparison completed and returned
+
+The fixed network/tree/forest/boosting comparison completed on Jeff-ROG through
+the existing Chrome Remote Desktop session, using Windows Python 3.13.12. All
+43 checks passed on Windows, preprocessing reproduced exactly, and all 15 run
+artifacts replayed byte for byte. The [completed run](runs/ml-nonlinear/20261019-windows-v1/index.html)
+and [catch-up/verification](runs/ml-nonlinear-verification/20261019-windows-v1/index.html)
+are preserved on the Mac. No nonlinear predictor was fitted on the Mac.
+
+Windows run:
+`C:\_dev\13d-models-20261019-fixed\13D_Nonlinear_Windows_20261019\research\runs\ml-nonlinear\windows-fit-fixed-py313-31397-4199`.
+The interpreter is the already prepared Python 3.13 environment in
+`C:\_dev\13d-models-20261019\13D_Nonlinear_Windows_20261019\.venv-ml-py313\Scripts\python.exe`.
+The initial Python 3.12 environment and first failed fit remain preserved.
+
+The first actual run stopped before scoring because JSON forest-state replay
+rounded a split threshold incorrectly. A two-row invented regression isolated it;
+the corrected replay compares float32 input values against float64 thresholds
+without rounding the latter. The [diagnosis](runs/ml-nonlinear-debug/20261019-boundary-v1/diagnosis.html)
+records the reproducer. Statistical settings, protocol, seeds, inputs and target
+remain unchanged. The corrected package SHA256 is
+`8ef5372593676a1d2070fbb8bfe7731bbea4512c34e429f55209fb022506d6dd`;
+the first package/failed source are retained.
+
+The Windows H: volume is personal Drive, not Fordham. Corrected code was sent
+through the remote session's normal file picker when outbound Drive propagation
+stalled. Results and evidence returned successfully through personal Drive:
+`Workspace/Coding & Research/Active/13D/Model Runs/20261019/Windows Results Corrected`.
+The exact replay log and Windows Model Evidence folder beside it contain tests,
+setup provenance and the unscored failure. Mac byte copies and an independent
+scalar audit verify the returned run, without modifying its original Windows
+path strings or provenance.
+
+This is a bounded immutable execution copy, not a replacement working checkout.
+The main Windows project checkout and regular Finish Work/Start Work marker were
+not advanced. Use the normal whole-project routine before editing that checkout.
+The initial Fordham/root transfer and older launchers are preserved delivery
+history; use the successful corrected run as the evidence for checkpoint 4B.
+
 ## October 15, 2026 — current ML work and handoff reconciliation
 
 Checkpoint 3's fixed prediction comparisons are complete. Checkpoint 4 has teaching
