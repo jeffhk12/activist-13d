@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>13D Bloomberg return audit — October 18, 2026</title>
+<style>body{font:17px/1.6 system-ui,sans-serif;color:#203448;background:#f4f6f8;margin:0}main{max-width:960px;margin:35px auto;padding:25px;background:white}h1{line-height:1.2}h2{font-size:23px}table{border-collapse:collapse;width:100%}th,td{text-align:left;padding:10px;border-bottom:1px solid #dce3e9}a{color:#155c99}code{overflow-wrap:anywhere}li{margin:8px 0}</style></head><body><main>
+<p><a href="../../../../START-HERE.html">13D project</a></p>
+<h1>Can the new fundamentals improve post-13D selection?</h1>
+<p>October 18, 2026 · Source-data review, before ML integration</p>
+<p><strong>The returned Bloomberg workbook adds substantial saved annual financial data for the fixed event list. It is not ready for historical predictive testing:</strong> the fiscal-period rule does not establish what investors knew at the time, and the extracted fields differ from the requested feature inputs. This audit establishes data coverage and internal consistency, not predictive value or alpha.</p>
+<table><thead><tr><th>What we found</th><th>What it means</th></tr></thead><tbody>
+<tr><td>667/667 requested event IDs and cutoff dates match</td><td>The return aligns with our observation list; no events were added or lost.</td></tr>
+<tr><td>587 events have nine numeric raw fields; 57 are partial; 23 have none</td><td>Full numeric coverage is 88.0% of 667 events. Numeric does not mean historically available or source-verified.</td></tr>
+<tr><td>5,725/6,003 possible raw field cells are numeric (95.4%)</td><td>Coverage is strong across the nine fields actually extracted, which differ from our original nine requests.</td></tr>
+<tr><td>No raw-to-summary value or row-reference discrepancies; derived debt reconciles</td><td>Workbook links and arithmetic agree internally. Bloomberg definitions, mapping, currency, scale and availability remain separate checks.</td></tr>
+</tbody></table>
+<h2>The timing issue, with a real example</h2>
+<p>Historical inputs must use information available before the investment decision. Giving the model results published later lets it learn from information an investor could not yet know; this is look-ahead bias.</p>
+<p>The workbook selects the cutoff calendar year minus one as its annual fiscal period. In <code>Live Fundamentals!A120:Q120</code>, BHE has a January 3, 2019 cutoff and FY2018 values, including $2.566465 billion revenue and $58.538 million operating income. The company's <a href="https://ir.bench.com/news/news-details/2019/BENCHMARK-ELECTRONICS-REPORTS-FOURTH-QUARTER-2018-RESULTS/default.aspx">FY2018 results release is dated February 7, 2019</a> and reports the same $58.538 million operating income. We cannot assume these annual results were known on January 3. This source check demonstrates a specific availability conflict; it does not measure how many of the 667 events are affected.</p>
+<p>The controls themselves mark revision vintage as NOT VERIFIED and historical mapping as REVIEW REQUIRED. The file contains saved financial values and internal formulas, with no saved BQL retrieval formulas demonstrating an as-of query. Publication dates, vendor availability dates and revision-vintage evidence are absent. A historical fiscal year alone cannot rule out later restatements.</p>
+<h2>What differs from the collection plan</h2>
+<ul><li>Comparable prior-year revenue, operating cash flow and company market capitalization are absent. Sales growth, cash-flow profitability and book-to-market therefore remain incomplete.</li>
+<li>Revenue and income use annual periods; actual trailing-twelve-month periods were requested. Annual and TTM measures must remain distinguished.</li>
+<li>Liabilities, operating income and EBITDA were added. Operating income is not operating cash flow.</li>
+<li>Total debt is derived from assets and a debt/assets ratio, using divisor 100. The arithmetic agrees; the vendor definition and ratio units have not been independently validated.</li>
+<li>All reviewed Bloomberg ID strings equal the original ticker seeds. This does not prove an error, but the workbook does not document independent historical-security validation.</li></ul>
+<h2>Coverage of the fields actually returned</h2>
+<table><thead><tr><th>Raw field</th><th>Numeric event values</th></tr></thead><tbody><tr><td>bs_tot_asset</td><td>642/667</td></tr><tr><td>BS_TOT_LIAB2</td><td>641/667</td></tr><tr><td>TOT_DEBT_TO_TOT_ASSET</td><td>641/667</td></tr><tr><td>bs_cash_near_cash_item</td><td>641/667</td></tr><tr><td>TOT_COMMON_EQY</td><td>642/667</td></tr><tr><td>SALES_REV_TURN</td><td>643/667</td></tr><tr><td>NET_INCOME</td><td>643/667</td></tr><tr><td>IS_OPER_INC</td><td>643/667</td></tr><tr><td>EBITDA</td><td>589/667</td></tr></tbody></table>
+<p>The 23 all-error events are labelled “pending” in the workbook, but this saved file does not establish that retrieval is still running. Preserve them as missing/error observations. EBITDA has 78 missing values; do not require EBITDA completeness merely to keep an event if it is not a selected predictor.</p>
+<h2>Exceptions to review, without automatic correction</h2>
+<p>CDZI FY2017 has debt/assets of 208.18%; KMPH FY2020 has 629.38%. Ratios above 100% can be economically possible, so these flags do not establish a unit error or justify rescaling. PLUG FY2020 has revenue of −$93.237 million and needs source/definition review. Negative common equity or earnings are not automatically data errors. USD appears in output labels, but returned currency/scale metadata are not supplied for independent confirmation.</p>
+<h2>Next collection decision</h2>
+<ol><li>Use the existing pilot, including this early-January BHE case, to verify historical security identity, publication availability and revision vintage. Retain exact queries, returned metadata, units and sources. Select only statements available by each event cutoff.</li>
+<li>Collect the missing core fields and distinguish annual from actual TTM measures. Record unsupported fields explicitly rather than silently substituting metrics.</li>
+<li>Review unresolved coverage and missingness before defining a separately versioned feature extension. Preserve the frozen baseline and use the same chronological comparisons when evaluating added financial inputs.</li></ol>
+<p>The original workbook has not been modified, recalculated or refreshed. No neural network or other model was trained, and no return targets, cohort rules or frozen protocols were changed.</p>
+<details><summary>Evidence and reproduction</summary>
+<p>Source: <code>/Users/jefflu/Downloads/13D_Bloomberg_9_Field_Extraction.xlsx</code><br>SHA256: <code>311e9932026756ea0130fcf96ad3f5cebd51dee11e1bf867649e6f60bf2d1949</code></p>
+<p><a href="audit.json">Full source-data audit</a> · <a href="inventory.json">Workbook structure and formulas</a> · <a href="bhe_example.json">BHE source row</a> · <a href="availability_source.json">Primary-source availability check</a> · <a href="audit-13d-bbg-return-20261018.py">Read-only audit probe</a></p>
+<p>The probe uses bundled Python with openpyxl in read-only mode. Its literal original input/output locations are retained for provenance. Original inspection outputs were written to <code>/private/tmp/13d-bbg-return-audit-20261018</code> and preserved here. Re-running the audit against the same source reproduced audit.json byte for byte. The source hash is checked before/after. This is an internal-consistency and metadata audit, not an independent audit of Bloomberg financial statements or complete historical availability.</p>
+</details></main></body></html>

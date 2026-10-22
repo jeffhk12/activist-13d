@@ -1,5 +1,20 @@
 # Activist 13D Machine Learning Class Project Plan
 
+## Updated ML professor progress report - October 21, 2026
+
+The [eight-page project and progress report](professor-update-20261021/13D_ML_Project_and_Progress_Report_20261021.pdf)
+replaces the October 15 draft-network status with the completed Windows comparison.
+It explains the data cuts, ten inputs, architecture and training, chronological
+folds, error arithmetic, annual ranking diagnostics, seed variation, limits and
+proposed next experiment. [Readable report and evidence](professor-update-20261021/index.html)
+retain source snapshots and hashes. No model or extraction was run for the update.
+The neural ensemble's within-year Spearman correlations are -0.364, -0.220 and
+-0.193 for 2021-2023. Boosting's correlations are small (+0.029, -0.001, +0.042),
+so ranking diagnostics do not demonstrate a stable positive benefit either.
+Next diagnose saved optimization and target/feature behavior before separately
+specifying limited tuning or validated data extensions. Professor feedback is
+requested on capacity, target choice, chronological validation and project scope.
+
 ## Neural network and tree comparison completed on Windows — October 19, 2026
 
 **Checkpoint 4B complete:** Jeff-ROG fitted the fixed comparison under Windows
