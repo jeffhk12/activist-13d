@@ -1,11 +1,13 @@
 # CI installs only what lint and the offline suite need. Deliberately excludes
 # torch, pycox, econml and every provider SDK: the suite must not be able to
 # import a client that reads a credential, and a 2 GB torch download on every
-# push buys nothing when no CI test trains a model.
+# push buys nothing for these offline synthetic checks.
 ruff
 pytest
 pandas
 numpy
+scipy
+scikit-learn
 requests
 lxml
 beautifulsoup4

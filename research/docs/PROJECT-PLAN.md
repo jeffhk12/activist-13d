@@ -1,5 +1,97 @@
 # Activist 13D Machine Learning Class Project Plan
 
+## Non-LLM ranking analysis completed — October 26, 2026
+
+Jeff requested proceeding with analysis before LLM extraction. The
+[ranking report and learning checkpoint](../runs/ranking-no-llm/20261026-v1/index.html)
+compare raw-return ridge, rank-target ridge and a shallow rank-target tree using
+the existing ten structured inputs. Constant and smaller-size rules are fixed
+references. Twenty-one fits produce 411 twelve-month and 302 twenty-four-month
+later predictions; the matched horizon comparison contains 297 events per horizon.
+The old 24-month ridge predictions reproduce exactly. Rank-target ridge improves
+on raw-return ridge in all four observed twelve-month years (positive in three),
+but twenty-four-month results remain mixed (positive in one of three years).
+No hyperparameter search, LLM extraction, Bloomberg inputs or return recomputation
+was performed. This is previously exposed chronological development evidence.
+Resolve financial information timing/mapping before a matched financial-only
+comparison; retain both ridge targets rather than selecting a winner from these
+few years. Frozen experiment: ranking-no-llm-v1. Extraction pilots remain preserved.
+
+## Revised extraction completed — October 26, 2026
+
+The [revised extraction report](../runs/extraction-stability/20261025-v2/index.html)
+and [learning checkpoint](ranking-direction-20261025/extraction-revision-20261026.md)
+record thirty fresh one-filing contexts, mechanical delivery logs, separate
+transaction facts and refined intent/evidence rules. Complete readable review is
+claimed for 30/30 records and mechanical delivery passes for 30/30.
+Three-agent intent agreement is 89/90 (98.9%) across the same ten
+discovery filings; on the original seven it is 63/63 (100.0%).
+These are post-development repeatability results, not accuracy validation. The
+original run and human packs are preserved. No reserved validation sources, new
+financial data or predictive fitting were used. Next inspect the remaining
+disagreements and freeze a procedure before specifying a separate reserved-case
+check. Financial information timing/mapping and downstream ranking remain pending.
+
+## Current extraction step — three-agent stability, October 25, 2026
+
+Jeff explicitly requested skipping human review for the ten discovery filings
+and comparing separate agents. That instruction supersedes the human-first
+sequence for these ten examples only. Three fresh contexts used the same sources,
+schema and nine intent definitions; thirty model records were finalized. The
+[consistency report](../runs/extraction-stability/20261025-v1/index.html) and
+[learning checkpoint](ranking-direction-20261025/agent-stability-checkpoint.md)
+preserve results, raw drafts, quotes and limitations separately from human packs.
+
+On seven filings all three agents reported fully reading, labels matched in
+59/63 intent cells (93.7%). Across all ten filings, agreement is 69/90 (76.7%);
+six records report incomplete source review of long documents. Same-model
+repeatability and exact citations do not establish semantic accuracy or ranking
+value. These ten discovery cases are now model-exposed development examples.
+The ten reserved validation sources remain unexposed by this run.
+
+Next address long-document evidence handling and the four remaining category
+differences on comparable reviews before specifying any revised extraction run.
+Preserve the first run; no majority answer becomes ground truth. Financial
+availability and downstream ranking experiments remain separate pending work.
+
+## Current direction — October 25, 2026
+
+Jeff's [new handoff](ranking-direction-20261025/13D_Codex_Handoff_2026-10-25.md)
+sets the current course-project question: do LLM-extracted initial-13D features
+improve chronological investment ranking beyond conventional financial inputs?
+Twelve- and 24-month excess returns are co-primary; 36 months is secondary if
+feasible. Spearman ranking is primary, with quintiles, top-minus-bottom spreads,
+temporal stability, counts and appropriate uncertainty supporting. Compare
+financial-only, validated LLM-only and combined features on matched samples,
+dates and algorithms. Start with references, ridge and constrained trees.
+Neural-network extensions are optional within the 4–5 week course window.
+
+The [inventory](../../reports/data_inventory.md),
+[quality audit](../../reports/data_quality_audit.md) and
+[10+10 filing pilot proposal](../../reports/filing_pilot_plan.md) are complete for
+review. The direct audit confirms 667 event records, 641 issuers and 639 security
+IDs; 662 panel events have exact 12/24-month labels and 561 have all three
+horizons. These are coverage counts, not final feature-eligible modeling samples.
+Financial publication/vintage and mapping remain unresolved; LLM features remain
+unvalidated. The [audit evidence](../runs/ranking-scope-audit/20261025-v2/audit.json)
+preserves source hashes, missingness, exact joins and prior ranking results.
+
+Jeff authorized the next step after the audit. The
+[ten-case source-only discovery pack](../../review/drafts/ranking-llm-pilot-20261025/index.html)
+is ready, with ten separate cases reserved for validation after schema/prompt
+freeze. Begin with D01 and return an independent reading JSON before model
+interpretation. A separate ten-event financial availability worksheet is prepared;
+publication dates, mapping, units and vintage remain unresolved.
+[Preparation and learning checkpoint](ranking-direction-20261025/pilot-preparation.md)
+records sampling, protection, verification and what Jeff reviews next. Full
+extraction and retraining have not started.
+Dynamic rebalancing, amendments, regimes, causal attribution and a full valuation
+engine are deferred. [Decision reconciliation](ranking-direction-20261025/direction.md)
+records what supersedes the older plan. Existing ranking metrics and exposed
+development history remain preserved; the new feature comparisons are unrun.
+
+The dated sections below describe preserved earlier work and priorities.
+
 ## Updated ML professor progress report - October 21, 2026
 
 The [eight-page project and progress report](professor-update-20261021/13D_ML_Project_and_Progress_Report_20261021.pdf)

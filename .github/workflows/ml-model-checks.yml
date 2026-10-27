@@ -7,6 +7,10 @@ on:
       - 'scripts/ml_experiment/nonlinear_models.py'
       - 'scripts/ml_experiment/run_nonlinear.py'
       - 'tests/test_ml_nonlinear.py'
+      - 'tests/test_ranking_no_llm.py'
+      - 'scripts/ml_experiment/run_ranking_no_llm.py'
+      - 'scripts/ml_experiment/audit_ranking_scope.py'
+      - 'research/protocol/ranking-no-llm-v1.json'
       - 'research/protocol/ml-nonlinear-v1.json'
       - 'requirements-ml.txt'
       - '.github/workflows/ml-model-checks.yml'
@@ -33,4 +37,4 @@ jobs:
       - name: Verify invented examples only
         # research/runs is excluded from git: the real-archive preparation check
         # skips. No test fits the real 13D outcomes, even when archives exist.
-        run: python -m pytest tests/test_ml_nonlinear.py tests/test_ml_baselines.py -k "not offline_artifact_replay" -q
+        run: python -m pytest tests/test_ml_nonlinear.py tests/test_ml_baselines.py tests/test_ranking_no_llm.py -k "not offline_artifact_replay" -q
