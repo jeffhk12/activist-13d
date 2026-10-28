@@ -1,5 +1,128 @@
 # Activist 13D Machine Learning Class Project Plan
 
+## Shared-rule extraction v3 completed — October 27, 2026
+
+The post-run [feature-use decision](../runs/extraction-revision/20261027-v3/readiness.html)
+also excludes LLM ownership-derived counts, sums, percentages and control features
+from the first model until reporter/target-security scope is validated. D10 has
+one reporting person in both readings but1 versus35 raw holding relations. These
+are different units, not35 confirmed errors. All raw answers stay preserved;
+the initial text study retains experimental objectives and qualified funding.
+This policy is declared after development and before any new investment fit.
+
+The user approved all four preparation steps and chose separate issuer-directed
+objectives, retaining routine merger/financing clauses as facts. Shared rules and
+qualified funding/person-security ownership/timing fields were frozen before
+model jobs and metadata selection.30 development jobs,3 construction-control
+jobs and9 separately released operational jobs completed (42 total,13 filings).
+
+The two source readers agree on 89/90 development
+intent states and 25/27 separate-case states.
+The conservative automated filter marks 84/90
+and 25/27 as eligible experimental
+intent fields, preserving both states and empirical frequencies plus flags.
+This is not natural-data accuracy. All fields remain experimental, and the old
+human-reference semantic-acceptance criteria remain unmet.
+
+Three new cases were released only after the33-job development/control gate;
+seven original reserved cases remain unreleased. Old assets are byte-preserved.
+Thirty synthetic checks, source/schema/citation integrity, construction criteria
+and byte-for-byte report replay pass. Transaction counts are excluded from the
+first ranking model. No paid API, new online filing source, full667 extraction,
+Bloomberg collection, return analysis or model fit was run.
+
+[Completed results and learning checkpoint](../runs/extraction-revision/20261027-v3/index.html)
+report all cases, control denominators, source gaps, critic issues and rule-induced
+v2-to-v3 changes. Next decide whether to scale experimental extraction in
+resumable batches while retaining disagreements and unknowns. No category is
+certified by same-model agreement or reviewer approval.
+
+## Automated reviewer pilot completed — October 27, 2026
+
+The user approved the literature-informed backward-review pilot. We reused saved
+replicate A for all ten discovery filings, fixed before judging, and ran ten fresh
+one-filing critics plus ten separate source-only readers and two constructed-control
+jobs. The critics judged 220/225 claims supported,
+0/225 contradicted and 5/225
+insufficiently evidenced. These are model verdicts, not natural-data error rates. Separate source-only
+readers differed on seven intent cells in three filings, all of which critics
+approved in the original candidate. This is unresolved definition/task variation,
+not proof of seven errors or of candidate anchoring.
+All 22 jobs delivered all readable source text. Sources, protocols, original
+extractions, human packs and reserved cases are preserved. No paid API, new source,
+Bloomberg collection, outcome analysis or investment fit was used.
+
+The critic matched 16/16 constructed
+verdict keys and flagged 8/8
+changed claims. The source-only control reader recovered
+8/8 deliberately deleted
+ownership rows. These short constructed fixtures do not estimate natural-filing
+precision, recall or accuracy. All roles use the inherited configured model;
+procedural blinding does not imply independent error patterns.
+
+The [completed audit and catch-up lesson](../runs/extraction-audit/20261027-v1/interpretation.html)
+links every non-supported claim to its source, all blind differences and controls.
+The implementation passed 18 synthetic guards and byte-for-byte report replay,
+with independent quotation, delivery-range and preservation checks. A missing
+schema-definition reference was repaired without changing the control draft,
+prompts or inputs; old/new code hashes are archived. Next specify how to handle
+the shared objective-qualification rule, flagged financing qualifications,
+ownership inclusion and transaction granularity before a revised extraction
+version or wider run. The role prompts differ in how broadly they emphasize
+ordinary transaction terms, so intent differences do not isolate candidate
+anchoring or establish which reader is correct. Model agreement
+and reviewer approval do not establish natural-data accuracy.
+
+## LLM reviewer literature probe completed — October 27, 2026
+
+Jeff has no time for extraction review and requested online research before
+deciding the next step. The [research brief and primary-paper notes](llm-extraction-review-research-20261027/index.html)
+compare evidence-grounded claim review, source-only omission checks, diverse
+judges, known-fault controls, human-light calibration and reconstruction-based
+benchmark-free validation. A small audit pilot on existing discovery cases is
+proposed, not frozen or run. It would preserve initial answers and separate
+support judgments, omissions, uncertainty and control performance. Without an
+appropriate independent reference, natural-data semantic accuracy remains
+unestimated. No new extraction, judge calls, reference labels, reserved sources
+or investment-model fits were used. Bloomberg remediation remains separate.
+
+## Bloomberg corrective handoff and discovery review — October 27, 2026
+
+Jeff requested a new Bloomberg transfer and useful work while it is pending,
+then selected reviewing the completed ten 13D filings first. The
+[current work page](parallel-work-20261027/index.html) links a self-contained
+ten-event/nine-annual-field handoff and ZIP, also copied to Downloads, and the
+[first-batch review](../runs/extraction-discovery-review/20261027-v1/index.html).
+The package contains 90 empty keyed results, not new vendor data, and specifies
+historical IDs, latest-public-period selection, available-by-cutoff versions,
+field definitions and evidence requirements. It supersedes the older October17
+TTM/growth field scope for this corrective pilot only.
+
+The discovery review verifies the preserved30 records and700 exact citations.
+Intent states agree in89/90 cells; funding-type sets differ on D02/D05/D06,
+ownership-row counts on D02, and transaction-fact counts on seven cases. Preserve
+all interpretations; no majority answer becomes truth. Next inspect these source
+passages and specify financing/ownership/transaction rules under a new version.
+No new filing sources, reserved cases, paid APIs, model fits or returns were used.
+
+## Ten-case Bloomberg timing check completed — October 26, 2026
+
+The [financial timing/identity report](../runs/bloomberg-timing/20261026-v1/index.html)
+checks the existing ten-event financial pilot against primary disclosures. Six
+rows need correction or definition work: BHE/CLR selected annual releases after
+filing, CBIO figures matching historical GlycoMimetics rather than Catalyst,
+NWLI later LDTI recasts, HOME older annual-period selection and TSC cash/common
+equity definitions. Four rows have no material issue identified in bounded checks;
+Geospace exact publication metadata remains limited. There are 36 amount
+comparisons, with 28 matches and 8 differences, plus eight recast/other-issuer
+comparisons. A match alone is not historical eligibility. No row is fully
+certified across all nine fields. The pilot is deliberately selected and includes
+a known conflict, so these counts do not estimate a population error rate.
+Original workbook and existing model outputs are preserved. Next correct stable
+historical IDs, latest-public-period selection, original vintages and definitions,
+then recheck these ten before extending the financial comparison to the full
+sample. No new financial-feature fit or return calculation was performed.
+
 ## Non-LLM ranking analysis completed — October 26, 2026
 
 Jeff requested proceeding with analysis before LLM extraction. The
