@@ -1,5 +1,53 @@
 # Activist 13D Machine Learning Class Project Plan
 
+<!-- extraction-batches-current -->
+## Extraction batches underway — October 28, 2026
+
+User authorized batch continuation. The fixed queue has627 eligible new filings:
+667 panel filings less13 completed filings less27 reserved/connected filings.
+The seven reserved cases are included in27; human protections remain applied.
+Five filings per batch receive two source-only readings and a backward critic.
+Current state: 25 new filings complete, 75/90 released jobs finalized.
+Finalized records are cached; every next release requires previous technical checks.
+All measurements remain experimental. Unknown/disagreement/critic flags are retained;
+LLM ownership-derived features and transaction counts stay out of the first model.
+Qualified funding remains a candidate, with no final transformation frozen yet.
+No new fitting, Bloomberg collection, paid API or online source retrieval.
+
+[Progress, results and learning checkpoint](../runs/extraction-batches/20261028-v1/index.html)
+
+<!-- extraction-batches-current-end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Shared-rule extraction v3 completed — October 27, 2026
 
 The post-run [feature-use decision](../runs/extraction-revision/20261027-v3/readiness.html)
