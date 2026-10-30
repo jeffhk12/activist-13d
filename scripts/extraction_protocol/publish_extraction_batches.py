@@ -24,11 +24,16 @@ def publish():
     complete_filings = sum(x['summary']['filings'] for x in batches if x['summary'])
     jobs_complete = sum(x['complete_jobs'] for x in batches)
     jobs_total = sum(x['total_jobs'] for x in batches)
+    capacity_errors = ['batch001_blind01', 'batch001_extractor02']
+    for path in sorted(BASE.glob('batch-*/operational-retries.json')):
+        for event in core.read(path)['events']:
+            if event['error_type'] == 'model_capacity' and event['stage'] == 'before_source_execution':
+                capacity_errors.append(event['agent_task'].rsplit('/', 1)[-1])
     payload = {'queued_filings': queue['queued_filings'], 'new_completed_filings': complete_filings,
                'prior_completed_filings': 13, 'completed_filings_total': 13 + complete_filings,
                'remaining_eligible_filings': queue['queued_filings'] - complete_filings,
                'batches': batches, 'all_fields_experimental': True,
-               'capacity_errors_before_source_execution': ['batch001_blind01', 'batch001_extractor02'],
+               'capacity_errors_before_source_execution': list(dict.fromkeys(capacity_errors)),
                'operational_retries': 'Same assigned jobs, prompts and inherited model; no score-selected semantic retry.'}
     (BASE / 'progress.json').write_bytes(core.enc(payload))
     table = ''
