@@ -9,7 +9,7 @@ The seven reserved cases are included in27; human protections remain applied.
 Reporting now covers25 filings and75 role jobs at a time, with saved five-filing checkpoints.
 Each filing retains two source-only readings and a backward critic.
 Continue through the full larger batch without asking after each checkpoint; source-release gates remain in force.
-Current state: 180 new filings complete, 540/555 released jobs finalized.
+Current state: 270 new filings complete, 810/810 released jobs finalized.
 Finalized records are cached; every next release requires previous technical checks.
 All measurements remain experimental. Unknown/disagreement/critic flags are retained;
 LLM ownership-derived features and transaction counts stay out of the first model.
@@ -19,6 +19,27 @@ No new fitting, Bloomberg collection, paid API or online source retrieval.
 [Progress, results and learning checkpoint](../runs/extraction-batches/20261028-v1/index.html)
 
 <!-- extraction-batches-current-end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
