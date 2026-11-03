@@ -1,7 +1,16 @@
 # Activist 13D Machine Learning Class Project Plan
 
+<!-- extraction-results-review-20261102 -->
+## Extraction results and methods review - November 2, 2026
+
+The eligible collection is complete: 640 filings, including 627 in the production run and 13 earlier v3 cases. The detailed review explains the investment question, nine objective definitions, funding/ownership/transaction fields, the three-agent workflow, quality methods, category results and open decisions. Its HTML appendices search every production filing and every original critic flag.
+
+[Detailed report](extraction-results-review-20261102/report.html) · [25-page PDF](extraction-results-review-20261102/13D_Extraction_Results_and_Methods_20261102.pdf)
+
+There are 221 critic flags across 127 production filings, overlapping 64 of the 165 excluded objective decisions. The distinct combined open inventory is 322 field decisions. No flags were adjudicated for this report. Prioritize all 165 unresolved objective decisions and 43 funding flags, with their material evidence dependencies. Funding feature transformation and Bloomberg historical timing/mapping remain pending; ownership-derived features and transaction counts retain the existing first-model exclusions. Accuracy and incremental investment value remain unmeasured.
+
 <!-- extraction-batches-current -->
-## Extraction batches underway — October 28, 2026
+## Extraction batches completed - October 28 to November 2, 2026
 
 User authorized batch continuation. The fixed queue has627 eligible new filings:
 667 panel filings less13 completed filings less27 reserved/connected filings.
@@ -9,7 +18,7 @@ The seven reserved cases are included in27; human protections remain applied.
 Reporting now covers25 filings and75 role jobs at a time, with saved five-filing checkpoints.
 Each filing retains two source-only readings and a backward critic.
 Continue through the full larger batch without asking after each checkpoint; source-release gates remain in force.
-Current state: 520 new filings complete, 1560/1560 released jobs finalized.
+Current state: 627 new filings complete, 1881/1881 released jobs finalized.
 Finalized records are cached; every next release requires previous technical checks.
 All measurements remain experimental. Unknown/disagreement/critic flags are retained;
 LLM ownership-derived features and transaction counts stay out of the first model.
@@ -19,6 +28,33 @@ No new fitting, Bloomberg collection, paid API or online source retrieval.
 [Progress, results and learning checkpoint](../runs/extraction-batches/20261028-v1/index.html)
 
 <!-- extraction-batches-current-end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
